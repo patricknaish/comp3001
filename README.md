@@ -1,4 +1,6 @@
 comp3001
 ========
 
-Repo for comp3001 group coursework
+Repository for comp3001 group coursework.
+
+It's so very, very exciting.
