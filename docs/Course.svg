@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 43363)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1024px" height="768px" viewBox="0 0 1024 768" enable-background="new 0 0 1024 768" xml:space="preserve">
+<rect x="125.078" y="126.409" fill="#FFFFFF" stroke="#000000" width="250.922" height="168.22"/>
+<line fill="none" stroke="#000000" x1="126" y1="189.019" x2="376" y2="189.019"/>
+<text transform="matrix(1 0 0 1 148 231.6294)"><tspan x="0" y="0" font-family="'MyriadPro-Regular'" font-size="40">ID : int</tspan><tspan x="0" y="48" font-family="'MyriadPro-Regular'" font-size="40">Name : string</tspan></text>
+<text transform="matrix(1 0 0 1 143.4009 176.6294)" font-family="'MyriadPro-Regular'" font-size="50">Course</text>
+</svg>
