@@ -13,5 +13,4 @@ Repository for comp3001 group coursework.
 * rjt2g10 - Ryan J Tyrrell
 
 # Ideas
-* Add ideas here
-* Test
+* Book exchange/sale system for universities
