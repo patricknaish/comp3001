@@ -13,8 +13,8 @@
    height="1052.3622047"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="New document 1">
+   inkscape:version="0.48.2 r9819"
+   sodipodi:docname="user.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,15 +25,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="162.50746"
-     inkscape:cy="656.49415"
+     inkscape:cx="475.35739"
+     inkscape:cy="730.43437"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1031"
-     inkscape:window-height="1195"
-     inkscape:window-x="2049"
-     inkscape:window-y="177"
+     inkscape:window-width="1296"
+     inkscape:window-height="845"
+     inkscape:window-x="48"
+     inkscape:window-y="0"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -43,7 +43,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -54,14 +54,14 @@
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
-       x="232.85715"
-       y="138.07648"
+       x="233.86729"
+       y="136.05617"
        id="text2985"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan2987"
-         x="232.85715"
-         y="138.07648"
+         x="233.86729"
+         y="136.05617"
          style="font-size:24px;font-style:italic;font-weight:bold">User</tspan></text>
     <text
        xml:space="preserve"
@@ -73,79 +73,90 @@
          sodipodi:role="line"
          x="107.86328"
          y="172.78061"
-         id="tspan3007">username : String</tspan><tspan
+         id="tspan3007">email : varchar(100)</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="195.28061"
-         id="tspan3011">firstName : String</tspan><tspan
+         id="tspan3011">firstName : varchar(50)</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="217.78061"
-         id="tspan2993">lastName : String</tspan><tspan
+         id="tspan2993">lastName : varchar(50)</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="240.28061"
-         id="tspan3001">university : University</tspan><tspan
+         id="tspan3001">universityId : int</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="262.78061"
-         id="tspan3005">course : Course</tspan><tspan
+         id="tspan3005">courseId : int</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="285.28061"
-         id="tspan2999">currentYear : int</tspan><tspan
+         id="tspan2997">currentYear : int</tspan><tspan
          sodipodi:role="line"
          x="107.86328"
          y="307.78061"
-         id="tspan2997">ownedBooks : Book[]</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="330.28061"
-         id="tspan3019">reputation : int</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="352.78061"
-         id="tspan3013" /><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="375.28061"
-         id="tspan3015">getRequiredBooks()</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="397.78061"
-         id="tspan3017">soldBook(book : Book)</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="420.28061"
-         id="tspan3021">boughtBook(book : Book)</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="442.78061"
-         id="tspan3799">alterReputation(positive : boolean)</tspan><tspan
-         sodipodi:role="line"
-         x="107.86328"
-         y="465.28061"
-         id="tspan3023" /></text>
-    <rect
-       id="rect3025"
-       width="346.13644"
-       height="358.1543"
-       x="91.428574"
-       y="109.50504"
-       style="fill:none;stroke:#000000;stroke-width:1.11387396;stroke-opacity:1" />
+         id="tspan3023">reputation : int</tspan></text>
     <rect
        style="fill:none;stroke:#000000;stroke-width:0.993177;stroke-opacity:1"
        id="rect3795"
        width="345.98404"
        height="40.412922"
        x="91.41539"
-       y="109.38137" />
+       y="-149.7943"
+       transform="scale(1,-1)" />
     <rect
-       style="fill:none;stroke:#000000;stroke-opacity:1"
+       style="fill:none;stroke:#000000;stroke-width:0.92496663;stroke-opacity:1"
        id="rect3797"
        width="345.97723"
-       height="197.48482"
+       height="168.96075"
        x="91.418808"
        y="149.79088" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="525.2793"
+       y="139.18428"
+       id="text3122"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3124"
+         x="525.2793"
+         y="139.18428"
+         style="font-weight:bold;font-style:italic;font-size:24px">UserBooks</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:18px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="492.95444"
+       y="172.51932"
+       id="text3126"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="492.95444"
+         y="172.51932"
+         id="tspan3130">ownId : int</tspan><tspan
+         sodipodi:role="line"
+         x="492.95444"
+         y="195.01932"
+         id="tspan3134">userEmail : varchar(100)</tspan><tspan
+         sodipodi:role="line"
+         x="492.95444"
+         y="217.51932"
+         id="tspan3136">bookId : int</tspan></text>
+    <rect
+       id="rect3138"
+       width="266.68027"
+       height="127.29126"
+       x="464.67017"
+       y="104.8391"
+       style="fill:none;stroke:#000000;stroke-width:0.95213473;stroke-opacity:1" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.99157536;stroke-opacity:1"
+       id="rect3908"
+       width="266.68027"
+       height="44.694172"
+       x="464.67017"
+       y="104.59163" />
   </g>
 </svg>
