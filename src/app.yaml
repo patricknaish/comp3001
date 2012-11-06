@@ -1,0 +1,8 @@
+application: comp3001-1213-b
+version: 0000000
+runtime: python27
+api_version: 1
+threadsafe: true
+handlers:
+- url: /images
+  static_dir: static/images
