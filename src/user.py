@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-class user:
+class User:
     bookList = []
 
     def __init__(self, 
@@ -11,7 +11,7 @@ class user:
                  universityID, 
                  courseID, 
                  currentYear):
-        self.userid = userid
+        self.id = userid
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
