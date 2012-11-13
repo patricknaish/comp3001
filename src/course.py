@@ -12,5 +12,5 @@ class course:
 	def addModule(self, module):
 		self.moduleList.append(module)
 		
-    def listModules(self):
-        return '\n'.join(map(str, self.moduleList))
+	def listModules(self):
+		return '\n'.join(map(str, self.moduleList))
