@@ -3,7 +3,14 @@
 class user:
     bookList = []
 
-    def __init__(self, userid, email, firstName, lastName, universityID, courseID, currentYear):
+    def __init__(self, 
+                 userid, 
+                 email,
+                 firstName, 
+                 lastName, 
+                 universityID, 
+                 courseID, 
+                 currentYear):
         self.userid = userid
         self.email = email
         self.firstName = firstName
