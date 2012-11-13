@@ -1,13 +1,14 @@
 #!/usr/bin/python
 
-class university:
-	moduleList = []
+class University:
+	courseList = []
 	
-	def __init__(self, name):
+	def __init__(self, id, name):
+		self.id = id
 		self.name = name
 		
-	def addModule(self, module):
-		self.moduleList.append(module)
+	def addCourse(self, course):
+		self.courseList.append(course)
 
 	def __str__(self):
 		return name
