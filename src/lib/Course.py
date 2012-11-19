@@ -3,9 +3,9 @@
 class Course:
     moduleList = []
     
-    def __init__(self, id, name):
+    def __init__(self, courseID, name):
         self.name = name
-        self.id = id
+        self.courseID = courseID
     
     def __str__(self):
         return self.name
