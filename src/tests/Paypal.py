@@ -12,16 +12,16 @@ class TestPaypal(unittest.TestCase):
 		self.assertEqual(self.paypal.ReturnMethod, 0)
 		self.paypal.setPDTMode("disabled")
 		self.assertEqual(self.paypal.ReturnMethod, 1)
-		self.paypal.setPDTMode("enabled")
+		self.paypal.setPDTMode("enabled_post")
 		self.assertEqual(self.paypal.ReturnMethod, 2)
 
 	def test_ShippingMode(self):
 		self.paypal.setShippingMode("enabled")
-		self.assertEqual(self.paypal.ReturnMethod, 0)
+		self.assertEqual(self.paypal.ShippingEnabled, 0)
 		self.paypal.setShippingMode("disabled")
-		self.assertEqual(self.paypal.ReturnMethod, 1)
+		self.assertEqual(self.paypal.ShippingEnabled, 1)
 		self.paypal.setShippingMode("required")
-		self.assertEqual(self.paypal.ReturnMethod, 2)
+		self.assertEqual(self.paypal.ShippingEnabled, 2)
 
 	def test_NoteField(self):
 		self.paypal.setNoteField(True)
