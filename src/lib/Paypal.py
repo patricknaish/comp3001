@@ -49,7 +49,7 @@ class User:
         self.last_name = ""
         self.business_name = ""
         self.email = ""
-        self.id = ""
+        self.user_id = ""
         self.status = ""
         self.phone = ""
         self.residence_country = ""
