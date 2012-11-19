@@ -1,23 +1,25 @@
-# Unit test module
+"""
+Module to test the Course class.
+"""
 import unittest
 
 import lib
 
 class TestCourse(unittest.TestCase):
 
-	# Prepare for running a test
-	def setUp(self):
-		self.course = lib.Course("Test Course")
+    def setUp(self):
+        "Prepare for running a test"
+        self.course = lib.COURSE("Test Course")
 
-	# Test the course name
-	def test_CourseToStr(self):
-		self.assertEqual(str(self.course), "Test Course")
+    def test_course_to_str(self):
+        "Test the course name"
+        self.assertEqual(str(self.course), "Test Course")
 
-	# Test that adding a module only accepts a Module object
-	def test_CourseAddModule(self):
-		with self.assertRaises(TypeError):
-			self.course.addModule("Module String")
+    def test_course_add_module(self):
+        "Test that adding a module only accepts a module object"
+        with self.assertRaises(TypeError):
+            self.course.addModule("Module String")
 
-	# Test that the module list returns a list of modules
-	def test_CourseListModules(self):
-		self.assertTrue(isinstance(self.course.getModules(), list))
+    def test_course_list_modules(self):
+        "Test that the module list returns a list of modules"
+        self.assertTrue(isinstance(self.course.getModules(), list))

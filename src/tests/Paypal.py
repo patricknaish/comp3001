@@ -13,9 +13,9 @@ class TestPaypal(unittest.TestCase):
         """
         Setup the Paypal test (this is called each time)
         """
-        self.paypal = lib.Paypal()
+        self.paypal = lib.PAYPAL()
 
-    def test_PDTMode(self):
+    def test_pdt_mode(self):
         """
         Ensure the PDT mode setting works
         """
@@ -26,7 +26,7 @@ class TestPaypal(unittest.TestCase):
         self.paypal.set_pdt_mode("enabled_post")
         self.assertEqual(self.paypal.return_method, 2)
 
-    def test_ShippingMode(self):
+    def test_shipping_mode(self):
         """
         Ensure the shipping mode setting works
         """
@@ -37,7 +37,7 @@ class TestPaypal(unittest.TestCase):
         self.paypal.set_shipping_mode("required")
         self.assertEqual(self.paypal.shipping_enabled, 2)
 
-    def test_NotesField(self):
+    def test_notes_field(self):
         """
         Ensure the notes field enable/disable works
         """
@@ -46,7 +46,7 @@ class TestPaypal(unittest.TestCase):
         self.paypal.set_notes_field(False)
         self.assertEqual(self.paypal.enable_notes, 1)
  
-    def test_setColourScheme(self):
+    def test_set_colour_scheme(self):
         """
         Ensure the colour scheme setting works
         """
@@ -55,7 +55,7 @@ class TestPaypal(unittest.TestCase):
         self.paypal.set_colour_scheme("white")
         self.assertEqual(self.paypal.checkout_colour, 0)
 
-    def test_setButtonType(self):
+    def test_set_button_type(self):
         """
         Ensure the button type setting works
         """
