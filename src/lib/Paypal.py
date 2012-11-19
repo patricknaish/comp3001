@@ -96,7 +96,7 @@ Class to do the main bulk of the work
 
 This class does interesting things with the above classes to get sanity.
 """
-class Integration:
+class Paypal:
 	def __init__(self):
 		self.MerchantID = ""
 		self.PDTAuthToken = ""
