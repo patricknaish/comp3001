@@ -3,4 +3,4 @@ all:
 
 test:
 	-python -m unittest tests.Course tests.University tests.Paypal
-	-find -name \*.py -exec ../tools/pep8.py {} \+
+	-find -name \*.py -exec pylint {} \+
