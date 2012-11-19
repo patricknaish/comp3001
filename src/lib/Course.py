@@ -28,4 +28,4 @@ class Course:
         """
         Return a list of the modules part of this course.
         """
-        return '\n'.join(map(str, self.module_list))
+        return '\n'.join(str(module) for module in self.module_list)
