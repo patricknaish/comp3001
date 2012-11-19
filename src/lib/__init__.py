@@ -1,10 +1,14 @@
-# Initial loader for libraries.  Brings them into the global namespace.
+"""
+Root of the libraries behind the web UI for the book trader system.
 
-import Course
-import Paypal
-import University
+All classes that are the same name as their modules are brought into the global
+namespace
+"""
+import lib.Course
+import lib.Paypal
+import lib.University
 
 # Now make the classes available readily
-Paypal = Paypal.Paypal
-Course = Course.Course
-University = University.University
+PAYPAL = lib.Paypal.Paypal
+COURSE = lib.Course.Course
+UNIVERSITY = lib.University.University
