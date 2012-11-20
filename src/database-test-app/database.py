@@ -93,7 +93,7 @@ class CourseModule(db.Model):
                                   required=True, 
                                   collection_name = 'courses')
 
-class UniversityCourses(db.Model):
+class UniversityCourse(db.Model):
     """
     Defines the university-course schema
     """
@@ -109,7 +109,7 @@ def create_user(user_email,
                 user_last_name, 
                 user_current_year):
     """
-    Add a new user to the database
+    Add a new user to the datastore
     """
     new_user = User(key_name=user_email,
                     email=user_email,
@@ -127,7 +127,7 @@ def create_book(book_isbn,
                 book_publisher,
                 book_rrp):
     """
-    Add a new book to the database
+    Add a new book to the datastore
     """
     new_book = Book(key_name=book_isbn,
                     isbn=book_isbn,
@@ -138,6 +138,32 @@ def create_book(book_isbn,
                     publisher=book_publisher,
                     rrp=book_rrp)
     new_book.put()
+
+def create_module(module_short_title,
+                  module_title):
+    """
+    Add a new module to the datastore
+    """
+    new_module = Module(key_name=module_short_title,
+                        shortTitle=module_short_title,
+                        title=module_title)
+    new_module.put()
+
+def create_course(course_name):
+    """
+    Add a new course to the datastore
+    """
+    new_course = Course(key_name=course_name,
+                        name=course_name)
+    new_course.put()
+
+def create_university(university_name):
+    """
+    Add a new university to the datastore
+    """
+    new_university = University(key_name=university_name,
+                                name=university_name)
+    new_university.put()
 
 def create_user_book_copy(user_email, 
                           book_isbn, 
@@ -153,6 +179,50 @@ def create_user_book_copy(user_email,
                          price=book_price,
                          condition=book_condition)
     user_book.put()
+
+def create_user_course_registration(user_email,
+                                    course_name):
+    """
+    Link a user and a course
+    """
+    user_ref = User.get_by_key_name(user_email)
+    course_ref = Course.get_by_key_name(course_name)
+    user_course = UserCourse(user=user_ref,
+                             course=course_ref)
+    user_course.put()
+
+def create_module_book_assignation(module_short_title,
+                                   book_isbn):
+    """
+    Link a module and a book
+    """
+    module_ref = Module.get_by_key_name(module_short_title)
+    book_ref = Book.get_by_key_name(book_isbn)
+    module_book = ModuleBook(module=module_ref,
+                             book=book_ref)
+    module_book.put()
+
+def create_course_module_assignation(course_name,
+                                     module_short_title):
+    """
+    Link a course and a module
+    """
+    course_ref = Course.get_by_key_name(course_name)
+    module_ref = Module.get_by_key_name(module_short_title)
+    course_module = CourseModule(course=course_ref,
+                                 module=module_ref)
+    course_module.put()
+
+def create_university_course_assignation(university_name,
+                                         course_name):
+    """
+    Link a university and a course
+    """
+    university_ref = University.get_by_key_name(university_name)
+    course_ref = Course.get_by_key_name(course_name)
+    university_course = UniversityCourse(university=university_ref,
+                                         course=course_ref)
+    university_course.put()
 
 class MainPage(webapp2.RequestHandler) :
     """
