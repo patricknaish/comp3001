@@ -5,11 +5,12 @@ class Course:
     """
     Class representing a course
     """
-    def __init__(self, name):
+    def __init__(self, course_id, name):
         """
         Initialise a new course object with a given name
         """
         self.name = name
+        self.course_id = course_id
         self.module_list = list()
     
     def __str__(self):
