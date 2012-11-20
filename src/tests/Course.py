@@ -22,4 +22,4 @@ class TestCourse(unittest.TestCase):
 
     def test_course_list_modules(self):
         "Test that the module list returns a list of modules"
-        self.assertTrue(isinstance(self.course.list_modules(), list))
+        self.assertTrue(isinstance(self.course.get_modules(), list))

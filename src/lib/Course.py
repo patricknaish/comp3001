@@ -27,8 +27,8 @@ class Course:
             raise TypeError("module is not an instance of the Module object")
         self.module_list.append(module)
     
-    def list_modules(self):
+    def get_modules(self):
         """
         Return a list of the modules part of this course.
         """
-        return '\n'.join(str(module) for module in self.module_list)
+        return self.module_list
