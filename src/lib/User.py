@@ -34,4 +34,4 @@ class User:
         return '\n'.join(map(str, self.bookList))
 
     def __str__(self):
-        return firstName+' '+lastName+' <'+email+'>'
+        return self.firstName+' '+self.lastName+' <'+self.email+'>'
