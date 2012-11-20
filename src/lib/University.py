@@ -1,4 +1,4 @@
-import Course
+from lib import Course
 
 class University:
     
