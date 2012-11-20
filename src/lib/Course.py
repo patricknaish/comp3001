@@ -1,4 +1,4 @@
-from lib import module
+from lib import Module
 
 """
 Course module with class to represent a single course at a University
