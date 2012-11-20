@@ -1,3 +1,5 @@
+from lib import module
+
 """
 Course module with class to represent a single course at a University
 """
