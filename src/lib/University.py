@@ -2,8 +2,8 @@ import Course
 
 class University:
     
-    def __init__(self, id, name):
-        self.id = id
+    def __init__(self, university_id, name):
+        self.university_id = university_id
         self.name = name
         self.course_list = list()
         
