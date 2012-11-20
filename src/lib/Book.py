@@ -5,9 +5,10 @@ Module containing classes for manipulating books
 class Book:
     "Class representing a book in the book trading system"
 
-    def __init__(self, isbn, title, author, year, edition, publisher, rrp):
+    def __init__(self, id, isbn, title, author, year, edition, publisher, rrp):
         "Create a new book with the specified parameters"
-        self.isbn = isbn
+        self.id = id
+		self.isbn = isbn
         self.title = title
         self.author = author
         self.year = year
