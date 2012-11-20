@@ -11,6 +11,9 @@ class University:
         if not isinstance(course, Course):
             raise TypeError("course is not an instance of the Course object")
         self.course_list.append(course)
+    
+    def get_courses(self):
+        return self.course_list
 
     def __str__(self):
         return self.name

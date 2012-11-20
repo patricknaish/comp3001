@@ -21,8 +21,8 @@ class TestUniversity(unittest.TestCase):
     def test_university_add_course(self):
         "Test that adding a module only accepts a Module object"
         with self.assertRaises(TypeError):
-            self.university.addCourse("Module String")
+            self.university.add_course("Module String")
 
     def test_university_list_courses(self):
         "Test that the module list returns a list of modules"
-        self.assertTrue(isinstance(self.university.getCourses(), list))
+        self.assertTrue(isinstance(self.university.get_courses(), list))
