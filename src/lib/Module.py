@@ -1,6 +1,6 @@
 class Module:
 
-    def __init__(self, id, shortTitle, fullTitle):
-        self.id = id
+    def __init__(self, module_id, shortTitle, fullTitle):
+        self.module_id = module_id
         self.shortTitle = shortTitle
         self.fillTitle = fullTitle
