@@ -8,7 +8,7 @@ class Book:
     def __init__(self, id, isbn, title, author, year, edition, publisher, rrp):
         "Create a new book with the specified parameters"
         self.id = id
-		self.isbn = isbn
+	    self.isbn = isbn
         self.title = title
         self.author = author
         self.year = year
