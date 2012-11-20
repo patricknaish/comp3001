@@ -9,7 +9,7 @@ class TestCourse(unittest.TestCase):
 
     def setUp(self):
         "Prepare for running a test"
-        self.course = lib.COURSE("Test Course")
+        self.course = lib.COURSE(0, "Test Course")
 
     def test_course_to_str(self):
         "Test the course name"
@@ -18,8 +18,8 @@ class TestCourse(unittest.TestCase):
     def test_course_add_module(self):
         "Test that adding a module only accepts a module object"
         with self.assertRaises(TypeError):
-            self.course.addModule("Module String")
+            self.course.add_module("Module String")
 
     def test_course_list_modules(self):
         "Test that the module list returns a list of modules"
-        self.assertTrue(isinstance(self.course.getModules(), list))
+        self.assertTrue(isinstance(self.course.get_modules(), list))

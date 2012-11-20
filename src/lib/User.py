@@ -31,7 +31,7 @@ class User:
         self.bookList.remove(book)
 
     def listBooks(self):
-        return '\n'.join(map(str, self.bookList))
+        return '\n'.join(str(book) for book in self.bookList)
 
     def __str__(self):
-        return firstName+' '+lastName+' <'+email+'>'
+        return self.firstName+' '+self.lastName+' <'+self.email+'>'
