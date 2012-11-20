@@ -9,7 +9,7 @@ class TestCourse(unittest.TestCase):
 
     def setUp(self):
         "Prepare for running a test"
-        self.course = lib.COURSE("Test Course")
+        self.course = lib.COURSE(0, "Test Course")
 
     def test_course_to_str(self):
         "Test the course name"
