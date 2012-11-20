@@ -23,6 +23,8 @@ class Course:
         """
         Add a module to this course.
         """
+        if not isinstance(module, Module):
+            raise TypeError("module is not an instance of the Module object")
         self.module_list.append(module)
     
     def list_modules(self):
