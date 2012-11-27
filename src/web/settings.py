@@ -1,10 +1,10 @@
 # DJANGO WEB SETTINGS FILE
 
-from djangoappengine.settings_base import *
+# from djangoappengine.settings_base import *
 
 import os
 
-SECRET_KEY = '' # Needs 
+SECRET_KEY = '' # Needs setting
 
 INSTALLED_APPS = (
     'djangoappengine',
