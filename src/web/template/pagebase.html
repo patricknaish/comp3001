@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/css/textrader.css" />
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="header">
+            <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
+            {% if gae_user %}
+            <div id="user_options">
+                <p>Welcome, {{ gae_user|name }}</p>
+                <p><a href='/account'>My account</a> | <a href='/basket'>My basket</a></p>
+            </div>
+            {% else %}
+            <div id="user_login">
+                <form action="/user/login" method="POST">
+                    <p><input type="text" name="username" value="Username" /></p>
+                    <p><input type="password" name="password" value="Password" /> <input type="submit" value="Log in" /></p>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+        {% block content %}{% endblock %}
+    </body>
+</html>

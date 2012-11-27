@@ -6,3 +6,5 @@ threadsafe: true
 handlers:
 - url: /images
   static_dir: static/images
+- url: /.*
+  script: django_handler.py
