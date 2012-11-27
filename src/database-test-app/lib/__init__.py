@@ -7,8 +7,14 @@ namespace
 import lib.Course
 import lib.Paypal
 import lib.University
+import lib.User
+import lib.Book
+import lib.UserBook
 
 # Now make the classes available readily
 PAYPAL = lib.Paypal.Paypal
 COURSE = lib.Course.Course
 UNIVERSITY = lib.University.University
+USER = lib.User.User
+BOOK = lib.Book.Book
+USERBOOK = lib.UserBook.UserBook
