@@ -6,9 +6,9 @@
     <body>
         <div class="header">
             <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
-            {% if gae_user %}
+            {% if gae_user != None %}
             <div id="user_options">
-                <p>Welcome, {{ gae_user|name }}</p>
+                <p>Welcome, {{ gae_user.name }}</p>
                 <p><a href='/account'>My account</a> | <a href='/basket'>My basket</a></p>
             </div>
             {% else %}

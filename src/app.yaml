@@ -8,6 +8,6 @@ libraries:
   version: "1.4"
 handlers:
 - url: /images
-  static_dir: static/images
+  static_dir: web/static/images
 - url: /.*
   script: django_handler.py

@@ -7,11 +7,6 @@ import os
 SECRET_KEY = '' # Needs setting
 
 INSTALLED_APPS = (
-    'djangoappengine',
-    'djangotoolbox',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
     'web', ## OUR web classes
 )
 
@@ -30,4 +25,4 @@ LOGIN_REDIRECT_URL = '/'
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'images')
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template'),)
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'web.urls'
