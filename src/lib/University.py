@@ -1,0 +1,46 @@
+from google.appengine.ext import db
+
+from lib.Course import Course
+
+class University(db.Model):
+    """
+    Defines the university schema
+    """
+    name = db.StringProperty()
+
+    @staticmethod
+    def create_university(university_name):
+        """
+        Add a new university to the datastore
+        """
+        new_university = University(key_name=university_name,
+                                    name=university_name)
+        new_university.put()
+
+    @staticmethod
+    def add_course(university_name,
+                   course_name):
+        """
+        Link a university and a course
+        """
+        from lib.UniversityCourse import UniversityCourse
+        university_ref = University.get_by_key_name(university_name)
+        course_ref = Course.get_by_key_name(course_name)
+        new_university_course = UniversityCourse(university=university_ref,
+                                                 course=course_ref)
+        new_university_course.put()
+
+    @staticmethod
+    def remove_course(university_name,
+                      course_name):
+        """
+        Unlink a university and a course
+        """
+        university_ref = University.get_by_key_name(university_name)
+        course_ref = Course.get_by_key_name(course_name)
+        uni_course_ref = db.GqlQuery("SELECT * FROM UniversityCourse WHERE " +\
+                                     "university = :1 AND " +\
+                                     "course = :2", 
+                                     university_ref, 
+                                     course_ref)
+        db.delete(uni_course_ref)      

@@ -1,5 +1,8 @@
 from google.appengine.ext import db
 
+from lib.Module import Module
+from lib.Book import Book
+
 class ModuleBook(db.Model):
     """
     Defines the module-book schema

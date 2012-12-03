@@ -1,5 +1,8 @@
 from google.appengine.ext import db
 
+from lib.Course import Course
+from lib.Module import Module
+
 class CourseModule(db.Model):
     """
     Defines the course-module schema

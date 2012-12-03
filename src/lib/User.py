@@ -1,9 +1,12 @@
 from google.appengine.ext import db
 
 from lib.Book import Book
+from lib.Course import Course
 
 class User(db.Model):
-
+    """
+    Defines the user schema
+    """
     email = db.EmailProperty()
     firstName = db.StringProperty()
     lastName = db.StringProperty()
@@ -40,9 +43,9 @@ class User(db.Model):
 
     @staticmethod
     def add_book(user_email,
-                book_isbn, 
-                book_price, 
-                book_condition):
+                 book_isbn, 
+                 book_price, 
+                 book_condition):
         from lib.UserBook import UserBook
         user_ref = User.get_by_key_name(user_email)
         book_ref = Book.get_by_key_name(book_isbn)
@@ -54,9 +57,9 @@ class User(db.Model):
 
     @staticmethod
     def remove_book(user_email,
-                   book_isbn, 
-                   book_price, 
-                   book_condition):
+                    book_isbn, 
+                    book_price, 
+                    book_condition):
         user_ref = User.get_by_key_name(user_email)
         book_ref = Book.get_by_key_name(book_isbn)
         user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
@@ -69,3 +72,31 @@ class User(db.Model):
                                     book_price, 
                                     book_condition)
         db.delete(user_book_ref)
+
+    @staticmethod
+    def add_course(user_email,
+                   course_name):
+        """
+        Link a user and a course
+        """
+        from lib.UserCourse import UserCourse
+        user_ref = User.get_by_key_name(user_email)
+        course_ref = Course.get_by_key_name(course_name)
+        new_user_course = UserCourse(user=user_ref,
+                                     course=course_ref)
+        new_user_course.put()
+
+    @staticmethod
+    def remove_course(user_email,
+                      course_name):
+        """
+        Unlink a user and a course
+        """
+        user_ref = User.get_by_key_name(user_email)
+        course_ref = Course.get_by_key_name(course_name)
+        user_course_ref = db.GqlQuery("SELECT * FROM UserCourse WHERE " +\
+                                      "user = :1 AND " +\
+                                      "course = :2",
+                                      user_ref,
+                                      course_ref)
+        db.delete(user_course_ref)

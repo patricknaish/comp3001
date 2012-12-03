@@ -1,5 +1,8 @@
 from google.appengine.ext import db
 
+from lib.University import University
+from lib.Course import Course
+
 class UniversityCourse(db.Model):
     """
     Defines the university-course schema
