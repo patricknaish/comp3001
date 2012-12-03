@@ -8,17 +8,6 @@ from lib import USER
 
 from google.appengine.ext import db
 
-def create_university_course_assignation(university_name,
-                                         course_name):
-    """
-    Link a university and a course
-    """
-    university_ref = University.get_by_key_name(university_name)
-    course_ref = Course.get_by_key_name(course_name)
-    university_course = UniversityCourse(university=university_ref,
-                                         course=course_ref)
-    university_course.put()
-
 class MainPage(webapp2.RequestHandler) :
     """
     Page rendering
