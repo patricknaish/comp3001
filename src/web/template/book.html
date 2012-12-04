@@ -3,7 +3,7 @@
 {% block title %}TexTrader - {{user.name}}{% endblock %}
 {% block content %}
 
-<div id="current_book_details">
+<div class="current_book_details">
 
     <img src="cover" alt="cover">
 
@@ -13,7 +13,7 @@
 
 </div>
 
-<div id="other_listings">
+<div class="other_listings">
     <p>Other listings of this book:</p>
     <ul>
     {% for book in same_books %}
@@ -23,9 +23,9 @@
         </li>
     {% endfor %}
     </ul>
-</div>
+</div>  
 
-<div id="related_listings">
+<div class="related_listings">
     <p>Related books:</p>
     <ul>
     {% for book in related_books %}
