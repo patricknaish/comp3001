@@ -1,6 +1,6 @@
 import os
 from django.http import HttpResponse
-from django.templace import Context, loader
+from django.template import Context, loader
 
 def render_create_book(request):
     context = Context()
