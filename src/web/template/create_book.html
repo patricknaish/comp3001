@@ -1,0 +1,14 @@
+{extends "pagebase.html"}
+
+{% block content %}
+
+<h1>Create Book</h1><br />
+    <form action="/register" method="post">
+	<div>Title: <input type="text" name="title"</div>
+	<div>Author: <input type="text" name="author"</div>
+	<div>Image: <input type="text" name="image"</div>
+	<div>Price: <input type="text" name="price"</div>
+	<div><input type="submit" value="Create"></div>
+</form>
+
+{% endblock %}

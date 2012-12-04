@@ -1,0 +1,1715 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="combined.svg">
+  <defs
+     id="defs4">
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3725"
+       id="pattern3741"
+       patternTransform="translate(63.71875,44.680307)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3621"
+       id="pattern3636"
+       patternTransform="translate(343.38262,44.033535)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3611"
+       id="pattern3629"
+       patternTransform="translate(487.12018,149.32787)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3563"
+       id="pattern3627"
+       patternTransform="translate(65.982044,151.91003)" />
+    <pattern
+       inkscape:collect="always"
+       xlink:href="#pattern3523"
+       id="pattern3547"
+       patternTransform="translate(486.19061,377.40783)" />
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.96875"
+       height="157.125"
+       patternTransform="translate(106.75,45.9375)"
+       id="pattern3523">
+      <rect
+         y="0.31274796"
+         x="0.32617188"
+         height="156.47859"
+         width="143.30159"
+         id="rect2985"
+         style="fill:none;stroke:#000000;stroke-width:0.65261006px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755"
+         d="m 0.5101,34.964893 c 143.57935,0 142.66044,0 142.66044,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757"
+         y="30.733088"
+         x="4.839232"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.733088"
+           x="4.839232"
+           id="tspan3759"
+           sodipodi:role="line">Book</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765"
+         y="78.134903"
+         x="6.4771576"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.134903"
+           x="6.4771576"
+           id="tspan3767"
+           sodipodi:role="line">Title: text</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1"
+         y="52.107971"
+         x="6.1343231"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.107971"
+           x="6.1343231"
+           id="tspan3767-7"
+           sodipodi:role="line">ID: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-4"
+         y="91.434967"
+         x="6.5664902"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="91.434967"
+           x="6.5664902"
+           id="tspan3767-0"
+           sodipodi:role="line">Author: text</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9"
+         y="65.072906"
+         x="6.1343231"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.072906"
+           x="6.1343231"
+           id="tspan3767-4"
+           sodipodi:role="line">ISBN: varchar(13) </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3808"
+         y="104.92911"
+         x="6.909317"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="104.92911"
+           x="6.909317"
+           id="tspan3810"
+           sodipodi:role="line">Year: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3812"
+         y="118.3262"
+         x="6.47715"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="118.3262"
+           x="6.47715"
+           id="tspan3814"
+           sodipodi:role="line">Edition: varchar(200)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-8"
+         y="132.92276"
+         x="6.9986496"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="132.92276"
+           x="6.9986496"
+           id="tspan3767-8"
+           sodipodi:role="line">Publisher: varchar(200) </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-2"
+         y="146.31987"
+         x="6.5664825"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="146.31987"
+           x="6.5664825"
+           id="tspan3767-45"
+           sodipodi:role="line">RRP: currency </tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.71875"
+       height="71.59375"
+       patternTransform="translate(294.84375,46.15625)"
+       id="pattern3549">
+      <rect
+         y="0.20573807"
+         x="0.2093811"
+         height="71.176598"
+         width="143.30159"
+         id="rect2985-1"
+         style="fill:none;stroke:#000000;stroke-width:0.44014412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-7"
+         d="m 0.39329,34.857879 c 143.57935,0 142.66044,0 142.66044,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-4"
+         y="30.62026"
+         x="4.728436"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.62026"
+           x="4.728436"
+           id="tspan3759-0"
+           sodipodi:role="line">Course</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-2"
+         y="52.000961"
+         x="6.0175171"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.000961"
+           x="6.0175171"
+           id="tspan3767-7-4"
+           sodipodi:role="line">ID: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-1"
+         y="64.965897"
+         x="6.0175171"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           id="tspan3319"
+           y="64.965897"
+           x="6.0175171"
+           sodipodi:role="line">Name: text</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.75"
+       height="71.625"
+       patternTransform="translate(480.625,46.15625)"
+       id="pattern3563">
+      <rect
+         y="0.20573425"
+         x="0.22476196"
+         height="71.191101"
+         width="143.30159"
+         id="rect2985-2"
+         style="fill:none;stroke:#000000;stroke-width:0.44018897px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-3"
+         d="m 0.40869,34.857883 c 143.57935,0 142.66044,0 142.66044,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-2"
+         y="30.62026"
+         x="4.7430573"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.62026"
+           x="4.7430573"
+           id="tspan3759-2"
+           sodipodi:role="line">University</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-7"
+         y="52.000961"
+         x="6.0329285"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.000961"
+           x="6.0329285"
+           id="tspan3767-7-6"
+           sodipodi:role="line">ID: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-9"
+         y="64.965897"
+         x="6.0329285"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="64.965897"
+           x="6.0329285"
+           id="tspan3767-4-2"
+           sodipodi:role="line">Name: varchar(200)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.90625"
+       height="141.46875"
+       patternTransform="translate(265.40625,215.96875)"
+       id="pattern3575">
+      <rect
+         y="0.2993927"
+         x="0.31054688"
+         height="140.87457"
+         width="143.30159"
+         id="rect2985-3"
+         style="fill:none;stroke:#000000;stroke-width:0.61921662px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-4"
+         d="m 0.49448,34.95152 c 143.57935,0 142.66044,0 142.66044,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-1"
+         y="30.718998"
+         x="4.8244138"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.718998"
+           x="4.8244138"
+           id="tspan3759-1"
+           sodipodi:role="line">User</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-3"
+         y="78.121552"
+         x="6.4615479"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.121552"
+           x="6.4615479"
+           id="tspan3767-87"
+           sodipodi:role="line">lastName: varchar(50)</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-4"
+         y="52.094604"
+         x="6.1187134"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.094604"
+           x="6.1187134"
+           id="tspan3767-7-2"
+           sodipodi:role="line">email: varchar(100)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-4-7"
+         y="91.4216"
+         x="6.5508728"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="91.4216"
+           x="6.5508728"
+           id="tspan3767-0-7"
+           sodipodi:role="line">universityId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-93"
+         y="65.05954"
+         x="6.1187134"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.05954"
+           x="6.1187134"
+           id="tspan3767-4-1"
+           sodipodi:role="line">firstName: varchar(50)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3808-9"
+         y="104.91577"
+         x="6.8937073"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="104.91577"
+           x="6.8937073"
+           id="tspan3810-8"
+           sodipodi:role="line">courseId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3812-6"
+         y="118.31284"
+         x="6.4615479"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="118.31284"
+           x="6.4615479"
+           id="tspan3814-5"
+           sodipodi:role="line">currentYear: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-8-0"
+         y="132.90939"
+         x="6.9830322"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="132.90939"
+           x="6.9830322"
+           id="tspan3767-8-2"
+           sodipodi:role="line">reputation: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="159.53125"
+       height="83.9375"
+       patternTransform="translate(458,215.40625)"
+       id="pattern3597">
+      <rect
+         y="0.25071716"
+         x="0.23635864"
+         height="83.435028"
+         width="158.88647"
+         id="rect2985-0"
+         style="fill:none;stroke:#000000;stroke-width:0.50178593px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-2"
+         d="m 0.42029,34.90286 c 160.13714,0 159.11226,0 159.11226,0"
+         style="fill:none;stroke:#000000;stroke-width:0.91566986px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-48"
+         y="30.667675"
+         x="4.7540507"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.667675"
+           x="4.7540507"
+           id="tspan3759-6"
+           sodipodi:role="line">UserBooks</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-5"
+         y="78.072876"
+         x="6.3873291"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.072876"
+           x="6.3873291"
+           id="tspan3767-09"
+           sodipodi:role="line">bookId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-0"
+         y="52.045929"
+         x="6.0444946"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.045929"
+           x="6.0444946"
+           id="tspan3767-7-0"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-3"
+         y="65.010864"
+         x="6.0444946"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.010864"
+           x="6.0444946"
+           id="tspan3767-4-8"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.78125"
+       height="85.125"
+       patternTransform="translate(516.0625,326.65625)"
+       id="pattern3611">
+      <rect
+         y="0.23422241"
+         x="0.23529053"
+         height="84.642456"
+         width="143.30159"
+         id="rect2985-4"
+         style="fill:none;stroke:#000000;stroke-width:0.47997701px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-9"
+         d="m 0.41924,34.88638 c 143.57935,0 142.66044,0 142.66044,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-6"
+         y="30.650322"
+         x="4.7530527"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.650322"
+           x="4.7530527"
+           id="tspan3759-3"
+           sodipodi:role="line">Module</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-7"
+         y="78.056396"
+         x="6.3862915"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.056396"
+           x="6.3862915"
+           id="tspan3767-88"
+           sodipodi:role="line">Title: text</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-29"
+         y="52.029449"
+         x="6.043457"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.029449"
+           x="6.043457"
+           id="tspan3767-7-1"
+           sodipodi:role="line">ID: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-98"
+         y="64.994385"
+         x="6.043457"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="64.994385"
+           x="6.043457"
+           id="tspan3767-4-4"
+           sodipodi:role="line">ShortTitle: text</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="159.53125"
+       height="83.9375"
+       patternTransform="translate(458,215.40625)"
+       id="pattern3597-7">
+      <rect
+         y="0.25071716"
+         x="0.23635864"
+         height="83.435028"
+         width="158.88647"
+         id="rect2985-0-3"
+         style="fill:none;stroke:#000000;stroke-width:0.50178593px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3755-2-7"
+         d="m 0.42029,34.90286 c 160.13714,0 159.11226,0 159.11226,0"
+         style="fill:none;stroke:#000000;stroke-width:0.91566986px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3757-48-2"
+         y="30.667675"
+         x="4.7540507"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.667675"
+           x="4.7540507"
+           id="tspan3759-6-6"
+           sodipodi:role="line">UserBooks</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-5-0"
+         y="78.072876"
+         x="6.3873291"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.072876"
+           x="6.3873291"
+           id="tspan3767-09-1"
+           sodipodi:role="line">bookId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3765-1-0-6"
+         y="52.045929"
+         x="6.0444946"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.045929"
+           x="6.0444946"
+           id="tspan3767-7-0-5"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3765-9-3-7"
+         y="65.010864"
+         x="6.0444946"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.010864"
+           x="6.0444946"
+           id="tspan3767-4-8-5"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="189.625"
+       height="84"
+       patternTransform="translate(275.28125,273.28125)"
+       id="pattern3744">
+      <rect
+         id="rect3609-4"
+         y="0.037322998"
+         x="0.04473877"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.28805542"
+         x="0.28109741"
+         height="83.435028"
+         width="189.0623"
+         id="rect3724"
+         style="fill:none;stroke:#000000;stroke-width:0.54736561px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3726"
+         d="m 0.46502,34.94021 c 188.96459,0 187.75522,0 187.75522,0"
+         style="fill:none;stroke:#000000;stroke-width:0.99467933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3728"
+         y="30.707066"
+         x="4.7964754"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707066"
+           x="4.7964754"
+           id="tspan3730"
+           sodipodi:role="line">UserCourses</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3732"
+         y="78.110229"
+         x="6.4320679"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.110229"
+           x="6.4320679"
+           id="tspan3734"
+           sodipodi:role="line">courseId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3736"
+         y="52.083282"
+         x="6.0892334"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.083282"
+           x="6.0892334"
+           id="tspan3738"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3740"
+         y="65.048218"
+         x="6.0892334"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.048218"
+           x="6.0892334"
+           id="tspan3742"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="189.625"
+       height="84"
+       patternTransform="translate(275.28125,273.28125)"
+       id="pattern3744-2">
+      <rect
+         id="rect3609-4-0"
+         y="0.037322998"
+         x="0.04473877"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.28805542"
+         x="0.28109741"
+         height="83.435028"
+         width="189.0623"
+         id="rect3724-0"
+         style="fill:none;stroke:#000000;stroke-width:0.54736561px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3726-1"
+         d="m 0.46502,34.94021 c 188.96459,0 187.75522,0 187.75522,0"
+         style="fill:none;stroke:#000000;stroke-width:0.99467933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3728-4"
+         y="30.707066"
+         x="4.7964754"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707066"
+           x="4.7964754"
+           id="tspan3730-6"
+           sodipodi:role="line">UserCourses</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3732-0"
+         y="78.110229"
+         x="6.4320679"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.110229"
+           x="6.4320679"
+           id="tspan3734-7"
+           sodipodi:role="line">courseId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3736-1"
+         y="52.083282"
+         x="6.0892334"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.083282"
+           x="6.0892334"
+           id="tspan3738-7"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3740-7"
+         y="65.048218"
+         x="6.0892334"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.048218"
+           x="6.0892334"
+           id="tspan3742-7"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="196.15625"
+       height="84"
+       patternTransform="translate(468.6875,264.7309)"
+       id="pattern3844">
+      <rect
+         id="rect3757-7"
+         y="0"
+         x="0.0016784668"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3822"
+         y="0.03729248"
+         x="0.046417236"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.2880249"
+         x="0.28277588"
+         height="83.435028"
+         width="195.40099"
+         id="rect3824"
+         style="fill:none;stroke:#000000;stroke-width:0.55646569px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3826"
+         d="m 0.48281,34.940194 c 196.9238,0 195.66349,0 195.66349,0"
+         style="fill:none;stroke:#000000;stroke-width:1.01541126px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3828"
+         y="30.707045"
+         x="4.7980943"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707045"
+           x="4.7980943"
+           id="tspan3830"
+           sodipodi:role="line">ModuleBooks</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3832"
+         y="78.110199"
+         x="6.4337463"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.110199"
+           x="6.4337463"
+           id="tspan3834"
+           sodipodi:role="line">bookId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3836"
+         y="52.083252"
+         x="6.0909119"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.083252"
+           x="6.0909119"
+           id="tspan3838"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3840"
+         y="65.048187"
+         x="6.0909119"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.048187"
+           x="6.0909119"
+           id="tspan3842"
+           sodipodi:role="line">moduleId: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="196.15625"
+       height="84"
+       patternTransform="translate(468.6875,264.7309)"
+       id="pattern3463">
+      <rect
+         id="rect3858"
+         y="0"
+         x="0"
+         height="84"
+         width="196.15625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3385"
+         y="0"
+         x="0.0016784668"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3387"
+         y="0.03729248"
+         x="0.046417236"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.2880249"
+         x="0.28277588"
+         height="83.435028"
+         width="195.40099"
+         id="rect3389"
+         style="fill:none;stroke:#000000;stroke-width:0.55646569px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3391"
+         d="m 0.48281,34.940194 c 196.9238,0 195.66349,0 195.66349,0"
+         style="fill:none;stroke:#000000;stroke-width:1.01541126px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3393"
+         y="30.707045"
+         x="4.7980943"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707045"
+           x="4.7980943"
+           id="tspan3395"
+           sodipodi:role="line">ModuleBooks</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3397"
+         y="63.416595"
+         x="6.4337463"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.416595"
+           x="6.4337463"
+           id="tspan3399"
+           sodipodi:role="line">bookId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3405"
+         y="50.354584"
+         x="6.0909119"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.354584"
+           x="6.0909119"
+           id="tspan3407"
+           sodipodi:role="line">moduleId: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="189.62883"
+       height="84.007751"
+       patternTransform="translate(244.71875,265.336)"
+       id="pattern3478">
+      <rect
+         id="rect3757"
+         y="0"
+         x="0.0038299561"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3409"
+         y="0.037322998"
+         x="0.048583984"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.28805542"
+         x="0.28494263"
+         height="83.435028"
+         width="189.0623"
+         id="rect3411"
+         style="fill:none;stroke:#000000;stroke-width:0.54736561px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3413"
+         d="m 0.46886,34.940221 c 188.96459,0 187.75522,0 187.75522,0"
+         style="fill:none;stroke:#000000;stroke-width:0.99467933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3415"
+         y="30.707073"
+         x="4.8001137"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707073"
+           x="4.8001137"
+           id="tspan3417"
+           sodipodi:role="line">UserCourses</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3419"
+         y="63.416626"
+         x="6.4359131"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.416626"
+           x="6.4359131"
+           id="tspan3421"
+           sodipodi:role="line">courseId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3427"
+         y="50.354614"
+         x="6.0930786"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.354614"
+           x="6.0930786"
+           id="tspan3429"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="159.5762"
+       height="108.125"
+       patternTransform="translate(269.53125,407.25)"
+       id="pattern3492">
+      <rect
+         id="rect3609"
+         y="0.037353516"
+         x="0.044952393"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.28808594"
+         x="0.28131104"
+         height="107.54043"
+         width="158.88647"
+         id="rect3365"
+         style="fill:none;stroke:#000000;stroke-width:0.56967896px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3367"
+         d="m 0.46523,34.94024 c 160.13714,0 159.11226,0 159.11226,0"
+         style="fill:none;stroke:#000000;stroke-width:0.91566986px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3369"
+         y="30.707092"
+         x="4.7966747"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707092"
+           x="4.7966747"
+           id="tspan3371"
+           sodipodi:role="line">UserBooks</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3373"
+         y="78.11026"
+         x="6.4322815"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.11026"
+           x="6.4322815"
+           id="tspan3375"
+           sodipodi:role="line">bookId: int</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3377"
+         y="52.083313"
+         x="6.089447"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.083313"
+           x="6.089447"
+           id="tspan3379"
+           sodipodi:role="line">ownId: int </tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3381"
+         y="65.048248"
+         x="6.089447"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.048248"
+           x="6.089447"
+           id="tspan3383"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3373-1"
+         y="90.115631"
+         x="6.6697388"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="90.115631"
+           x="6.6697388"
+           id="tspan3375-7"
+           sodipodi:role="line">price: currency</tspan><tspan
+           id="tspan3452"
+           y="105.1156"
+           x="6.6697388"
+           sodipodi:role="line" /></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3373-4"
+         y="103.08063"
+         x="6.6697388"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="103.08063"
+           x="6.6697388"
+           id="tspan3375-0"
+           sodipodi:role="line">condition: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="143.84375"
+       height="111.75"
+       patternTransform="translate(68.375,380.21875)"
+       id="pattern3512">
+      <rect
+         y="0.27200317"
+         x="0.27469635"
+         height="111.18964"
+         width="143.30159"
+         id="rect3896"
+         style="fill:none;stroke:#000000;stroke-width:0.55012131px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3898"
+         d="m 0.458629,34.92412 c 143.579351,0 142.660441,0 142.660441,0"
+         style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3900"
+         y="30.690111"
+         x="4.7904105"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.690111"
+           x="4.7904105"
+           id="tspan3902"
+           sodipodi:role="line">User</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3904"
+         y="78.094147"
+         x="6.4256973"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="78.094147"
+           x="6.4256973"
+           id="tspan3906"
+           sodipodi:role="line">lastName: varchar(50)</tspan></text>
+      <text
+         inkscape:transform-center-y="22.90473"
+         inkscape:transform-center-x="-20.311741"
+         sodipodi:linespacing="125%"
+         id="text3908"
+         y="52.0672"
+         x="6.0828629"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="52.0672"
+           x="6.0828629"
+           id="tspan3910"
+           sodipodi:role="line">email: varchar(100)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3912"
+         y="91.394196"
+         x="6.5150223"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="91.394196"
+           x="6.5150223"
+           id="tspan3914"
+           sodipodi:role="line">currentYear: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3916"
+         y="65.032135"
+         x="6.0828629"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="65.032135"
+           x="6.0828629"
+           id="tspan3918"
+           sodipodi:role="line">firstName: varchar(50)</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3920"
+         y="104.88837"
+         x="6.8578568"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="104.88837"
+           x="6.8578568"
+           id="tspan3922"
+           sodipodi:role="line">reputation: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="189.62883"
+       height="84.007751"
+       patternTransform="translate(244.71875,265.336)"
+       id="pattern3478-9">
+      <rect
+         id="rect3757-4"
+         y="0"
+         x="0.0038299561"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3409-8"
+         y="0.037322998"
+         x="0.048583984"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.28805542"
+         x="0.28494263"
+         height="83.435028"
+         width="189.0623"
+         id="rect3411-8"
+         style="fill:none;stroke:#000000;stroke-width:0.54736561px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3413-2"
+         d="m 0.46886,34.940221 c 188.96459,0 187.75522,0 187.75522,0"
+         style="fill:none;stroke:#000000;stroke-width:0.99467933px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3415-4"
+         y="30.707073"
+         x="4.8001137"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.707073"
+           x="4.8001137"
+           id="tspan3417-5"
+           sodipodi:role="line">UserCourses</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3419-5"
+         y="63.416626"
+         x="6.4359131"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.416626"
+           x="6.4359131"
+           id="tspan3421-1"
+           sodipodi:role="line">courseId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3427-7"
+         y="50.354614"
+         x="6.0930786"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.354614"
+           x="6.0930786"
+           id="tspan3429-1"
+           sodipodi:role="line">userEmail: varchar(100)</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="227.03125"
+       height="84.03125"
+       patternTransform="translate(369.3125,51.8125)"
+       id="pattern3621">
+      <rect
+         id="rect3490-1"
+         y="0.004486084"
+         x="0.017974854"
+         height="84.007751"
+         width="189.62883"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3601"
+         y="0.0044937134"
+         x="0.021789551"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3603"
+         y="0.041816711"
+         x="0.066558838"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.29254913"
+         x="0.30291748"
+         height="83.435028"
+         width="226.44221"
+         id="rect3605"
+         style="fill:none;stroke:#000000;stroke-width:0.59903711px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3607"
+         d="m 0.48683,34.944715 c 227.13919,0 225.68551,0 225.68551,0"
+         style="fill:none;stroke:#000000;stroke-width:1.09053326px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3609"
+         y="30.711809"
+         x="4.8171577"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.711809"
+           x="4.8171577"
+           id="tspan3611"
+           sodipodi:role="line">CourseModules</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3613"
+         y="63.42112"
+         x="6.4538879"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.42112"
+           x="6.4538879"
+           id="tspan3615"
+           sodipodi:role="line">moduleId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3617"
+         y="50.359108"
+         x="6.1110535"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.359108"
+           x="6.1110535"
+           id="tspan3619"
+           sodipodi:role="line">courseId: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="227.03125"
+       height="84.03125"
+       patternTransform="translate(369.3125,51.8125)"
+       id="pattern3621-2">
+      <rect
+         id="rect3490-1-7"
+         y="0.004486084"
+         x="0.017974854"
+         height="84.007751"
+         width="189.62883"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3601-6"
+         y="0.0044937134"
+         x="0.021789551"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3603-1"
+         y="0.041816711"
+         x="0.066558838"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.29254913"
+         x="0.30291748"
+         height="83.435028"
+         width="226.44221"
+         id="rect3605-4"
+         style="fill:none;stroke:#000000;stroke-width:0.59903711px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3607-2"
+         d="m 0.48683,34.944715 c 227.13919,0 225.68551,0 225.68551,0"
+         style="fill:none;stroke:#000000;stroke-width:1.09053326px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3609-3"
+         y="30.711809"
+         x="4.8171577"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.711809"
+           x="4.8171577"
+           id="tspan3611-2"
+           sodipodi:role="line">CourseModules</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3613-2"
+         y="63.42112"
+         x="6.4538879"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.42112"
+           x="6.4538879"
+           id="tspan3615-1"
+           sodipodi:role="line">moduleId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3617-6"
+         y="50.359108"
+         x="6.1110535"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.359108"
+           x="6.1110535"
+           id="tspan3619-8"
+           sodipodi:role="line">courseId: int</tspan></text>
+    </pattern>
+    <pattern
+       patternUnits="userSpaceOnUse"
+       width="260.3125"
+       height="84.0625"
+       patternTransform="translate(63.71875,47.125)"
+       id="pattern3725">
+      <rect
+         id="rect3634-5"
+         y="0.012615204"
+         x="0.0058441162"
+         height="84.03125"
+         width="227.03125"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3703"
+         y="0.017101288"
+         x="0.02381897"
+         height="84.007751"
+         width="189.62883"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3705"
+         y="0.017108917"
+         x="0.027633667"
+         height="84"
+         width="189.625"
+         style="fill:none;stroke:none" />
+      <rect
+         id="rect3707"
+         y="0.054431915"
+         x="0.072402954"
+         height="83.9375"
+         width="159.53125"
+         style="fill:none;stroke:none" />
+      <rect
+         y="0.30516434"
+         x="0.3087616"
+         height="83.435028"
+         width="259.69138"
+         id="rect3709"
+         style="fill:none;stroke:#000000;stroke-width:0.64151055px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path3711"
+         d="m 0.492673,34.957329 c 259.047997,0 257.390097,0 257.390097,0"
+         style="fill:none;stroke:#000000;stroke-width:1.1646167px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <text
+         transform="scale(1.0543201,0.94847856)"
+         sodipodi:linespacing="125%"
+         id="text3713"
+         y="30.725109"
+         x="4.8227"
+         style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="30.725109"
+           x="4.8227"
+           id="tspan3715"
+           sodipodi:role="line">UniversityCourses</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3717"
+         y="63.433731"
+         x="6.4597321"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="63.433731"
+           x="6.4597321"
+           id="tspan3719"
+           sodipodi:role="line">moduleId: int</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text3721"
+         y="50.371719"
+         x="6.1168976"
+         style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           y="50.371719"
+           x="6.1168976"
+           id="tspan3723"
+           sodipodi:role="line">courseId: int</tspan></text>
+    </pattern>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.81809872"
+     inkscape:cx="137.93994"
+     inkscape:cy="780.33638"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="738"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:url(#pattern3547);stroke:none"
+       width="143.96875"
+       height="157.125"
+       x="486.19061"
+       y="377.40784"
+       id="rect3545" />
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="119.70962"
+       y="108.94662"
+       id="text3761"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3763"
+         x="119.70962"
+         y="108.94662" /></text>
+    <text
+       y="384.27029"
+       x="-26.91773"
+       id="text3063"
+       transform="scale(0.9787192,1.0217435)"
+       style="font-size:11.74463081px">
+      <tspan
+         style="font-size:39.14876938px;font-family:MyriadPro-Regular"
+         x="-26.91773"
+         y="384.27029"
+         font-size="40"
+         id="tspan3065" />
+    </text>
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3228"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:12px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3230"><rect
+           id="rect3232"
+           width="336.14526"
+           height="537.8324"
+           x="185.79665"
+           y="142.93648" /></flowRegion><flowPara
+         id="flowPara3234" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3236"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:12px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3238"><rect
+           id="rect3240"
+           width="311.69833"
+           height="360.59219"
+           x="303.14191"
+           y="232.16777" /></flowRegion><flowPara
+         id="flowPara3242" /></flowRoot>    <rect
+       style="fill:none;stroke:none"
+       width="143.71875"
+       height="71.59375"
+       x="278.06345"
+       y="153.18481"
+       id="rect3559" />
+    <rect
+       style="fill:url(#pattern3627);stroke:none"
+       width="143.75"
+       height="71.625"
+       x="65.982048"
+       y="151.91002"
+       id="rect3573" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3368"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:12px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3370"><rect
+           id="rect3372"
+           width="226.13408"
+           height="103.89944"
+           x="270.13855"
+           y="256.61469" /></flowRegion><flowPara
+         id="flowPara3374" /></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot3376"
+       style="fill:black;stroke:none;stroke-opacity:1;stroke-width:1px;stroke-linejoin:miter;stroke-linecap:butt;fill-opacity:1;font-family:Sans;font-style:normal;font-weight:normal;font-size:12px;line-height:125%;letter-spacing:0px;word-spacing:0px"><flowRegion
+         id="flowRegion3378"><rect
+           id="rect3380"
+           width="3.6670392"
+           height="67.22905"
+           x="264.02682"
+           y="249.28061" /></flowRegion><flowPara
+         id="flowPara3382" /></flowRoot>    <rect
+       style="fill:none;stroke:none"
+       width="143.90625"
+       height="141.46875"
+       x="68.339134"
+       y="380.19135"
+       id="rect3595" />
+    <rect
+       style="stroke:none;fill:url(#pattern3492)"
+       width="159.5762"
+       height="108.125"
+       x="269.53125"
+       y="407.25"
+       id="rect3510" />
+    <rect
+       style="fill:url(#pattern3629);stroke:none"
+       width="143.78125"
+       height="85.125"
+       x="487.12018"
+       y="149.32787"
+       id="rect3623" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 211.77151,458.76022 c 58.13785,-0.53477 58.13785,-0.53477 58.13785,-0.53477 l -5.50056,0.0764 5.27137,-4.5838 -5.19497,4.50741 5.11857,4.66019"
+       id="path3646"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 486.73135,453.78786 c -58.13785,0.53477 -58.13785,0.53477 -58.13785,0.53477 l 5.50056,-0.0764 -5.27137,4.5838 5.19497,-4.50741 -5.11857,-4.66019"
+       id="path3646-0"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="stroke:none;fill:url(#pattern3478)"
+       width="189.62883"
+       height="84.007751"
+       x="244.71875"
+       y="265.336"
+       id="rect3490" />
+    <rect
+       style="stroke:none;fill:url(#pattern3463)"
+       width="196.15625"
+       height="84"
+       x="468.6875"
+       y="264.7309"
+       id="rect3476" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 560.08546,233.84223 0,31.11586 0,-6.91464 -4.07454,7.05731 4.07454,-7.05731 3.96649,6.87018"
+       id="path3886"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 554.03515,377.32091 0,-28.95503 0,6.91463 -3.59223,-6.22192 3.21797,5.57368 3.29705,-5.71067"
+       id="path3888"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 185.39866,379.9139 0,-12.96494 153.85063,0 0,-17.74153 0,5.65335 -3.11962,-5.40334 3.10758,5.38248 3.20411,-5.54968"
+       id="path3892"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 124.65513,223.48124 0,156.46034 0,-5.261 -3.04871,5.28053 3.02889,-5.2462 3.09273,5.35677"
+       id="path3894"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="stroke:none;fill:url(#pattern3512)"
+       width="143.84375"
+       height="111.75"
+       x="68.375"
+       y="380.21875"
+       id="rect3528" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 340.97795,264.95809 0,-40.62348 0,7.77896 -4.07453,-7.0573 3.96649,6.87017 4.28674,-7.42485"
+       id="path3932"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.44014412px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="rect3530"
+       width="143.30159"
+       height="71.176598"
+       x="278.27283"
+       y="153.39053" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.86703944px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 278.45675,188.04268 c 143.57935,0 142.66044,0 142.66044,0"
+       id="path3532"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:29.64729309px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="268.46567"
+       y="192.12607"
+       id="text3534"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0543201,0.94847856)"><tspan
+         sodipodi:role="line"
+         id="tspan3536"
+         x="268.46567"
+         y="192.12607">Course</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="284.08096"
+       y="205.18576"
+       id="text3538"
+       sodipodi:linespacing="125%"
+       inkscape:transform-center-x="-20.311741"
+       inkscape:transform-center-y="22.90473"><tspan
+         sodipodi:role="line"
+         id="tspan3540"
+         x="284.08096"
+         y="205.18576">ID: int </tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:12px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="284.08096"
+       y="218.1507"
+       id="text3542"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="284.08096"
+         y="218.1507"
+         id="tspan3544">Name: text</tspan></text>
+    <rect
+       style="fill:url(#pattern3636);stroke:none"
+       width="227.03125"
+       height="84.03125"
+       x="343.38263"
+       y="44.033535"
+       id="rect3634" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 420.92842,193.21875 14.6936,0 0,-64.82471 0,7.77897 -8.21113,-8.21113 7.3468,7.3468 8.21113,-8.21113"
+       id="path3638"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 462.6581,128.26832 0,64.78436 23.83576,0 -7.33408,0 8.34075,-4.81553 -8.34075,4.81553 8.0761,4.66274"
+       id="path3640"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:url(#pattern3741);stroke:none"
+       width="260.3125"
+       height="84.0625"
+       x="63.71875"
+       y="44.680305"
+       id="rect3739" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 209.02123,192.44151 10.38994,0 0,-63.56201 0,7.33407 -3.98065,-6.89469 4.2453,7.35307 4.53042,-7.84691"
+       id="path3743"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 248.74749,128.8795 0,62.95083 29.33631,0 -9.77877,0 10.24518,-5.91505 -10.50983,6.06785 9.38984,5.42122"
+       id="path3745"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
