@@ -1,3 +1,7 @@
+{% extends "pagebase.html" %}
+{% block title %}Account{% endblock %}
+
+{% block content %}
 <div class="account-settings">
 	<form action="POST">
 		<span class="description">E-Mail: </span><span>{{gae_user.email}}</span><br />
@@ -32,3 +36,4 @@
 {% endfor %}
 </ul>
 </div>
+{% endblock %}
