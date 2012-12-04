@@ -14,10 +14,10 @@ def render_account(request):
 
 def render_account_test(request):
     purchase_hist = [{"book": 
-		{"image": "url",
-		"title": "Title",
-		"price": "£10.00",
-		"author": "Bob"}]
+        {"image": "url",
+        "title": "Title",
+        "price": "10.00",
+        "author": "Bob"}]
     context = Context("purchase_history": purchase_hist)
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
