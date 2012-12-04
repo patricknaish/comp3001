@@ -269,7 +269,7 @@ class Paypal:
         )
 
         opt_index = 0
-        for opt in item.getOptions():
+        for opt in item.get_options():
             this_field_prices = False
             if opt.Display:
                 form_html += ("""<input type="hidden" name="on%d" """
