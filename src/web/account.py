@@ -18,7 +18,7 @@ def render_account_test(request):
         "title": "Title",
         "price": "10.00",
         "author": "Bob"}}]
-    context = Context("purchase_history": purchase_hist)
+    context = Context({"purchase_history": purchase_hist})
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
     response.write(render_to_string(tmpl, context))
