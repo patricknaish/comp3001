@@ -18,6 +18,8 @@
 {% endfor %}
 </ul>
 </form>
-{{ ppcheckout|safe }}
+{% autoescape off %}
+{{ ppcheckout }}
+{% endautoescape %}
 </div>
 {% endblock %}
