@@ -17,7 +17,7 @@ def render_account_test(request):
         {"image": "url",
         "title": "Title",
         "price": "10.00",
-        "author": "Bob"}]
+        "author": "Bob"}}]
     context = Context("purchase_history": purchase_hist)
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
