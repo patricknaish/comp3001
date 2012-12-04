@@ -4,29 +4,37 @@
 
 {% block content %}
 
-<img src="cover" alt="cover">
+<div id="current_book_details">
 
-<p>{{ seller.name }} - {{ seller.reputation }}</p>
+    <img src="cover" alt="cover">
 
-<p>Book condition: {{ current_book.condition }}</p>
+    <p>{{ seller.name }} - {{ seller.reputation }}</p>
 
-<p>Other listings of this book:</p>
-<ul>
-{% for book in same_books %}
-    <li class="book-listing">
-        <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-        <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
-    </li>
-{% endfor %}
-</ul>
+    <p>Book condition: {{ current_book.condition }}</p>
 
-<p>Related books:</p>
-<ul>
-{% for book in related_books %}
-    <li class="book-listing">
-        <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-        <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
-    </li>
-{% endfor %}
-</ul>
+</div>
+
+<div id="other_listings">
+    <p>Other listings of this book:</p>
+    <ul>
+    {% for book in same_books %}
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div id="related_listings">
+    <p>Related books:</p>
+    <ul>
+    {% for book in related_books %}
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
 {% endblock %}
