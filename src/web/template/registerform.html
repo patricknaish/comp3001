@@ -1,0 +1,17 @@
+{% extends "pagebase.html" %}
+
+{% block content %}
+<form action="/register" method="post">
+    <div>First name: <input type="text" name="firstname"</div>
+    <div>Last name:  <input type="text" name="lastname"</div>
+    <div>Email:      <input type="text" name="email"</div>
+    <div>Year of study: <input type="radio" name="year" value="1">1<br />
+                        <input type="radio" name="year" value="2">2<br />
+                        <input type="radio" name="year" value="3">3<br />
+                        <input type="radio" name="year" value="4">4<br />
+                        <input type="radio" name="year" value="5">5<br />
+                        <input type="radio" name="year" value="6">Postgrad<br />
+    </div>
+    <div><input type="submit" value="Register"></div>
+</form>
+{% endblock %}
