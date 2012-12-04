@@ -11,7 +11,7 @@ def render_account(request):
     return response
 
 def render_account_test(request):
-    if request.user.get_profile().is_store():
+    if users.get_current_user():
         return redirect("/login") #TODO: Pass account as a return-to page
     purchase_hist = [
     {"book": 
