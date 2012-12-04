@@ -14,6 +14,7 @@ class Book(db.Model):
     edition = db.StringProperty()
     publisher = db.StringProperty()
     rrp = db.IntegerProperty()
+    picture = db.StringProperty
 
     @staticmethod
     def create_book(book_isbn, 
@@ -22,7 +23,8 @@ class Book(db.Model):
                     book_year,
                     book_edition,
                     book_publisher,
-                    book_rrp):
+                    book_rrp,
+                    book_picture):
         """
         Add a new book to the datastore
         """
@@ -33,5 +35,6 @@ class Book(db.Model):
                         year=book_year,
                         edition=book_edition,
                         publisher=book_publisher,
-                        rrp=book_rrp)
+                        rrp=book_rrp,
+                        picture=book_picture)
         new_book.put()
