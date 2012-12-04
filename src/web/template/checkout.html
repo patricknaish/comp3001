@@ -2,6 +2,7 @@
 
 {% block title %}Checkout | TexTrader{% endblock %} 
 {% block content %}
+<h2>Your basket</h2>
 <div class='basket'>
 <form action='/checkout/update' method='POST'>
 <ul>
@@ -17,5 +18,6 @@
 {% endfor %}
 </ul>
 </form>
+{{ ppcheckout }}
 </div>
 {% endblock %}
