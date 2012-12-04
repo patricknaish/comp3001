@@ -9,3 +9,4 @@ def render_home(request):
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'pagebase.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
+    return response
