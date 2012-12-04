@@ -1,0 +1,21 @@
+{% extends "web/template/pagebase.html" %}
+
+{% block title %}Checkout | TexTrader{% endblock %} 
+{% block content %}
+<div class='basket'>
+<form action='/checkout/update' method='POST'>
+<ul>
+{% for entry in basket %}
+<li>
+<div class='entry_entry'>
+<span class='picture'><img src='{% entry.picture %}' alt='Book image' /></span>
+<span class='title'>{% entry.title %}</span>
+<span class='seller'>Seller: {% entry.user.name %}</span>
+<span class='price'>&pound; {% entry.price %}
+<span class='remove'><input type='checkbox' name='remove_{% entry.key %}' value='1' /></span>
+</li>
+{% endfor %}
+</ul>
+</form>
+</div>
+{% endblock %}
