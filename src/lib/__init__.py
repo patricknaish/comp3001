@@ -9,7 +9,7 @@ import lib.Paypal
 import lib.University
 import lib.User
 import lib.Book
-import lib.UserBook
+import lib.Module
 
 # Now make the classes available readily
 PAYPAL = lib.Paypal.Paypal
@@ -17,4 +17,4 @@ COURSE = lib.Course.Course
 UNIVERSITY = lib.University.University
 USER = lib.User.User
 BOOK = lib.Book.Book
-USERBOOK = lib.UserBook.UserBook
+MODULE = lib.Module.Module
