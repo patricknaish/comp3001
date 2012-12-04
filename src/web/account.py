@@ -12,7 +12,7 @@ def render_account(request):
     return response
 
 def render_account_test(request):
-    if users.get_current_user():
+    if not users.get_current_user():
         return redirect("/login") #TODO: Pass account as a return-to page
     purchase_hist = [
     {"book": 
