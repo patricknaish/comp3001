@@ -213,13 +213,13 @@ class Paypal:
         else:
             raise InvalidPaypalOptionException()
 
-    def buy_now_button(self, item, paypal_extra = list()):
+    def buy_now_button(self, item, paypal_extra = dict()):
         """
         Generate a "Buy Now" button for an item.
         """
         return self.button("_xclick", item, paypal_extra)
 
-    def add_cart_button(self, item, paypal_extra = list()):
+    def add_cart_button(self, item, paypal_extra = dict()):
         """
         Generate an "Add to cart" button.
         """
