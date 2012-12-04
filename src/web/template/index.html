@@ -1,4 +1,9 @@
-<ul>
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - Home{% endblock %}
+
+{% block content %}
+<ul class="book-list">
 {% for book in book_list %}
     <a href="./book/{{ book.id }}" class="listing-link">
     <li class="book-listing">
@@ -8,3 +13,5 @@
     </a>
 {% endfor %}
 </ul>
+
+{% endblock %}
