@@ -1,0 +1,13 @@
+{
+    /* Reset the css for the page */
+    margin 0;
+    padding: 0;
+}
+
+body
+{
+    background: red;
+    font-family: Arial, Sans-Serif;
+}
+
+
