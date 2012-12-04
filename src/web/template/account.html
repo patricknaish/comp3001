@@ -11,10 +11,10 @@
 <ul>
 {% for purchase in purchase_history %}
 	<li class="book-listing">
-        <div class="listing-image">{{ purchase.book.image }}<div>
+        <img class="listing-image" href="{{ purchase.book.image }}" />
 		<span class="listing-info">{{ purchase.book.title }}</span>
-        <span class="listing-price">{{ purchase.book.price }}</span>
 		<span class="listing-author">{{ purchase.book.author }}</span>
+        <span class="listing-price">{{ purchase.book.price }}</span>
 	</li>
 {% endfor %}
 </ul>
@@ -24,10 +24,10 @@
 <ul>
 {% for listing in seller_listings %}
 	<li class="book-listing">
-        <div class="listing-image">{{ listing.book.image }}<div>
+        <img class="listing-image" href="{{ listing.book.image }}" />
 		<span class="listing-info">{{ listing.book.title }}</span>
-        <span class="listing-price">{{ listing.book.price }}</span>
 		<span class="listing-author">{{ listing.book.author }}</span>
+		<span class="listing-price">{{ listing.book.price }}</span>
 	</li>
 {% endfor %}
 </ul>
