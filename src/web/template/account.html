@@ -1,0 +1,34 @@
+<div class="account-settings">
+	<form>
+		<span class="description">E-Mail: </span><span>{{gae_user.email}}</span><br />
+		<span class="description">Password: </span><input type="text" name="password"><br />
+		<span class="description">Password (confirm): </span><input type="text" name="password_confirm"></br />
+		<input type="submit" value="Change Details"/>
+	</form>
+</div>
+
+<div class="purchase-history">
+<ul>
+{% for purchase in purchase_history %}
+	<li class="book-listing">
+        <div class="listing-image">{{ purchase.book.image }}<div>
+		<span class="listing-info">{{ purchase.book.title }}</span>
+        <span class="listing-price">{{ purchase.book.price }}</span>
+		<span class="listing-author">{{ purchase.book.author }}</span>
+	</li>
+{% endfor %}
+</ul>
+</div>
+
+<div class="seller-listings">
+<ul>
+{% for listing in seller_listings %}
+	<li class="book-listing">
+        <div class="listing-image">{{ listing.book.image }}<div>
+		<span class="listing-info">{{ listing.book.title }}</span>
+        <span class="listing-price">{{ listing.book.price }}</span>
+		<span class="listing-author">{{ listing.book.author }}</span>
+	</li>
+{% endfor %}
+</ul>
+</div>
