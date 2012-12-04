@@ -2,11 +2,12 @@
 
 {% block title %}TexTrader - {{user.name}}{% endblock %}
 {% block content %}
+
 <img src="cover" alt="cover">
 
-<p>Seller + reputation</p>
+<p>{{ seller.name }} - {{ seller.reputation }}</p>
 
-<p>Book condition</p>
+<p>Book condition: {{ current_book.condition }}</p>
 
 <p>Other listings of this book:</p>
 <ul>
@@ -28,4 +29,3 @@
 {% endfor %}
 </ul>
 {% endblock %}
-
