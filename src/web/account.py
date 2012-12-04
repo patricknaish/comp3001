@@ -1,4 +1,5 @@
 import os
+from google.appengine.api import users
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.template import Context
