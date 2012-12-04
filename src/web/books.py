@@ -19,7 +19,7 @@ def create_book_action(request):
     publisher = cgi.escape(request.get('publisher'))
     rrp = double(cgi.escape(request.get('rrp')))
     picture = cgi.escape(request.get('picture'))
-    rrp = int(rrp * 100) #convert £.pp to interger pence
+    rrp = int(rrp * 100) #convert P.pp to interger pence
 	
     context = Context()
                             
