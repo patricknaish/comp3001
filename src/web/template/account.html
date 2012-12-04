@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="account-settings">
-	<form action="POST">
+	<form method="POST">
 		<span class="description">E-Mail: </span><span>{{gae_user.email}}</span><br />
 		<span class="description">Password: </span><input type="password" name="password"><br />
 		<span class="description">Password (confirm): </span><input type="password" name="password_confirm"></br />
