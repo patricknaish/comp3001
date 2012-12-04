@@ -14,7 +14,7 @@ class Book(db.Model):
     edition = db.StringProperty()
     publisher = db.StringProperty()
     rrp = db.IntegerProperty()
-    picture = db.StringProperty
+    picture = db.StringProperty()
 
     @staticmethod
     def create_book(book_isbn, 
