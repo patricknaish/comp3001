@@ -29,5 +29,3 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template'),)
 # web.urls contains the url mapping to functions
 ROOT_URLCONF = 'web.urls'
 
-# Use files for sessions
-SESSION_ENGINE = 'django.contrib.sessions.backends.file'
