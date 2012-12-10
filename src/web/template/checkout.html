@@ -12,8 +12,9 @@
 <span class='picture'><img src='{{ entry.picture }}' alt='Book image' /></span>
 <span class='title'>{{ entry.title }}</span>
 <span class='seller'>Seller: {{ entry.user.name }}</span>
-<span class='price'>&pound; {{ entry.price }}
+<span class='price'>&pound; {{ entry.price }}</span>
 <span class='remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
+</div>
 </li>
 {% endfor %}
 </ul>
