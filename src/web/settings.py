@@ -4,7 +4,7 @@
 
 import os
 
-SECRET_KEY = '' # Needs setting
+SECRET_KEY = '074953e23c03a689c90188843557c309bff231dc' # Needs setting
 
 INSTALLED_APPS = (
     'web', ## OUR web classes
@@ -22,7 +22,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 LOGIN_REDIRECT_URL = '/'
 
+# Some folders we use
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'images')
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template'),)
 
+# web.urls contains the url mapping to functions
 ROOT_URLCONF = 'web.urls'
+
+# Use files for sessions
+SESSION_ENGINE = 'django.contrib.sessions.backends.file'
