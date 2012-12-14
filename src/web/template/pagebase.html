@@ -13,8 +13,7 @@
                 <a href="/"><li>Home</li></a>
                 <a href="/help"><li>Help</li></a>
                 <a href="/account"><li>My Account</li></a>
-                <a href="/search"><li>Search</li></a>
-                <a href="/basket"<li class="basket">Basket(0)</li>
+                <a href="/basket"<li>Basket(0)</li>
                 {% else %}
                 <a href="/"><li>Home</li></a>
                 <a href="/help"><li>Help</li></a>
@@ -26,7 +25,8 @@
 
         <div class="search-bar">
             <div class="welcome-user">
-                Welcome, <strong>{% if gae_user != None %}Name{% else %} Guest{% endif %}</strong>!
+                Welcome, <strong>{% if gae_user != None %}Name! (<a href="/user/logout">logout</a>)
+                {% else %} Guest!{% endif %}</strong>
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
