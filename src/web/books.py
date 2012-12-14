@@ -28,7 +28,7 @@ def create_book_action(request):
     try:
         BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_success.html')
-    except (Exception as e):
+    except Exception as e:
         error = e
         context = Context({"error": error})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_failure.html')
