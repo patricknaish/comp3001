@@ -40,7 +40,7 @@ class Book(db.Model):
         new_book.put()
 
     @staticmethod
-    def list_books():
+    def list_all_books():
         books = []
         book_ref = db.GqlQuery("SELECT * FROM Book")
         for book in book_ref.run():
