@@ -14,14 +14,14 @@ def render_create_book(request):
         return response
 	
 def create_book_action(request):
-    isbn = cgi.escape(request.get('isbn'))
-    title = cgi.escape(request.get('title'))
-    author = cgi.escape(request.get('author'))
-    year = int(cgi.escape(request.get('year')))
-    edition = cgi.escape(request.get('edition'))
-    publisher = cgi.escape(request.get('publisher'))
-    rrp = double(cgi.escape(request.get('rrp')))
-    picture = cgi.escape(request.get('picture'))
+    isbn = cgi.escape(request.POST('isbn'))
+    title = cgi.escape(request.POST('title'))
+    author = cgi.escape(request.POST('author'))
+    year = int(cgi.escape(request.POST('year')))
+    edition = cgi.escape(request.POST('edition'))
+    publisher = cgi.escape(request.POST('publisher'))
+    rrp = double(cgi.escape(request.POST('rrp')))
+    picture = cgi.escape(request.POST('picture'))
     rrp = int(rrp * 100) #convert P.pp to interger pence
 	
     context = Context()
