@@ -6,12 +6,24 @@ import cgi
 
 def render_register(request):
     if request.method == 'GET':
-        tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registerform.html')
+        return render_register_form(request)
         
     if request.method == 'POST':
-        tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registerpost.html')     
+        return render_register_post(request)  
 
+def render_register_form(request):
+    tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registerform.html')
+    
     context = Context()
+    response = HttpResponse()
+    
+    response.write(render_to_string(tmpl, context))
+    return response
+
+def render_register_post(request):
+    tmpl = os.path.join(os.path.dirname(__file__), 'template', 'requestpost.html')
+    
+    context = Context() #TODO: fill with request details
     response = HttpResponse()
     
     response.write(render_to_string(tmpl, context))
