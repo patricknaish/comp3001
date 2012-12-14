@@ -4,8 +4,9 @@
 {% block content %}
 <div id="user_login">
     <form action="/user/login" method="POST">
-        <p><input type="text" name="username" value="Username" /></p>
-        <p><input type="password" name="password" value="Password" /> <input type="submit" value="Log in" /></p>
+        <p><label>Username:</label><input type="text" name="username" value="Username" class="input" /></p>
+        <p><label>Password:</label><input type="password" name="password" value="Password" class="input" /></p>
+        <input type="submit" value="Log in" class="submit-button" />
     </form>
 </div>
 {% endblock %}

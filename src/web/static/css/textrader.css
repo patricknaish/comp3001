@@ -80,9 +80,8 @@ body
 
 #user_login
 {
-	float: right;
 	font-size: 12px;
-	width: 30%;
+	width: 45%;
 	border: 1px solid black;
 	padding: 5px;
 }
@@ -92,14 +91,15 @@ body
 	border: 1px solid red;
 	background: white;
 	padding: 3px;
-	font-size: 12px;
+	font-size: 0.8rem;
 	width: 50%;
 }
 
 #user_login label
 {
 	display: inline-block;
-	width:25%;
+	font-size: 0.8rem;
+	width: 70px;
 }
 
 .submit-button
