@@ -11,8 +11,8 @@ def render_basket(request):
     pp.pdt_auth_token = "lwcdLbpiHFwN8PJr08Rv6JVvYcmp90ivctfoJSWgBvANCrG-7iXJ59e8Qy4"
     item = Paypal.Item("TEST", "Test item", 10.00)
     context = dict()
-    if 'items' in request.SESSION.keys():
-        context["basket"] = request.SESSION['items']
+    if 'items' in request.session.keys():
+        context["basket"] = request.session['items']
         context["ppcheckout"] = pp.buy_now_button(item)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'checkout.html')
     else:
