@@ -213,13 +213,13 @@ class Paypal:
         else:
             raise InvalidPaypalOptionException()
 
-    def buy_now_button(self, item, paypal_extra = list()):
+    def buy_now_button(self, item, paypal_extra = dict()):
         """
         Generate a "Buy Now" button for an item.
         """
         return self.button("_xclick", item, paypal_extra)
 
-    def add_cart_button(self, item, paypal_extra = list()):
+    def add_cart_button(self, item, paypal_extra = dict()):
         """
         Generate an "Add to cart" button.
         """
@@ -262,20 +262,20 @@ class Paypal:
             self.shipping_enabled,
             self.return_url,
             self.return_method,
-            item.Name,
-            item.Code,
-            item.Currency,
-            item.Cost
+            item.name,
+            item.code,
+            item.currency,
+            item.cost
         )
 
         opt_index = 0
-        for opt in item.getOptions():
+        for opt in item.get_options():
             this_field_prices = False
             if opt.Display:
                 form_html += ("""<input type="hidden" name="on%d" """
-                                """ "value="%s" />""") % (opt_index, opt.Name)
+                                """ "value="%s" />""") % (opt_index, opt.name)
                 form_html += """<label for="os%d">%s</label>""" % \
-                                (opt_index, opt.Name)
+                                (opt_index, opt.name)
                 if isinstance(opt.value, dict):
                     form_html += """<select name="os%d">""" % opt_index
                     for key in opt.value.keys():

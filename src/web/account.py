@@ -6,6 +6,8 @@ from django.template.loader import render_to_string
 from django.template import Context
 
 def render_account(request):
+    if not users.get_current_user(): #TODO: Fix to use our own user management, not GAE
+        return redirect("/login") #TODO: Pass account as a return-to page
     context = Context()
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
