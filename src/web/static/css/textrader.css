@@ -79,18 +79,16 @@ h1
 
 .main-content
 {
-	padding: 10px;
+	padding: 20px;
 	border: 1px solid red;
 }
 
-#user_login
+.user-login
 {
 	width: 45%;
-	border: 1px solid black;
-	padding: 10px;
 }
 
-#user_login .input
+.user-login .input
 {
 	border: 1px solid red;
 	background: white;
@@ -99,18 +97,9 @@ h1
 	width: 50%;
 }
 
-#user_login label
-{
-	display: inline-block;
-	font-size: 0.8rem;
-	width: 70px;
-}
-
 .register-form
 {
 	width: 45%;
-	border: 1px solid black;
-	padding: 10px;
 }
 
 .register-form .input
@@ -122,7 +111,7 @@ h1
 	width: 50%;
 }
 
-.register-form label
+label
 {
 	display: inline-block;
 	font-size: 0.8rem;

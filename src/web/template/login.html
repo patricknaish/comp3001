@@ -2,10 +2,10 @@
 
 {% block title %}TexTrader Login{% endblock %}
 {% block content %}
-<div id="user_login">
+<div class="user-login">
     <h1>Login</h1>
     <form action="/user/login" method="POST">
-        <p><label>Username:</label><input type="text" name="username" placeholder="Username" class="input" /></p>
+        <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" /></p>
         <p><label>Password:</label><input type="password" name="password" placeholder="Password" class="input" /></p>
         <input type="submit" value="Log in" class="submit-button" />
     </form>

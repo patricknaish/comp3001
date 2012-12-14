@@ -1,0 +1,20 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - Home{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Popular Books</h1>
+    <ul class="book-list">
+    {% for book in book_list %}
+        <a href="./book/{{ book.id }}" class="listing-link">
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+        </li>
+        </a>
+    {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
