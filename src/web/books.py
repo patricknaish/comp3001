@@ -1,6 +1,7 @@
 import os
 from django.http import HttpResponse
 from django.template import Context, loader
+from lib import BOOK
 import cgi
 
 def render_create_book(request):
