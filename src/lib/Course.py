@@ -48,3 +48,18 @@ class Course(db.Model):
                                         module_ref)
         db.delete(course_module_ref)
 
+    @staticmethod
+    def list_modules(course_name):
+        """
+        List all modules associated with a course
+        """
+        modules = []
+        course_ref = Course.get_by_key_name(course_name)
+        course_module_ref = db.GqlQuery("SELECT * FROM CourseModule WHERE " +\
+                                        "course = :1",                                      
+                                        course_ref)
+        for module_ref in course_module_ref.run():
+            module_key = CourseModule.module.get_value_for_datastore(module_ref)
+            module_res = Module.get(module_key)
+            modules.append(module_res)
+        return modules

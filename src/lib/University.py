@@ -70,6 +70,6 @@ class University(db.Model):
                                             university_ref)
         for course_ref in university_course_ref.run():
             course_key = UniversityCourse.course.get_value_for_datastore(course_ref)
-            course_res = Course.get(Course_key)
+            course_res = Course.get(course_key)
             courses.append(course_res)
         return courses
