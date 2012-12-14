@@ -5,21 +5,46 @@
     </head>
     <body>
         <div class="header">
-            <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
-            {% if gae_user != None %}
-            <div id="user_options">
-                <p>Welcome, {{ gae_user.name }}</p>
-                <p><a href='/account'>My account</a> | <a href='/basket'>My basket</a></p>
+            <div class="banner">
+                <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
             </div>
-            {% else %}
-            <div id="user_login">
-                <form action="/user/login" method="POST">
-                    <p><input type="text" name="username" value="Username" /></p>
-                    <p><input type="password" name="password" value="Password" /> <input type="submit" value="Log in" /></p>
+            <ul class="navigation-bar">
+                {% if gae_user != None %}
+                <a href="/"><li>Home</li></a>
+                <a href="/help"><li>Help</li></a>
+                <a href="/account"><li>My Account</li></a>
+                <a href="/search"><li>Search</li></a>
+                <a href="/basket"<li class="basket">Basket(0)</li>
+                {% else %}
+                <a href="/"><li>Home</li></a>
+                <a href="/help"><li>Help</li></a>
+                <a href="/login"><li>Login</li></a>
+                <a href="/register"><li>Register</li></a>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="search-bar">
+            <div class="welcome-user">
+                Welcome {% if gae_user != None %}Name{% else %} Guest{% endif %}!
+            </div>
+            <div class="search-form">
+                <form action="/search" method="get">
+                    <input type="text" />
+                    <select>
+                        <option="none">Categories</option>
+                    </select>
+                    <input type="submit" value="Search" />
+                    <a href="/search">Advanced Search</a>
                 </form>
             </div>
-            {% endif %}
         </div>
+
+        <div class=main-content>
         {% block content %}{% endblock %}
+        </div>
+
+        <div class="footer">
+        </div>
     </body>
 </html>
