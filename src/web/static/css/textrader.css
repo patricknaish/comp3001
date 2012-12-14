@@ -16,6 +16,18 @@ h1
 	color: red;
 }
 
+a
+{
+	color: red;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: red;
+	text-decoration: underline;
+}
+
 .header
 {
 	height: 150px;
@@ -109,7 +121,7 @@ h1
 label
 {
 	display: inline-block;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	width: 100px;
 }
 
