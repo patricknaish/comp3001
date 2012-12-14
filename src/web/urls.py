@@ -7,5 +7,6 @@ urlpatterns = patterns('',
     (r'^basket$', 'web.checkout.render_basket'),
     (r'^account$', 'web.account.render_account'),
     (r'^book$', 'web.book.render_book'),
-    (r'^login$', 'web.login.render_login')
+    (r'^login$', 'web.login.render_login'),
+    (r'^create_book$', 'web.books.render_create_book')
 )
