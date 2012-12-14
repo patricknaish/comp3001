@@ -23,7 +23,12 @@ def render_register_form(request):
 def render_register_post(request):
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'requestpost.html')
     
-    context = Context() #TODO: fill with request details
+    firstname = cgi.escape(request.get("firstname"))
+    lastname = cgi.escape(request.get("lastname"))
+    email = cgi.escape(request.get("email"))
+    year =  int(cgi.escape(request.get("year")))
+
+    context = Context()
     response = HttpResponse()
     
     response.write(render_to_string(tmpl, context))
