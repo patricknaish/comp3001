@@ -1,5 +1,5 @@
 """
-Module containing classes for manipulating books
+Module containing methods for manipulating books
 """
 
 from google.appengine.ext import db
@@ -41,6 +41,9 @@ class Book(db.Model):
 
     @staticmethod
     def list_all_books():
+        """
+        List all books in the datastore
+        """
         books = []
         book_ref = db.GqlQuery("SELECT * FROM Book")
         for book in book_ref.run():

@@ -1,3 +1,7 @@
+"""
+Interim table between modules and books
+"""
+
 from google.appengine.ext import db
 
 from lib.Module import Module

@@ -1,3 +1,7 @@
+"""
+Module containing methods for manipulating modules 
+"""
+
 from google.appengine.ext import db
 
 from lib.Book import Book
@@ -36,6 +40,9 @@ class Module(db.Model):
     @staticmethod
     def remove_book(module_short_title,
                     book_isbn):
+        """
+        Remove a book from a module
+        """
         module_ref = Module.get_by_key_name(module_short_title)
         book_ref = Book.get_by_key_name(book_isbn)
         module_book_ref = db.GqlQuery("SELECT * FROM ModuleBook WHERE " +\
@@ -47,6 +54,9 @@ class Module(db.Model):
 
     @staticmethod
     def list_books(module_short_title):
+        """
+        List all books associated with a module
+        """
         books = []
         module_ref = Module.get_by_key_name(module_short_title)
         module_book_ref = db.GqlQuery("SELECT * FROM ModuleBook WHERE " +\

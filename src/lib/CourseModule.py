@@ -1,3 +1,7 @@
+"""
+Interim table between courses and modules
+"""
+
 from google.appengine.ext import db
 
 from lib.Course import Course

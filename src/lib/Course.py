@@ -36,6 +36,9 @@ class Course(db.Model):
     @staticmethod
     def remove_module(course_name,
                       module_short_title):  
+        """
+        Remove a module from a course
+        """
         course_ref = Course.get_by_key_name(course_name)
         module_ref = Module.get_by_key_name(module_short_title)
         course_module_ref = db.GqlQuery("SELECT * FROM CourseModule WHERE " +\

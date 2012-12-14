@@ -1,3 +1,7 @@
+"""
+Interim table between universities and courses
+"""
+
 from google.appengine.ext import db
 
 from lib.University import University
