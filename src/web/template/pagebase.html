@@ -26,7 +26,7 @@
 
         <div class="search-bar">
             <div class="welcome-user">
-                Welcome {% if gae_user != None %}Name{% else %} Guest{% endif %}!
+                Welcome, <strong>{% if gae_user != None %}Name{% else %} Guest{% endif %}</strong>!
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
