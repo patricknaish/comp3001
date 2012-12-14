@@ -148,3 +148,36 @@ class User(db.Model):
                                       user_ref,
                                       course_ref)
         db.delete(user_course_ref)
+
+    @staticmethod
+    def list_books(user_email):
+        """
+        List all books associated with a user
+        """
+        books = []
+        user_ref = User.get_by_key_name(user_email)
+        user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
+                                    "user = :1",                                      
+                                    user_ref)
+        for book_ref in user_book_ref.run():
+            book_key = UserBook.book.get_value_for_datastore(book_ref)
+            book_res = Book.get(Book_key)
+            books.append(book_res)
+        return books
+
+    @staticmethod
+    def list_courses(user_email):
+        """
+        List all courses associated with a user
+        """
+        courses = []
+        user_ref = User.get_by_key_name(user_email)
+        user_course_ref = db.GqlQuery("SELECT * FROM UserCourse WHERE " +\
+                                      "user = :1",                                      
+                                      user_ref)
+        for course_ref in user_course_ref.run():
+            course_key = UserCourse.course.get_value_for_datastore(course_ref)
+            course_res = Course.get(Course_key)
+            courses.append(course_res)
+        return courses
+
