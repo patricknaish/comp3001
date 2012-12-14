@@ -39,6 +39,17 @@ class User(db.Model):
         new_user.put()
 
     @staticmethod
+    def authenticate(user_email,
+                     user_password):
+        user_ref = User.get_by_key_name(user_email)
+        salt = user_ref.salt
+        hash_pwd = hashlib.sha512(user_password + salt).hexdigest()
+        if hash_pwd == user_ref.password:
+            return true
+        else:
+            return false
+
+    @staticmethod
     def increase_reputation(user_email):
         user_ref = User.get_by_key_name(user_email)
         user_ref.reputation += 1
