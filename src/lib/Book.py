@@ -38,3 +38,12 @@ class Book(db.Model):
                         rrp=book_rrp,
                         picture=book_picture)
         new_book.put()
+
+    @staticmethod
+    def list_books():
+        books = []
+        book_ref = db.GqlQuery("SELECT * FROM Book")
+        for book in book_ref.run():
+            books.append(book)
+        return books
+

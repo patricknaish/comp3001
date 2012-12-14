@@ -1,3 +1,5 @@
+import hashlib, uuid
+
 from google.appengine.ext import db
 
 from lib.Book import Book
@@ -8,6 +10,8 @@ class User(db.Model):
     Defines the user schema
     """
     email = db.EmailProperty()
+    password = db.StringProperty()
+    salt = db.StringProperty()
     firstName = db.StringProperty()
     lastName = db.StringProperty()
     currentYear = db.IntegerProperty()
@@ -15,14 +19,19 @@ class User(db.Model):
 
     @staticmethod
     def create_user(user_email,
+                    user_password,
                     user_first_name, 
                     user_last_name, 
                     user_current_year):
         """
         Add a new user to the datastore
         """
+        salt = uuid.uuid4().hex
+        hash_pwd = hashlib.sha512(user_password + salt).hexdigest()
         new_user = User(key_name=user_email,
                         email=user_email,
+                        password=hash_pwd,
+                        salt=salt,
                         firstName=user_first_name,
                         lastName=user_last_name,
                         currentYear=user_current_year,
