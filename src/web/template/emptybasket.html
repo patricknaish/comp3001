@@ -1,0 +1,17 @@
+{% extends "pagebase.html" %}
+
+{% block title %}Checkout | TexTrader{% endblock %} 
+{% block content %}
+<h2>Your basket</h2>
+<div class='basket'>
+<form action='/checkout/update' method='POST'>
+<ul>
+<li>
+<div class='entry_entry empty_basket'>
+Your basket is empty.  <a href='/'>Go shopping</a>
+</div>
+</li>
+</ul>
+</form>
+</div>
+{% endblock %}
