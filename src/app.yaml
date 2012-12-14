@@ -3,6 +3,13 @@ version: 0000000
 runtime: python27
 api_version: 1
 threadsafe: true
+libraries:
+- name: django
+  version: "1.4"
 handlers:
 - url: /images
-  static_dir: static/images
+  static_dir: web/static/images
+- url: /css
+  static_dir: web/static/css
+- url: /.*
+  script: django_handler.app

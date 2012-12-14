@@ -1,0 +1,39 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - {{user.name}}{% endblock %}
+{% block content %}
+
+<div class="current_book_details">
+
+    <img src="cover" alt="cover">
+
+    <p>{{ seller.name }} - {{ seller.reputation }}</p>
+
+    <p>Book condition: {{ current_book.condition }}</p>
+
+</div>
+
+<div class="other_listings">
+    <p>Other listings of this book:</p>
+    <ul>
+    {% for book in same_books %}
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="related_listings">
+    <p>Related books:</p>
+    <ul>
+    {% for book in related_books %}
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+{% endblock %}

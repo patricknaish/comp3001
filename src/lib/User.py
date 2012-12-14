@@ -1,39 +1,102 @@
-#!/usr/bin/python
+from google.appengine.ext import db
 
-class User:
-    bookList = []
+from lib.Book import Book
+from lib.Course import Course
 
-    def __init__(self, 
-                 userid, 
-                 email,
-                 firstName, 
-                 lastName, 
-                 universityID, 
-                 courseID, 
-                 currentYear):
-        self.id = userid
-        self.email = email
-        self.firstName = firstName
-        self.lastName = lastName
-        self.universityID = universityID
-        self.courseID  = courseID
-        self.currentYear = currentYear
-        self.reputation = 0
+class User(db.Model):
+    """
+    Defines the user schema
+    """
+    email = db.EmailProperty()
+    firstName = db.StringProperty()
+    lastName = db.StringProperty()
+    currentYear = db.IntegerProperty()
+    reputation = db.IntegerProperty()
 
-    def increaseReputation(self):
-        self.reputation += 1
+    @staticmethod
+    def create_user(user_email,
+                    user_first_name, 
+                    user_last_name, 
+                    user_current_year):
+        """
+        Add a new user to the datastore
+        """
+        new_user = User(key_name=user_email,
+                        email=user_email,
+                        firstName=user_first_name,
+                        lastName=user_last_name,
+                        currentYear=user_current_year,
+                        reputation=0)
+        new_user.put()
 
-    def decreaseReputation(self):
-        self.reputation -= 1
+    @staticmethod
+    def increase_reputation(user_email):
+        user_ref = User.get_by_key_name(user_email)
+        user_ref.reputation += 1
+        user_ref.put()
 
-    def addBook(self, book):
-        self.bookList.append(book)
+    @staticmethod
+    def decrease_reputation(user_email):
+        user_ref = User.get_by_key_name(user_email)
+        user_ref.reputation -= 1
+        user_ref.put()
 
-    def removeBook(self, book):
-        self.bookList.remove(book)
+    @staticmethod
+    def add_book(user_email,
+                 book_isbn, 
+                 book_price, 
+                 book_condition):
+        from lib.UserBook import UserBook
+        user_ref = User.get_by_key_name(user_email)
+        book_ref = Book.get_by_key_name(book_isbn)
+        new_user_book = UserBook(user=user_ref,
+                                 book=book_ref,
+                                 price=book_price,
+                                 condition=book_condition)
+        new_user_book.put()
 
-    def listBooks(self):
-        return '\n'.join(map(str, self.bookList))
+    @staticmethod
+    def remove_book(user_email,
+                    book_isbn, 
+                    book_price, 
+                    book_condition):
+        user_ref = User.get_by_key_name(user_email)
+        book_ref = Book.get_by_key_name(book_isbn)
+        user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
+                                    "user = :1 AND " +\
+                                    "book = :2 AND " +\
+                                    "price = :3 AND " +\
+                                    "condition = :4", 
+                                    user_ref, 
+                                    book_ref, 
+                                    book_price, 
+                                    book_condition)
+        db.delete(user_book_ref)
 
-    def __str__(self):
-        return firstName+' '+lastName+' <'+email+'>'
+    @staticmethod
+    def add_course(user_email,
+                   course_name):
+        """
+        Link a user and a course
+        """
+        from lib.UserCourse import UserCourse
+        user_ref = User.get_by_key_name(user_email)
+        course_ref = Course.get_by_key_name(course_name)
+        new_user_course = UserCourse(user=user_ref,
+                                     course=course_ref)
+        new_user_course.put()
+
+    @staticmethod
+    def remove_course(user_email,
+                      course_name):
+        """
+        Unlink a user and a course
+        """
+        user_ref = User.get_by_key_name(user_email)
+        course_ref = Course.get_by_key_name(course_name)
+        user_course_ref = db.GqlQuery("SELECT * FROM UserCourse WHERE " +\
+                                      "user = :1 AND " +\
+                                      "course = :2",
+                                      user_ref,
+                                      course_ref)
+        db.delete(user_course_ref)

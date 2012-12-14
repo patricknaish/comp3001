@@ -1,0 +1,124 @@
+{
+    /* Reset the css for the page */
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    margin: auto auto;
+    width: 75%;
+    font-family: Arial, Sans-Serif;
+}
+
+.header
+{
+	height: 150px;
+}
+
+.banner
+{
+	float: left;
+	height: 150px;
+	width: 40%;
+}
+
+.banner img
+{
+	height: 150px;
+	width: 100%;
+}
+
+.navigation-bar
+{
+	float: right;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	width: 50%;
+	padding: 4px;
+	border: 1px solid red;
+}
+
+.navigation-bar li
+{
+	display: inline-block;
+	padding-left: 5px;
+}
+
+.navigation-bar .basket
+{
+	display: inline-block;
+	float: right;
+	padding-right: 5px;
+}
+
+.search-bar
+{
+	border: 1px solid red;
+	height: 25px;
+}
+
+.welcome-user
+{
+	float: left;
+	width: 30%;
+}
+
+.search-form
+{
+	float: right;
+	padding: 0px;
+	margin: 0px;
+	width: 70%;
+}
+
+.main-content
+{
+	padding: 10px;
+	border: 1px solid red;
+}
+
+#user_login
+{
+	float: right;
+	font-size: 12px;
+	width: 30%;
+	border: 1px solid black;
+	padding: 5px;
+}
+
+#user_login .input
+{
+	border: 1px solid red;
+	background: white;
+	padding: 3px;
+	font-size: 12px;
+	width: 50%;
+}
+
+#user_login label
+{
+	display: inline-block;
+	width:25%;
+}
+
+.submit-button
+{
+	padding: 4px;
+	border: 1px solid red;
+	color: red;
+	width: 75px;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	transition: all .1s linear;
+   	-o-transition: all .1s linear;
+   	-moz-transition: all .1s linear;
+   	-webkit-transition: all .1s linear;
+}
+
+.submit-button:hover
+{
+	background-color: red;
+	color: white;
+	cursor: pointer;
+}

@@ -1,0 +1,9 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+*.pdf  diff=astextplain
+*.PDF	diff=astextplain
+
+*.ico binary
+*.png binary
+*.jpg binary
