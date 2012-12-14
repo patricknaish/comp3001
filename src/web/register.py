@@ -2,6 +2,7 @@ import os
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.template import Context
+import cgi
 
 def render_register(request):
     if request.method == 'GET':
