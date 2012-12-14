@@ -1,17 +1,24 @@
 {% extends "pagebase.html" %}
 
+{% block title %}TexTrader Register{% endblock %}
 {% block content %}
+<div class="register-form">
+<h1>Register</h1>
 <form action="/register" method="post">
-    <div>First name: <input type="text" name="firstname"</div>
-    <div>Last name:  <input type="text" name="lastname"</div>
-    <div>Email:      <input type="text" name="email"</div>
-    <div>Year of study: <input type="radio" name="year" value="1">1<br />
-                        <input type="radio" name="year" value="2">2<br />
-                        <input type="radio" name="year" value="3">3<br />
-                        <input type="radio" name="year" value="4">4<br />
-                        <input type="radio" name="year" value="5">5<br />
-                        <input type="radio" name="year" value="6">Postgrad<br />
-    </div>
-    <div><input type="submit" value="Register"></div>
+    <p><label>First Name:</label><input type="text" name="firstname" placeholder="John"></p>
+    <p><label>Last Name:</label><input type="text" name="lastname" placeholder="Smith"></p>
+    <p><label>Email:</label><input type="text" name="email" placeholder="something@mail.com"></p>
+    <p><label>Confirm Email:</label><input type="text" name="email2" placeholder="something@mail.com"></p>
+    <p><label>Year of study:</label>
+         <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">Postgrad</option>
+        </select></p>
+    <div><input type="submit" value="Register" class="submit-button"></div>
 </form>
+</div>
 {% endblock %}
