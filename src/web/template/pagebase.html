@@ -10,32 +10,29 @@
             </div>
             <ul class="navigation-bar">
                 {% if gae_user != None %}
-                <a href="/"><li>Home</li></a>
-                <a href="/help"><li>Help</li></a>
-                <a href="/account"><li>My Account</li></a>
-                <a href="/basket"<li>Basket(0)</li>
+                <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
+                <a href="/basket">Basket(0)</a>
                 {% else %}
-                <a href="/"><li>Home</li></a>
-                <a href="/help"><li>Help</li></a>
-                <a href="/login"><li>Login</li></a>
-                <a href="/register"><li>Register</li></a>
+                <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/login">Login</a> | 
+                <a href="/register">Register</a>
                 {% endif %}
             </ul>
         </div>
 
         <div class="search-bar">
             <div class="welcome-user">
-                Welcome, <strong>{% if gae_user != None %}Name! (<a href="/user/logout">logout</a>)
-                {% else %} Guest!{% endif %}</strong>
+                <small>Welcome, <strong>{% if gae_user != None %}Name!<br>(<a href="/user/logout">logout</a>)
+                {% else %} Guest!{% endif %}</strong></small>
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
-                    <input type="text" />
+                    <input type="text" class="input" />
                     <select>
                         <option="none">Categories</option>
+                        <option="other">Other</option>
                     </select>
                     <input type="submit" value="Search" />
-                    <a href="/search">Advanced Search</a>
+                    <small><a href="/search">Advanced Search</a> | <a href="/browse">Browse</a></small>
                 </form>
             </div>
         </div>

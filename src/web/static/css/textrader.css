@@ -13,18 +13,18 @@ body
 
 h1
 {
-	color: red;
+	color: #9C0014;
 }
 
 a
 {
-	color: red;
+	color: #9C0014;
 	text-decoration: none;
 }
 
 a:hover
 {
-	color: red;
+	color: #CC0000;
 	text-decoration: underline;
 }
 
@@ -37,7 +37,7 @@ a:hover
 {
 	float: left;
 	height: 150px;
-	width: 40%;
+	width: 55%;
 }
 
 .banner img
@@ -49,45 +49,44 @@ a:hover
 .navigation-bar
 {
 	float: right;
+	text-align: right;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	width: 50%;
+	width: 40%;
 	padding: 4px;
-	border: 1px solid red;
-}
-
-.navigation-bar li
-{
-	display: inline-block;
-	float: left;
-	width: 25%;
-	text-align: center;
 }
 
 .search-bar
 {
-	border: 1px solid red;
-	height: 25px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid #9C0014;
+	height: 30px;
+	padding: 5px;
 }
 
 .welcome-user
 {
 	float: left;
-	width: 30%;
+	width: 20%;
 }
 
 .search-form
 {
-	float: right;
-	padding: 0px;
-	margin: 0px;
+	float: left;
 	width: 70%;
+}
+
+.search-form .input
+{
+	font-size: 1.2rem;
+	width: 50%;
 }
 
 .main-content
 {
 	padding: 20px;
-	border: 1px solid red;
+	border: 1px solid #9C0014;
 }
 
 .user-login
@@ -97,7 +96,7 @@ a:hover
 
 .user-login .input
 {
-	border: 1px solid red;
+	border: 1px solid #9C0014;
 	background: white;
 	padding: 1px;
 	font-size: 0.8rem;
@@ -111,7 +110,7 @@ a:hover
 
 .register-form .input
 {
-	border: 1px solid red;
+	border: 1px solid #9C0014;
 	background: white;
 	padding: 1px;
 	font-size: 0.8rem;
@@ -128,8 +127,8 @@ label
 .submit-button
 {
 	padding: 4px;
-	border: 1px solid red;
-	color: red;
+	border: 1px solid #9C0014;
+	color: #9C0014;
 	width: 75px;
 	background-color: #FFFFFF;
 	font-size: 0.8rem;
@@ -141,7 +140,7 @@ label
 
 .submit-button:hover
 {
-	background-color: red;
+	background-color: #9C0014;
 	color: white;
 	cursor: pointer;
 }
