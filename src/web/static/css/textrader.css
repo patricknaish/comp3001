@@ -101,6 +101,24 @@ hr.fade
 	font-size: 1.2rem;
 }
 
+.advanced-search
+{
+	margin-right: 5px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8em;
+}
+
+.browse
+{
+	margin-left: 5px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8em;
+}
+
 .main-content
 {
 	padding: 20px;
