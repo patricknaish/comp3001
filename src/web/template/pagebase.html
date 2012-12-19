@@ -8,7 +8,7 @@
             <div class="banner">
                 <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
             </div>
-            <ul class="navigation-bar">
+            <nav class="navigation-bar">
                 {% if gae_user != None %}
                 <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
                 <a href="/basket">Basket(0)</a>
@@ -16,7 +16,7 @@
                 <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/login">Login</a> | 
                 <a href="/register">Register</a>
                 {% endif %}
-            </ul>
+            </nav>
         </div>
 
         <div class="search-bar">
@@ -26,8 +26,8 @@
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
-                    <input type="text" class="input" />
-                    <select>
+                    <input type="search" class="input" />
+                    <select class="select-category">
                         <option="none">Categories</option>
                         <option="other">Other</option>
                     </select>

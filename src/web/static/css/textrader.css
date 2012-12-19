@@ -7,8 +7,10 @@
 body
 {
     margin: auto auto;
+    padding-top: 5px;
     width: 75%;
     font-family: Arial, Sans-Serif;
+    background: rgb(242,242,242);
 }
 
 h1
@@ -26,6 +28,16 @@ a:hover
 {
 	color: #CC0000;
 	text-decoration: underline;
+}
+
+hr.fade 
+{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -moz-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -ms-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -o-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
 }
 
 .header
@@ -48,6 +60,7 @@ a:hover
 
 .navigation-bar
 {
+	display: block;
 	float: right;
 	text-align: right;
 	margin-top: 0px;
@@ -81,6 +94,11 @@ a:hover
 {
 	font-size: 1.2rem;
 	width: 50%;
+}
+
+.search-form .select-category
+{
+	font-size: 1.2rem;
 }
 
 .main-content
@@ -143,4 +161,47 @@ label
 	background-color: #9C0014;
 	color: white;
 	cursor: pointer;
+}
+
+.book-listing
+{
+	display: inline-block;
+	background: rgb(230,230,230);
+    width: 100%;
+}
+
+.listing-image
+{
+	width: 150px;
+	height: 150px;
+	margin: 2px;
+	float: left;
+}
+
+.listing-info
+{
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.listing-info:hover
+{
+	text-decoration: underline;
+}
+
+.listing-title
+{
+	font-weight: bold;
+}
+
+.listing-price
+{
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.listing-author
+{
+
 }
