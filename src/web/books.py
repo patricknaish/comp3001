@@ -5,7 +5,7 @@ import cgi
 
 def render_create_book(request):
     if request.method == 'POST':
-        create_book_action(request)
+        return create_book_action(request)
     else:
         context = Context()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
@@ -28,7 +28,8 @@ def create_book_action(request):
     try:
         BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_success.html')
-    except:
+    except Exception as e:
+        context["reason"] = e
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_failure.html')
 		
     response = HttpResponse()
