@@ -1,6 +1,7 @@
 import os
 from django.http import HttpResponse
 from django.template import Context, loader
+from lib import BOOK
 import cgi
 from lib import BOOK
 
@@ -13,7 +14,7 @@ def render_create_book(request):
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response
-	
+
 def create_book_action(request):
     isbn = cgi.escape(request.POST['isbn'])
     title = cgi.escape(request.POST['title'])
@@ -24,15 +25,15 @@ def create_book_action(request):
     rrp = float(cgi.escape(request.POST['rrp']))
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
-	
+
     context = Context()
     try:
         BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_success.html')
     except Exception as e:
-        context["reason"] = e
+        context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_failure.html')
-		
+
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
