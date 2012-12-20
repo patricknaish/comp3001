@@ -20,7 +20,7 @@ def create_book_action(request):
     year = int(cgi.escape(request.POST['year']))
     edition = cgi.escape(request.POST['edition'])
     publisher = cgi.escape(request.POST['publisher'])
-    rrp = double(cgi.escape(request.POST['rrp']))
+    rrp = float(cgi.escape(request.POST['rrp']))
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
 	
