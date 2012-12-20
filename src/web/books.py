@@ -2,6 +2,7 @@ import os
 from django.http import HttpResponse
 from django.template import Context, loader
 import cgi
+from lib import BOOK
 
 def render_create_book(request):
     if request.method == 'POST':
