@@ -56,7 +56,7 @@ class University(db.Model):
         """
         universities = []
         university_ref = db.GqlQuery("SELECT * FROM University")
-        for book in book_ref.run()
+#        for book in book_ref.run()
 
     @staticmethod
     def list_courses(university_name):
