@@ -115,5 +115,5 @@ class User(db.Model):
         DICTIONARY = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#~@-_+="
         newPW = ""
         for x in range(8):
-            newpW += random.choice(DICTIONARY)
+            newPW += random.choice(DICTIONARY)
         return newPW
