@@ -26,9 +26,8 @@ class User(db.Model):
 
     @staticmethod
     def create_user(user_email,
-                    user_password,
-                    user_first_name, 
-                    user_last_name, 
+                    user_first_name,
+                    user_last_name,
                     user_current_year):
         """
         Add a new user to the datastore
