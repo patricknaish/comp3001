@@ -3,8 +3,7 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.template import Context
 
-# Import the app settings
-import settings
+import cgi
 
 # User functions
 from lib import USER
