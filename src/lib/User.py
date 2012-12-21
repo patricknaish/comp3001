@@ -33,7 +33,6 @@ class User(db.Model):
                         reputation=0,
                         password="")
         new_user.put()
-        return password
 
     @staticmethod
     def reset_password(user_email):
