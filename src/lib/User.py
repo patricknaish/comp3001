@@ -108,7 +108,7 @@ class User(db.Model):
 
     @staticmethod
     def hash_password(inStr):
-        return hashlib.sha1(inStr).hexdiest()
+        return hashlib.sha1(inStr).hexdigest()
 
     @staticmethod
     def create_password():
