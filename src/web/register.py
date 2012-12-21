@@ -33,7 +33,7 @@ def render_register_action(request):
         # Do the creation
         USER.create_user(email, firstname, lastname, year)
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.html')
-        context = Context({"error": error})
+        context = Context()
         response = HttpResponse()
         response.write(render_to_string(tmpl, context))
         return response
