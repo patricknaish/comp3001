@@ -2,7 +2,7 @@ import os
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.template import Context
-
+from google.appengine.api import mail
 import cgi
 
 # User functions
@@ -32,6 +32,22 @@ def render_register_action(request):
 
         # Do the creation
         USER.create_user(email, firstname, lastname, year)
+        new_password = USER.reset_password(email)
+
+        # Send the success email
+        context = Context({
+            "firstname": firstname,
+            "lastname" : lastname,
+            "email": email,
+            "password": new_password
+        })
+        tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.eml')
+        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
+            subject = "TexTrader: Your account details")
+        message.to = "%s %s <%s>" % (firstname, lastname, email)
+        message.body = render_to_string(tmpl, context)
+        message.send()
+
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.html')
         context = Context()
         response = HttpResponse()

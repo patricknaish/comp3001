@@ -31,8 +31,17 @@ class User(db.Model):
                         lastName=user_last_name,
                         currentYear=user_current_year,
                         reputation=0,
-                        password=User.hash_password(User.create_password()))
+                        password="")
         new_user.put()
+        return password
+
+    @staticmethod
+    def reset_password(user_email):
+        password = User.create_password()
+        user_ref = User.get_by_key_name(user_email)
+        user_ref.password = User.hash_password(password)
+        user_ref.put()
+        return password
 
     @staticmethod
     def increase_reputation(user_email):

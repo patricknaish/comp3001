@@ -1,0 +1,14 @@
+Dear {{firstname}} {{lastname}},
+
+Thank you for registering your TexTrader account.
+Your account can be accessed by logging in to the TexTrader website with the
+following information:
+
+Email: {{email}}
+Password: {{password}}
+
+Happy trading!
+
+Regards,
+
+The TexTrader team
