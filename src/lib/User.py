@@ -47,7 +47,7 @@ class User(db.Model):
     def reset_password(user_email):
         password = User.create_password()
         user_ref = User.get_by_key_name(user_email)
-        user_ref.password = User.hash_password(password)
+        user_ref.password = User.hash_password(password, user_ref.salt)
         user_ref.put()
         return password
 
