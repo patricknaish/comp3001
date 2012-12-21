@@ -11,3 +11,5 @@ urlpatterns = patterns('',
     (r'^login$', 'web.login.render_login'),
     (r'^create_book$', 'web.books.render_create_book')
 )
+
+handler403 = "web.errors.permission_denied"
