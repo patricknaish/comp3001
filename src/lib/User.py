@@ -1,3 +1,6 @@
+import random
+import hashlib
+
 from google.appengine.ext import db
 
 from lib.Book import Book
@@ -12,6 +15,7 @@ class User(db.Model):
     lastName = db.StringProperty()
     currentYear = db.IntegerProperty()
     reputation = db.IntegerProperty()
+    password = db.StringProperty()
 
     @staticmethod
     def create_user(user_email,
@@ -26,7 +30,8 @@ class User(db.Model):
                         firstName=user_first_name,
                         lastName=user_last_name,
                         currentYear=user_current_year,
-                        reputation=0)
+                        reputation=0,
+                        password=User.hash_password(User.create_password()))
         new_user.put()
 
     @staticmethod
@@ -100,3 +105,15 @@ class User(db.Model):
                                       user_ref,
                                       course_ref)
         db.delete(user_course_ref)
+
+    @staticmethod
+    def hash_password(inStr):
+        return hashlib.sha1(inStr).hexdiest()
+
+    @staticmethod
+    def create_password():
+        DICTIONARY = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#~@-_+="
+        newPW = ""
+        for x in range(8):
+            newpW += random.choice(DICTIONARY)
+        return newPW
