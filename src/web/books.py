@@ -1,11 +1,20 @@
 import os
 from django.http import HttpResponse
 from django.template import Context, loader
-from lib import BOOK
+from django.core.exceptions import PermissionDenied
 import cgi
 from lib import BOOK
+from web import AuthManager
 
 def render_create_book(request):
+    # Check permissions
+    if not AuthManager.is_authenticated(request):
+        raise PermissionDenied
+
+    if not AuthManager.has_permission(request, 'check_book'):
+        raise PermissionDenied
+
+    # Handle the request if we're allowed to
     if request.method == 'POST':
         return create_book_action(request)
     else:
