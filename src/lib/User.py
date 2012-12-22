@@ -61,9 +61,9 @@ class User(db.Model):
         salt = user_ref.salt
         hash_pwd = User.hash_password(user_password, salt)
         if hash_pwd == user_ref.password:
-            return true
+            return True
         else:
-            return false
+            return False
 
     @staticmethod
     def increase_reputation(user_email):
