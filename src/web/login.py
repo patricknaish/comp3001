@@ -5,7 +5,10 @@ from django.shortcuts import render
 from django.template import Context, loader
 
 def render_login(request):
-    context = Context({"from": request.GET["origin"]})
+    origin = None
+    if "from" in request.GET.keys():
+        origin = request.GET["from"]
+    context = Context({"origin": origin})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'login.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
