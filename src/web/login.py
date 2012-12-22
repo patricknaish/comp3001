@@ -30,7 +30,7 @@ def render_login_action(request):
     else:
         return render_login_form(request, "Invalid username or password")
 
-def render_login_form(request, error = None)
+def render_login_form(request, error = None):
     origin = None
     if "from" in request.GET.keys():
         origin = request.GET["from"]
