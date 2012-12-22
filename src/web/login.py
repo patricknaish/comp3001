@@ -1,7 +1,7 @@
 # Django magic
 import os
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import Context, loader
 from lib import USER
 from web import AuthManager
