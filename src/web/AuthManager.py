@@ -15,3 +15,6 @@ def is_authenticated(request):
         return True
     else:
         return False
+
+def set_logged_in(request, user):
+    request.session["user"] = user

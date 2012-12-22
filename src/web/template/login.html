@@ -10,7 +10,7 @@
     {% if error %}
     <div class="error">{{error}}</div>
     {% endif %}
-    <form action="/user/login" method="POST">
+    <form action="/login" method="POST">
         <fieldset>
             <input type="hidden" name="from" value="{{origin}}" />
             <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" autofocus="autofocus" /></p>
