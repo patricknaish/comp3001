@@ -4,6 +4,12 @@
 {% block content %}
 <div class="user-login">
     <h1>Login</h1>
+    {% if origin %}
+    <div class="warning">You need to be logged in before you can do that.</div>
+    {% endif %}
+    {% if error %}
+    <div class="error">{{error}}</div>
+    {% endif %}
     <form action="/user/login" method="POST">
         <fieldset>
             <input type="hidden" name="from" value="{{origin}}" />
