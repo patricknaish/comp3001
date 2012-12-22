@@ -13,8 +13,8 @@ def render_login(request):
         return render_login_form(request)
 
 def render_login_action(request):
-    if not request.method == "POST" or
-       not "email" in request.POST.keys() or
+    if not request.method == "POST" or \
+       not "email" in request.POST.keys() or \
        not "password" in request.POSTkeys():
         return render_login_form(request, "The form was not correctly sent to the web server. Please try again.")
     if request.POST["email"] == "":
