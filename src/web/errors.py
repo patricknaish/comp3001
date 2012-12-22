@@ -6,5 +6,5 @@ def permission_denied(request):
     if "user" in request.session.keys():
         redirect('django.views.defaults.permission_denied')
     else:
-        redirect('web.user.login', from=request.path)
+        redirect('web.user.login', origin=request.path)
 
