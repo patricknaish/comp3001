@@ -5,10 +5,13 @@
 <div class="user-login">
     <h1>Login</h1>
     <form action="/user/login" method="POST">
-        <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" autofocus="autofocus" /></p>
-        <p><label>Password:</label><input type="password" name="password" placeholder="Password" class="input" /><br \>
-        	<small>( <a href="/login/forgotten">Forgotten your password?<a/> )</small></p>
-        <input type="submit" value="Login" class="submit-button" />
+        <fieldset>
+            <input type="hidden" name="from" value="{{origin}}" />
+            <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" autofocus="autofocus" /></p>
+            <p><label>Password:</label><input type="password" name="password" placeholder="Password" class="input" /></p>
+            <p><small>( <a href="/login/forgotten">Forgotten your password?</a> )</small></p>
+            <p><input type="submit" value="Login" class="submit-button" /></p>
+        </fieldset>
     </form>
 </div>
 {% endblock %}
