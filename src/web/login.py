@@ -1,4 +1,6 @@
-# Django magic
+"""
+This module handles being logged in and out of the TexTreader website
+"""
 import os
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
@@ -7,12 +9,20 @@ from lib import USER
 from web import AuthManager
 
 def render_login(request):
+    """
+    Handler for requests to /login
+    """
+    if AuthManager.is_logged_in(request):
+        return redirect("web.account.render_account")
     if request.method == "POST":
         return render_login_action(request)
     else:
         return render_login_form(request)
 
 def render_login_action(request):
+    """
+    Handle the login form submission
+    """
     if not request.method == "POST" or \
        not "email" in request.POST.keys() or \
        not "password" in request.POST.keys():
@@ -31,6 +41,9 @@ def render_login_action(request):
         return render_login_form(request, "Invalid username or password")
 
 def render_login_form(request, error = None):
+    """
+    Handle display of the login page
+    """
     origin = None
     if "from" in request.GET.keys():
         origin = request.GET["from"]

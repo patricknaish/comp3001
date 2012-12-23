@@ -1,16 +1,20 @@
+"""
+This module handles the actual books.
+This includes rendering the individual book pages, adding new books etc.
+"""
+
 import os
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.core.exceptions import PermissionDenied
 import cgi
 from lib import BOOK
+from lib import USER
 from web import AuthManager
 
 def render_create_book(request):
+    "Show the create book form"
     # Check permissions
-    if not AuthManager.is_logged_in(request):
-        raise PermissionDenied
-
     if not AuthManager.has_permission(request, 'check_book'):
         raise PermissionDenied
 
@@ -18,7 +22,7 @@ def render_create_book(request):
     if request.method == 'POST':
         return create_book_action(request)
     else:
-        context = Context()
+        context = Context({"user": USER.get_by_key_name(request.session["user"])})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
