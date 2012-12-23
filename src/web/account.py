@@ -1,13 +1,14 @@
 import os
-from google.appengine.api import users
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.template import Context
 
+from web import AuthManager
+
 def render_account(request):
-    if not users.get_current_user(): #TODO: Fix to use our own user management, not GAE
-        return redirect("/login") #TODO: Pass account as a return-to page
+    if not AuthManager.is_logged_in():
+        return redirect("/login")
     context = Context()
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
@@ -15,8 +16,8 @@ def render_account(request):
     return response
 
 def render_account_test(request):
-    if not users.get_current_user():
-        return redirect("/login") #TODO: Pass account as a return-to page
+    if not AuthManager.is_logged_in():
+        return redirect("/login")
     purchase_hist = [
     {"book": 
         {"image": "url",

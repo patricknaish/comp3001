@@ -12,7 +12,7 @@
     {% endif %}
     <form action="/login" method="POST">
         <fieldset>
-            <input type="hidden" name="from" value="{{origin}}" />
+            {% if origin %}<input type="hidden" name="from" value="{{origin}}" />{% endif %}
             <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" autofocus="autofocus" /></p>
             <p><label>Password:</label><input type="password" name="password" placeholder="Password" class="input" /></p>
             <p><small>( <a href="/login/forgotten">Forgotten your password?</a> )</small></p>
