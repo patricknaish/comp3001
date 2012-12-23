@@ -19,6 +19,7 @@ class Session(db.Model):
         sessionData = json.dumps(sessionData)
         if Session.get_session(sessionID) != None:
             session = Session.get_by_key_name(sessionID)
+            session.data = sessionData
         else:
             session = Session(key_name = sessionID,
                               sessionID = sessionID,
