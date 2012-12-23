@@ -4,6 +4,7 @@ from django.shortcuts import redirect
 from django.template.loader import render_to_string
 from django.template import Context
 
+from lib import User
 from web import AuthManager
 
 def render_account(request):
