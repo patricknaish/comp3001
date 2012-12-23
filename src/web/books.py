@@ -8,7 +8,7 @@ from web import AuthManager
 
 def render_create_book(request):
     # Check permissions
-    if not AuthManager.is_authenticated(request):
+    if not AuthManager.is_logged_in(request):
         raise PermissionDenied
 
     if not AuthManager.has_permission(request, 'check_book'):
