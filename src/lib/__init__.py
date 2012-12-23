@@ -10,6 +10,7 @@ import lib.University
 import lib.User
 import lib.Book
 import lib.Module
+import lib.Session
 
 # Now make the classes available readily
 PAYPAL = lib.Paypal.Paypal
@@ -18,3 +19,4 @@ UNIVERSITY = lib.University.University
 USER = lib.User.User
 BOOK = lib.Book.Book
 MODULE = lib.Module.Module
+Session = lib.Session.Session
