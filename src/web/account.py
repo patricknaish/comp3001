@@ -7,7 +7,7 @@ from django.template import Context
 from web import AuthManager
 
 def render_account(request):
-    if not AuthManager.is_logged_in():
+    if not AuthManager.is_logged_in(request):
         return redirect("/login")
     context = Context()
     response = HttpResponse()
@@ -16,7 +16,7 @@ def render_account(request):
     return response
 
 def render_account_test(request):
-    if not AuthManager.is_logged_in():
+    if not AuthManager.is_logged_in(request):
         return redirect("/login")
     purchase_hist = [
     {"book": 
