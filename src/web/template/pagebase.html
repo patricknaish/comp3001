@@ -9,7 +9,7 @@
                 <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
             </div>
             <nav class="navigation-bar">
-                {% if gae_user != None %}
+                {% if user != None %}
                 <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
                 <a href="/basket">Basket(0)</a>
                 {% else %}
@@ -21,7 +21,7 @@
 
         <div class="search-bar">
             <div class="welcome-user">
-                <small>Welcome, <strong>{% if gae_user != None %}Name!<br>(<a href="/user/logout">logout</a>)
+                <small>Welcome, <strong>{% if user != None %}Name!<br>(<a href="/user/logout">logout</a>)
                 {% else %} Guest!{% endif %}</strong></small>
             </div>
             <div class="search-form">
