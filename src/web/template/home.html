@@ -1,0 +1,38 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - Home{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Popular Books</h1>
+    <ul class="book-list">
+    {% for book in book_list %}
+        <a href="./book/test" class="listing-link">
+        <li class="book-listing">
+            <div class="listing-image">{{ book.image }}</div>
+            <div class="listing-info">
+                <span class="listing-title">{{ book.title }}</span> - <span class="listing-author">{{ book.author }}</span><br>
+                <span class="listing-price">{{ book.price }}</span>
+            </div>
+        </li>
+        </a>
+        
+        {% if not forloop.last %}
+        <hr class="fade" \>
+        {% endif %}
+    {% endfor %}
+        <!-- Example book for css testing while database is linked -->
+        <a href="./book/test" class="listing-link">
+        <li class="book-listing">
+            <div class="listing-image"><img src="test"></div>
+            <div class="listing-info">
+                <span class="listing-title">Book Title</span> - <span class="listing-author">Book Author</span><br>
+                <span class="listing-price">£0.00</span>
+            </div>
+        </li>
+        </a>
+        <hr class="fade">
+    </ul>
+</div>
+
+{% endblock %}

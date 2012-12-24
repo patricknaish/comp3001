@@ -1,3 +1,7 @@
+"""
+Interim table between users and courses
+"""
+
 from google.appengine.ext import db
 
 from lib.User import User
