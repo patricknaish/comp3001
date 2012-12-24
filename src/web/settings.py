@@ -11,7 +11,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'web.middleware.sessions.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 

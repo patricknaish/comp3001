@@ -7,8 +7,37 @@
 body
 {
     margin: auto auto;
+    padding-top: 5px;
     width: 75%;
     font-family: Arial, Sans-Serif;
+    background: rgb(242,242,242);
+}
+
+h1
+{
+	color: #9C0014;
+}
+
+a
+{
+	color: #9C0014;
+	text-decoration: none;
+}
+
+a:hover
+{
+	color: #CC0000;
+	text-decoration: underline;
+}
+
+hr.fade 
+{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -moz-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -ms-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
+    background-image: -o-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
 }
 
 .header
@@ -20,7 +49,7 @@ body
 {
 	float: left;
 	height: 150px;
-	width: 40%;
+	width: 55%;
 }
 
 .banner img
@@ -31,85 +60,114 @@ body
 
 .navigation-bar
 {
+	display: block;
 	float: right;
+	text-align: right;
 	margin-top: 0px;
 	margin-bottom: 0px;
-	width: 50%;
+	width: 40%;
 	padding: 4px;
-	border: 1px solid red;
-}
-
-.navigation-bar li
-{
-	display: inline-block;
-	padding-left: 5px;
-}
-
-.navigation-bar .basket
-{
-	display: inline-block;
-	float: right;
-	padding-right: 5px;
 }
 
 .search-bar
 {
-	border: 1px solid red;
-	height: 25px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	border: 1px solid #9C0014;
+	height: 30px;
+	padding: 5px;
 }
 
 .welcome-user
 {
 	float: left;
-	width: 30%;
+	width: 20%;
 }
 
 .search-form
 {
-	float: right;
-	padding: 0px;
-	margin: 0px;
+	float: left;
 	width: 70%;
+}
+
+.search-form .input
+{
+	font-size: 1.2rem;
+	width: 50%;
+}
+
+.search-form .select-category
+{
+	font-size: 1.2rem;
+}
+
+.advanced-search
+{
+	margin-right: 5px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8em;
+}
+
+.browse
+{
+	margin-left: 5px;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 0.8em;
 }
 
 .main-content
 {
-	padding: 10px;
-	border: 1px solid red;
+	padding: 20px;
+	border: 1px solid #9C0014;
 }
 
-#user_login
+.user-login
 {
-	float: right;
-	font-size: 12px;
-	width: 30%;
-	border: 1px solid black;
-	padding: 5px;
+	width: 45%;
 }
 
-#user_login .input
+.user-login .input
 {
-	border: 1px solid red;
+	border: 1px solid #9C0014;
 	background: white;
-	padding: 3px;
-	font-size: 12px;
+	padding: 1px;
+	font-size: 0.8rem;
 	width: 50%;
 }
 
-#user_login label
+.register-form
+{
+	width: 45%;
+}
+
+.register-form .input
+{
+	border: 1px solid #9C0014;
+	background: white;
+	padding: 1px;
+	font-size: 0.8rem;
+	width: 50%;
+}
+
+label
 {
 	display: inline-block;
-	width:25%;
+	font-size: 0.9rem;
+	width: 100px;
 }
 
 .submit-button
 {
 	padding: 4px;
-	border: 1px solid red;
-	color: red;
+	border: 1px solid #9C0014;
+	color: #9C0014;
 	width: 75px;
 	background-color: #FFFFFF;
-	font-size: 12px;
+	font-size: 0.8rem;
 	transition: all .1s linear;
    	-o-transition: all .1s linear;
    	-moz-transition: all .1s linear;
@@ -118,7 +176,50 @@ body
 
 .submit-button:hover
 {
-	background-color: red;
+	background-color: #9C0014;
 	color: white;
 	cursor: pointer;
+}
+
+.book-listing
+{
+	display: inline-block;
+	background: rgb(230,230,230);
+    width: 100%;
+}
+
+.listing-image
+{
+	width: 150px;
+	height: 150px;
+	margin: 2px;
+	float: left;
+}
+
+.listing-info
+{
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.listing-info:hover
+{
+	text-decoration: underline;
+}
+
+.listing-title
+{
+	font-weight: bold;
+}
+
+.listing-price
+{
+	display: inline-block;
+	margin-top: 5px;
+}
+
+.listing-author
+{
+
 }
