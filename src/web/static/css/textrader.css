@@ -87,17 +87,44 @@ hr.fade
 .search-form
 {
 	float: left;
-	width: 70%;
+	width: 80%;
 }
 
-.search-form .input
-{
-	font-size: 1.2rem;
-	width: 50%;
+.search-fields {
+	float: left;
+	width: 80%;
+}
+
+.search-form .input {
+	/* Need to set to content-box to allow styling */
+	-webkit-box-sizing: content-box;
+	-webkit-appearance: none;
+
+	float: left;
+	margin: 0px;
+	padding: 0.3rem 0.2em;
+	font-size: 0.9rem;
+	width: 55%;
+	border: 0px;
+}
+
+.search-form .button {
+	float: left;
+	margin: 0px;
+	padding: 0.4rem 0.4em;
+	font-size: 0.7rem;
+	width: 10%;
+	border: 0px;
+	background-color: #9C0014;
+	color: #EEEEEE;
 }
 
 .search-form .select-category
 {
+	float: left;
+	margin: 0px;
+	margin-right: 0.4em;
+	width: 20%;
 	font-size: 1.2rem;
 }
 
