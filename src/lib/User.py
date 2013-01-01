@@ -58,6 +58,8 @@ class User(db.Model):
         Authenticate a user with the hashed password
         """
         user_ref = User.get_by_key_name(user_email)
+        if user_ref == None:
+            return False
         salt = user_ref.salt
         hash_pwd = User.hash_password(user_password, salt)
         if hash_pwd == user_ref.password:
