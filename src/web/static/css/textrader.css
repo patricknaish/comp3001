@@ -102,8 +102,7 @@ hr.fade
 
 	float: left;
 	margin: 0px;
-	padding: 4px 0.2em;
-	font-size: 0.9rem;
+	height: 22px;
 	width: 55%;
 	border: 0px;
 }
@@ -115,10 +114,10 @@ hr.fade
 
 	float: left;
 	margin: 0px;
-	padding: 6px 0.4em;
 	font-size: 0.7rem;
-	width: 10%;
-	border: 0px;
+	font-weight: bold;
+	height: 18px;
+	border: 2px solid white;
 	background-color: #9C0014;
 	color: #EEEEEE;
 	cursor: pointer;
