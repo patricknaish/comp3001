@@ -92,7 +92,7 @@ hr.fade
 
 .search-fields {
 	float: left;
-	width: 80%;
+	width: 75%;
 }
 
 .search-form .input {
@@ -199,10 +199,6 @@ label
 	width: 75px;
 	background-color: #FFFFFF;
 	font-size: 0.8rem;
-	transition: all .1s linear;
-   	-o-transition: all .1s linear;
-   	-moz-transition: all .1s linear;
-   	-webkit-transition: all .1s linear;
 }
 
 .submit-button:hover
