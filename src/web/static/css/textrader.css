@@ -102,6 +102,12 @@ hr.fade
 	font-size: 0.5em;
 }
 
+.close-window {
+	display: inline-block;
+	float: right;
+	margin: -28px -28px 0 0;
+}
+
 .search-bar
 {
 	margin-top: 3px;
