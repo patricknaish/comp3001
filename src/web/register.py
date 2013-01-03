@@ -63,3 +63,56 @@ def render_register_form(request, error = None):
     response = HttpResponse()
     response.write(render_to_string(tmpl, context))
     return response
+
+def render_forgot_password(request):
+    if request.method == 'GET':
+        return render_forgotpw_form(request)
+
+    if request.method == 'POST':
+        return render_forgotpw_action(request)
+
+def render_forgotpw_action(request):
+    try:
+        email = cgi.escape(request.POST['email'])
+        lastname = cgi.escape(request.POST['lastname'])
+        # Check their email addresses match
+        user = USER.get_by_key_name(email)
+        if user == None:
+             raise InvalidUserError()
+
+        if user.lastName != lastname:
+#            raise InvalidUserDataError()
+             return None
+
+        # Do the creation
+        new_password = USER.reset_password(email)
+
+        # Send the success email
+        context = Context({
+            "firstname": user.firstName,
+            "lastname" : user.lastName,
+            "email": email,
+            "password": new_password
+        })
+        tmpl = os.path.join(os.path.dirname(__file__), 'template', 'forgotpw.eml')
+        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
+            subject = "TexTrader: Password reset")
+        message.to = "%s %s <%s>" % (user.firstName, user.lastName, user.email)
+        message.body = render_to_string(tmpl, context)
+        message.send()
+
+        tmpl = os.path.join(os.path.dirname(__file__), 'template', 'pwresetsuccess.html')
+        context = Context()
+        response = HttpResponse()
+        response.write(render_to_string(tmpl, context))
+        return response
+
+    except EmailDoesntMatchError as e:
+        return render_register_form(request, str(e))
+
+def render_forgotpw_form(request, error = None):
+    tmpl = os.path.join(os.path.dirname(__file__), 'template', 'pwreset.html')
+    context = Context({"error": error})
+    response = HttpResponse()
+    response.write(render_to_string(tmpl, context))
+    return response

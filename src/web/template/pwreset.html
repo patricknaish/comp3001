@@ -1,0 +1,19 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader Register{% endblock %}
+{% block content %}
+
+<div class="register-form">
+    <h1>Forgot your password?</h1>
+    <p>Simply fill out the details below, and a new password will be on its 
+    way to you.</p>
+    {% if error %}
+    <div class='error'>Error: {{error}}</div>
+    {% endif %}
+    <form action="/login/forgotten" method="post">
+        <p><label>Last Name:</label><input type="text" name="lastname" placeholder="Smith" class="input"></p>
+        <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input"></p>
+        <div><input type="submit" value="Reset password" class="submit-button"></div>
+    </form>
+</div>
+{% endblock %}
