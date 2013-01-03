@@ -1,0 +1,13 @@
+Dear {{firstname}} {{lastname}},
+
+Somebody, hopefully you, requested a password reset for this email address on
+the TexTrader website.  Your new password is shown below.
+
+Email: {{email}}
+Password: {{password}}
+
+Happy trading!
+
+Regards,
+
+The TexTrader team
