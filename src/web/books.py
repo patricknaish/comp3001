@@ -15,7 +15,7 @@ from web import AuthManager
 def render_create_book(request):
     "Show the create book form"
     # Check permissions
-    if not AuthManager.has_permission(request, 'check_book'):
+    if not AuthManager.has_permission(request, 'create_book'):
         raise PermissionDenied
 
     # Handle the request if we're allowed to
@@ -24,6 +24,25 @@ def render_create_book(request):
     else:
         context = Context({"user": USER.get_by_key_name(request.session["user"])})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
+        response = HttpResponse()
+        response.write(loader.render_to_string(tmpl, context))
+        return response
+
+def render_create_listing(request):
+    "Show the create book form"
+    # Check permissions
+    if not AuthManager.has_permission(request, 'list_book'):
+        raise PermissionDenied
+
+    # Handle the request if we're allowed to
+    if request.method == 'POST':
+        return list_book_action(request)
+    else:
+        context = Context({
+                            "user": USER.get_by_key_name(request.session["user"]),
+                            "books": BOOK.list_all_books()
+                            })
+        tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response

@@ -1,0 +1,14 @@
+{% extends "pagebase.html" %}
+
+{% block content %}
+<h1>List a book for sale</h1>
+<form action='list_book' method='POST'>
+Select the book you wish to list:
+<select name='template_isbn' id='template_isbn' onchange="TemplateBook.Run();">
+{% for book in books %}
+<option value="{{book.isbn}}">{{book.name}}</option>
+{% endfor %}
+</select>
+Or, <a href='list_new_book'>List a new book</a>
+</form>
+{% endblock %}
