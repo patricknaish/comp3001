@@ -2,13 +2,41 @@
 
 {% block content %}
 <h1>List a book for sale</h1>
-<form action='list_book' method='POST'>
-Select the book you wish to list:
-<select name='template_isbn' id='template_isbn' onchange="TemplateBook.Run();">
-{% for book in books %}
-<option value="{{book.isbn}}">{{book.name}}</option>
-{% endfor %}
-</select>
-Or, <a href='list_new_book'>List a new book</a>
-</form>
+<div id='accordion'>
+<h3>List a book based on a template</h3>
+<div id='existingbook'>
+    <form action='list_book' method='POST'>
+    <p>Select the book you wish to list:
+    <select name='template_isbn' id='template_isbn' onchange="TemplateBook.Run();">
+    <option value="">Select a book from the list</option>
+    {% for book in books %}
+    <option value="{{book.isbn}}">{{book.title}} (Edition: {{book.edition}}, Year: {{book.year}})</option>
+    {% endfor %}
+    </select></p>
+    <p><label for="existing_price">Your price:</label><input type="text" name="price" id="existing_price" /></p>
+    <p><label for="existing_condition">Condition of your item:</label><input type="text" name="condition" id="existing_condition" /></p>
+    <p><input type='submit' value='List my item' /></p>
+    </form>
+</div>
+
+<h3>My book isn't listed?</h3>
+<div id='notlisted'>
+    <form action="/create_and_list_book" method="post">
+    <div>ISBN: <input type="text" name="isbn"</div>
+    <div>Title: <input type="text" name="title"</div>
+    <div>Author: <input type="text" name="author"</div>
+    <div>Year: <input type="text" name="year"</div>
+    <div>Edition: <input type="text" name="edition"</div>
+    <div>Publisher: <input type="text" name="publisher"</div>
+    <div>RRP: <input type="text" name="rrp"</div>
+    <div>Picture: <input type="text" name="picture"</div>
+    <p><label for="new_price">Your price:</label><input type="text" name="price" id="new_price" /></p>
+    <p><label for="new_condition">Condition of your item:</label><input type="text" name="condition" id="new_condition" /></p>
+    <div><input type="submit" value="Create"></div>
+    </form>
+</div>
+</div>
+<script type='text/javascript'>
+$('#accordion').accordion({ heightStyle: "content" });
+</script>
 {% endblock %}

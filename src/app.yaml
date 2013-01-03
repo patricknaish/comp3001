@@ -11,5 +11,7 @@ handlers:
   static_dir: web/static/images
 - url: /css
   static_dir: web/static/css
+- url: /js
+  static_dir: web/static/js
 - url: /.*
   script: django_handler.app
