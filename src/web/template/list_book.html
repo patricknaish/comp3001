@@ -1,6 +1,7 @@
 {% extends "pagebase.html" %}
 
 {% block content %}
+<script type="text/javascript" src="/js/TemplateBook.js"></script>
 <h1>List a book for sale</h1>
 <div id='accordion'>
 <h3>List a book based on a template</h3>
@@ -13,6 +14,22 @@
     <option value="{{book.isbn}}">{{book.title}} (Edition: {{book.edition}}, Year: {{book.year}})</option>
     {% endfor %}
     </select></p>
+    <div id='existing_info'>
+        <table>
+            <tr>
+            <th>ISBN:</th><td id="json_isbn"></td>
+            <th>Author:</th><td id="json_author"></td>
+            </tr>
+            <tr>
+            <th>Edition:</th><td id="json_edition"></td>
+            <th>Year:</th><td id="json_year"></td>
+            </tr>
+            <tr>
+            <th>Publisher:</th><td id="json_publisher"></td>
+            <th>RRP:</th><td id="json_rrp"></td>
+            </tr>
+        </table>
+    </div>
     <p><label for="existing_price">Your price:</label><input type="text" name="price" id="existing_price" /></p>
     <p><label for="existing_condition">Condition of your item:</label><input type="text" name="condition" id="existing_condition" /></p>
     <p><input type='submit' value='List my item' /></p>
