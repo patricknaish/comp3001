@@ -8,6 +8,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.core.exceptions import PermissionDenied
 import cgi
+import json
 from lib import BOOK
 from lib import USER
 from web import AuthManager
@@ -68,4 +69,11 @@ def create_book_action(request):
 
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
+    return response
+
+def render_book_json(request):
+    isbn = cgi.escape(request.GET['isbn'])
+    book = BOOK.get_by_key_name(isbn)
+    response = HttpResponse()
+    response.write(json.dumps(book.as_dict()))
     return response

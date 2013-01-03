@@ -50,3 +50,14 @@ class Book(db.Model):
             books.append(book)
         return books
 
+    def as_dict(self):
+        return { 
+            "isbn": self.isbn,
+            "title": self.title,
+            "author": self.author,
+            "year": self.year,
+            "edition": self.edition,
+            "publisher": self.publisher,
+            "rrp": self.rrp,
+            "picture": self.picture
+           }
