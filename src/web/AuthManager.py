@@ -2,6 +2,8 @@
 Authentication management for users
 """
 
+import lib
+
 def has_permission(request, perm_name):
     "Check if a user has a given permission"
     if is_logged_in(request):
@@ -18,3 +20,9 @@ def is_logged_in(request):
 
 def set_logged_in(request, user):
     request.session["user"] = user
+
+def get_current_user(request):
+    "Get the current user object"
+    if not is_logged_in(request):
+        return None
+    return lib.User.get_by_key_name(request.session["user"])
