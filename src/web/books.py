@@ -11,6 +11,7 @@ import cgi
 import json
 from lib import BOOK
 from lib import USER
+from lib import UserBook
 from web import AuthManager
 
 def render_create_book(request):
@@ -47,6 +48,27 @@ def render_create_listing(request):
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response
+
+def list_book_action(request):
+    # Are we using a template or a new book?
+    if not "template_isbn" in request.POST.keys():
+        # Create new book
+        create_book_action(request)
+        isbn = cgi.escape(request.POST["isbn"])
+    else:
+        isbn = cgi.escape(request.POST["template_isbn"])
+    book = BOOK.get_by_key_name(isbn)
+    user = AuthManager.get_current_user(request)
+    condition = cgi.escape(request.POST['condition'])
+    rrp = float(cgi.escape(request.POST['price']))
+    rrp = int(rrp * 100) #convert P.pp to interger pence
+
+
+    UserBook(key_name = None,
+                 user = user,
+                 book = book,
+                 price = price,
+                 condition = condition).put()
 
 def create_book_action(request):
     isbn = cgi.escape(request.POST['isbn'])
