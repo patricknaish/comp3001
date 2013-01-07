@@ -47,6 +47,7 @@ def render_account(request, message = None):
             response.write(render_to_string(tmpl, context))
             return response
         except PasswordDoesntMatchError as e:
+            request.method = 'GET'
             return render_account(request, str(e))
     
 
