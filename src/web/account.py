@@ -36,8 +36,8 @@ def render_account(request, message = None):
         try :
             password = cgi.escape(request.POST['password'])
             password2 = cgi.escape(request.POST['password_confirm'])
-            if email != email2:
-                raise EmailDoesntMatchError()
+            if password != password2:
+                raise PasswordDoesntMatchError()
             lib.USER.change_password(user, password)
             message = "Successfully updated password"
             context = Context({ "user": user,
