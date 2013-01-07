@@ -15,6 +15,7 @@ import lib.Session as Session
 import logging
 # Now make the classes available readily
 logging.info("dir(lib.Paypal) = %s" % dir(Paypal))
+PAYPAL = Paypal
 Paypal = Paypal.Paypal
 COURSE = Course.Course
 UNIVERSITY = University.University
