@@ -54,7 +54,7 @@ def render_account_test(request):
         user = None
     context = Context({
                        "purchase_history": purchase_hist, 
-                       "user": user)
+                       "user": user
                        })
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
