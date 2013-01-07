@@ -1,0 +1,21 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - {{ book.title }}{% endblock %}
+{% block content %}
+
+<div class="current_book_details">
+
+    <img src="cover" alt="cover">
+
+    <h2>Book Details</h2>
+    <p>Title: {{ book.title }}</p>
+    <p>Author: {{ book.author }}</p>
+    <p>RRP: &#163;{{ book.rrp }}</p>
+    <p>Publisher: {{ book.publisher }}</p>
+    <p>Edition: {{ book.edition }}</p>
+    <p>Year: {{ book.year }}</p>
+    <p>ISBN: {{ book.isbn }}</p>
+
+</div>
+
+{% endblock %}

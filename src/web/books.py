@@ -149,7 +149,7 @@ def render_book(request, book_isbn):
                         "user": AuthManager.get_current_user(request),
                         "book": lib.BOOK.get_by_key_name(book_isbn)
                         })
-    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
