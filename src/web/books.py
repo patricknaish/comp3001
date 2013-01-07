@@ -5,12 +5,13 @@ This includes rendering the individual book pages, adding new books etc.
 
 import os
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import Context, loader
 from django.core.exceptions import PermissionDenied
+from web import AuthManager
 import cgi
 import json
 import lib
-from web import AuthManager
 
 def render_create_book(request):
     "Show the create book form"
@@ -111,4 +112,21 @@ def render_book_json(request):
     book = lib.BOOK.get_by_key_name(isbn)
     response = HttpResponse()
     response.write(json.dumps(book.as_dict()))
+    return response
+
+def render_listing(request, listing_id):
+    listing_id = int(listing_id)
+    listing = lib.USERBOOK.get_by_id(listing_id)
+    book = listing.book
+    seller = listing.user
+    copies = lib.BOOK.list_book_copies(book.isbn)
+    context = Context({
+                       "seller":seller,
+                       "current_book":listing,
+                       "same_books":copies, 
+                       "user": AuthManager.get_current_user(request)
+                       })
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
     return response
