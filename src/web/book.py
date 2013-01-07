@@ -8,7 +8,7 @@ from lib import BOOK
 
 def render_book(request, book_id):
     copies = BOOK.list_book_copies(book_id)
-    context = Context()
+    context = Context({"same_books":copies})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
