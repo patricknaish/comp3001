@@ -6,7 +6,8 @@ from django.template import Context, loader
 import lib
 
 def render_book(request, listing_id):
-    listing = lib.USERBOOK.get_by_key_name(listing_id)
+    listing_id = int(listing_id)
+    listing = lib.USERBOOK.get_by_id(listing_id)
     book = listing.book
     seller = listing.user
     copies = lib.BOOK.list_book_copies(book.isbn)
