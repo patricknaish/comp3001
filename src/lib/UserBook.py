@@ -7,6 +7,8 @@ from google.appengine.ext import db
 from lib.User import User
 from lib.Book import Book
 
+import time
+
 class UserBook(db.Model):
     """
     Defines the user-book schema
