@@ -166,7 +166,7 @@ class User(db.Model):
 
     @staticmethod
     def create_password():
-        DICTIONARY = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!#~@-_+="
+        DICTIONARY = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         newPW = ""
         for x in range(8):
             newPW += random.choice(DICTIONARY)
