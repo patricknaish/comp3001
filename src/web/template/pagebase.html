@@ -14,7 +14,7 @@
             <nav class="navigation-bar">
                 {% if user != None %}
                 <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
-                <a href="/basket">Basket(0)</a>
+                <a href="/list_book">Sell</a> | <a href="/basket">Basket(0)</a>
                 {% else %}
                 <a href="/">Home</a> | <a href="/help">Help</a> | <a href="#login-box" class="login-window">Login</a> | 
                 <a href="/register">Register</a>
@@ -31,7 +31,7 @@
                 <form action="/search" method="get">
                     <div class="search-fields">
                         <select class="select-category">
-                            <option value="none">Categories</option>
+                            <option value="none">All Categories</option>
                             <option value="other">Other</option>
                         </select>
                         <input type="search" class="input" placeholder="Search" />
