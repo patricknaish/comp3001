@@ -62,7 +62,7 @@ class Book(db.Model):
             return None
         user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
                                     "book = :1",                                      
-                                    user_ref)
+                                    book_ref)
         for book_ref in user_book_ref.run():
             book_key = UserBook.book.get_value_for_datastore(book_ref)
             book_res = Book.get(Book_key)
