@@ -15,7 +15,7 @@ def render_book(request, listing_id):
                        "seller":seller,
                        "current_book":listing,
                        "same_books":copies, 
-                       "user": AuthManager.get_current_user(request))
+                       "user": AuthManager.get_current_user(request)
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
