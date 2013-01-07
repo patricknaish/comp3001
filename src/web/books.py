@@ -10,6 +10,7 @@ from django.core.exceptions import PermissionDenied
 import cgi
 import json
 import lib
+import time
 from web import AuthManager
 
 def render_create_book(request):
@@ -75,7 +76,8 @@ def list_book_action(request):
                      user = user,
                      book = book,
                      price = price,
-                     condition = condition).put()
+                     condition = condition,
+                     listed_stamp = int(time.time()) ).put()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_success.html')
     except Exception as e:
         context = Context({"error": e})

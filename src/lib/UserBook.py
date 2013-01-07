@@ -19,3 +19,4 @@ class UserBook(db.Model):
                                 collection_name = 'users')
     price = db.IntegerProperty()
     condition = db.StringProperty()
+    listed_stamp = db.IntegerProperty()
