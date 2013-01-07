@@ -72,6 +72,10 @@ def list_book_action(request):
     except Exception as e:
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
+    
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
+    return response
 
 def create_book_action(request):
     isbn = cgi.escape(request.POST['isbn'])
