@@ -13,7 +13,7 @@ def render_logout(request):
     Handler for requests to /logout
     """
     if AuthManager.is_logged_in(request):
-        AuthManager.set_logged_out(request):
+        AuthManager.set_logged_out(request)
         context = Context()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'logout.html')
         response = HttpResponse()
