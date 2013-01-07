@@ -4,7 +4,7 @@
 {% block content %}
 <div class="account-settings">
 	{% if message %}
-	<div class='message'>{{error}}</div>
+	<div class='message'>{{message}}</div>
 	{% endif %}
 	<form method="POST">
 		<span class="description">E-Mail: </span><span>{{user.email}}</span><br />
