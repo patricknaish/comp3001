@@ -21,7 +21,7 @@ class UserBook(db.Model):
     condition = db.StringProperty()
     listed_stamp = db.IntegerProperty()
 
-    @static
+    @staticmethod
     def get_recent_listings():
         "Gets all listings created in the last 24 hours"
         books = []
