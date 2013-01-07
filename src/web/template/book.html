@@ -1,13 +1,13 @@
 {% extends "pagebase.html" %}
 
-{% block title %}TexTrader - {{user.name}}{% endblock %}
+{% block title %}TexTrader - {{ book.title }}{% endblock %}
 {% block content %}
 
 <div class="current_book_details">
 
     <img src="cover" alt="cover">
 
-    <p>{{ seller.name }} - {{ seller.reputation }}</p>
+    <p>{{ seller.firstName }} {{ seller.lastName }} - <strong>Reputation:</strong> {{ seller.reputation }}</p>
 
     <p>Book condition: {{ current_book.condition }}</p>
 
