@@ -53,6 +53,7 @@ class Course(db.Model):
         """
         List all modules associated with a course
         """
+        from lib.CourseModule import CourseModule
         modules = []
         course_ref = Course.get_by_key_name(course_name)
         course_module_ref = db.GqlQuery("SELECT * FROM CourseModule WHERE " +\
