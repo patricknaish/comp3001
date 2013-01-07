@@ -13,9 +13,9 @@ def render_book(request, listing_id):
     copies = lib.BOOK.list_book_copies(book.isbn)
     context = Context({
                        "seller":seller,
-                       "current_book":book,
+                       "current_book":listing,
                        "same_books":copies, 
-                       "user": lib.USER.get_by_key_name(request.session["user"])
+                       "user": AuthManager.get_current_user(request))
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
