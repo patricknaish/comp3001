@@ -32,7 +32,7 @@ def render_register_action(request):
 
         # Do the creation
         lib.USER.create_user(email, firstname, lastname, year)
-        new_password = USER.reset_password(email)
+        new_password = lib.USER.reset_password(email)
 
         # Send the success email
         context = Context({
