@@ -31,7 +31,7 @@ def render_register_action(request):
             raise EmailDoesntMatchError()
 
         # Do the creation
-        USER.create_user(email, firstname, lastname, year)
+        lib.USER.create_user(email, firstname, lastname, year)
         new_password = USER.reset_password(email)
 
         # Send the success email
