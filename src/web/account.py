@@ -1,4 +1,5 @@
 import os
+import cgi
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.template.loader import render_to_string
