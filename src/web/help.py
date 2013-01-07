@@ -8,7 +8,7 @@ import lib
 
 def render_help(request):
 	try:
-        user = lib.USER.get_by_key_name(request.session["user"]),
+        user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
     context = Context({"user": user})

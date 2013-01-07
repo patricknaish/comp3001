@@ -11,7 +11,7 @@ def render_account(request):
     if not AuthManager.is_logged_in(request):
         return redirect("/login")
     try:
-        user = lib.USER.get_by_key_name(request.session["user"]),
+        user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
     context = Context({ "user": user})
@@ -48,9 +48,13 @@ def render_account_test(request):
         "price": "15.00",
         "author": "Bill"}}
     ]
+    try:
+        user = lib.USER.get_by_key_name(request.session["user"])
+    except:
+        user = None
     context = Context({
                        "purchase_history": purchase_hist, 
-                       "user": User.get_by_key_name(request.session["user"])
+                       "user": user)
                        })
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
