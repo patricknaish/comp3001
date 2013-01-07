@@ -7,7 +7,7 @@ from django.template import Context, loader
 import lib
 
 def render_home(request):
-	try:
+    try:
         user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
