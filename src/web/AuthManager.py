@@ -18,3 +18,6 @@ def is_logged_in(request):
 
 def set_logged_in(request, user):
     request.session["user"] = user
+
+def set_logged_out(request):
+    request.session["user"] = None
