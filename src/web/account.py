@@ -26,7 +26,7 @@ def render_account(request, message = None):
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
         response.write(render_to_string(tmpl, context))
         return response
-    if request.method == 'POST':
+    if request.method == 'POST': 
         if not AuthManager.is_logged_in(request):
             return redirect("/login")
         try:
