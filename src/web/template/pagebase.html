@@ -24,7 +24,7 @@
 
         <div class="search-bar">
             <div class="welcome-user">
-                <small>Welcome, <strong>{% if user != None %}Name!<br>(<a href="/user/logout">logout</a>)
+                <small>Welcome, <strong>{% if user != None %}{{ user.firstName }}!<br>(<a href="/user/logout">logout</a>)
                 {% else %} Guest!{% endif %}</strong></small>
             </div>
             <div class="search-form">
