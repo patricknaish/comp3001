@@ -50,6 +50,25 @@ class Book(db.Model):
             books.append(book)
         return books
 
+    @staticmethod
+    def list_book_copies(book_isbn):
+        """
+        Get all the copies of a book
+        """
+        from lib.UserBook import UserBook
+        books = []
+        book_ref = Book.get_by_key_name(book_isbn)
+        if book_ref == None:
+            return None
+        user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
+                                    "book = :1",                                      
+                                    user_ref)
+        for book_ref in user_book_ref.run():
+            book_key = UserBook.book.get_value_for_datastore(book_ref)
+            book_res = Book.get(Book_key)
+            books.append(book_res)
+        return books
+
     def as_dict(self):
         return { 
             "isbn": self.isbn,
