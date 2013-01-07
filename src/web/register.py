@@ -14,7 +14,7 @@ class EmailDoesntMatchError(Exception):
 
 class AlreadyRegisteredError(Exception):
     def __init__(self):
-        Exception.__init__(self, "An email address has already been registered to this account.<br> Have you <a href=/login/forgotten>forgotten your password?</a>")
+        Exception.__init__(self, "An email address has already been registered to this account.")
 
 def render_register(request):
     if request.method == 'GET':
