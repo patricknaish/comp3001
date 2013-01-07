@@ -45,6 +45,7 @@ def render_account(request, message = None):
             response = HttpResponse()
             tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
             response.write(render_to_string(tmpl, context))
+            return response
         except PasswordDoesntMatchError as e:
             return render_account(request, str(e))
     
