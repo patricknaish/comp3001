@@ -14,6 +14,7 @@ def render_home(request):
         context = Context({"user": AuthManager.get_current_user(request)})
     else:
         context = Context({})
+    context["book_list"] = lib.USERBOOK.get_recent_listings()
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))

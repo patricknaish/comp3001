@@ -20,3 +20,14 @@ class UserBook(db.Model):
     price = db.IntegerProperty()
     condition = db.StringProperty()
     listed_stamp = db.IntegerProperty()
+
+    @static
+    def get_recent_listings():
+        "Gets all listings created in the last 24 hours"
+        books = []
+        book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE listed_stamp > :1",
+             time.time() - 86400)
+        for book in book_ref.run():
+            books.append(book)
+        return books
+
