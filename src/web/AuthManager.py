@@ -26,3 +26,6 @@ def get_current_user(request):
     if not is_logged_in(request):
         return None
     return lib.USER.get_by_key_name(request.session["user"])
+
+def set_logged_out(request):
+    del request.session["user"]

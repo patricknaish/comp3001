@@ -24,15 +24,15 @@
 
         <div class="search-bar">
             <div class="welcome-user">
-                <small>Welcome, <strong>{% if user != None %}Name!<br>(<a href="/user/logout">logout</a>)
+                <small>Welcome, <strong>{% if user != None %}{{ user.firstName }}!<br>(<a href="/user/logout">logout</a>)
                 {% else %} Guest!{% endif %}</strong></small>
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
                     <div class="search-fields">
                         <select class="select-category">
-                            <option="none">Categories</option>
-                            <option="other">Other</option>
+                            <option value="none">Categories</option>
+                            <option value="other">Other</option>
                         </select>
                         <input type="search" class="input" placeholder="Search" />
                         <input type="submit" class="button" value="Search" />
@@ -55,7 +55,7 @@
             <form method="post" class="login-form" action="/login">
                 <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" required autofocus="autofocus" /></p>
                 <p><label>Password:</label><input type="password" name="password" placeholder="Password" required class="input" /><br>
-                    <span class="smaller"><a href="/pwreset">Forgotten your password?</a></span></p>
+                    <span class="smaller"><a href="/login/forgotten">Forgotten your password?</a></span></p>
                 <p><input type="submit" value="Login" class="submit-button" /></p>
             </form>
             <hr class="fade">
