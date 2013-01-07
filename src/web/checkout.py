@@ -13,7 +13,7 @@ def render_basket(request):
     pp.pdt_auth_token = "lwcdLbpiHFwN8PJr08Rv6JVvYcmp90ivctfoJSWgBvANCrG-7iXJ59e8Qy4"
     item = Paypal.Item("TEST", "Test item", 10.00)
     try:
-        user = lib.USER.get_by_key_name(request.session["user"]),
+        user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
     context = Context({"user": user})

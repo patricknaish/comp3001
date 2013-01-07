@@ -23,7 +23,7 @@ def render_create_book(request):
         return create_book_action(request)
     else:
         try:
-            user = lib.USER.get_by_key_name(request.session["user"]),
+            user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
         context = Context({"user": user})
@@ -43,7 +43,7 @@ def render_create_listing(request):
         return list_book_action(request)
     else:
         try:
-            user = lib.USER.get_by_key_name(request.session["user"]),
+            user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
         context = Context({
@@ -81,7 +81,7 @@ def list_book_action(request):
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
     try:
-        user = lib.USER.get_by_key_name(request.session["user"]),
+        user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
     context = Context({
