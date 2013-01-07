@@ -3,6 +3,7 @@ import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context, loader
+from web import AuthManager
 import lib
 
 def render_book(request, listing_id):
