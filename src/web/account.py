@@ -38,7 +38,7 @@ def render_account(request, message = None):
             password2 = cgi.escape(request.POST['password_confirm'])
             if password != password2:
                 raise PasswordDoesntMatchError()
-            lib.USER.change_password(user, password)
+            lib.USER.change_password(user.email, password)
             message = "Successfully updated password"
             context = Context({ "user": user,
                                 "message": message})
