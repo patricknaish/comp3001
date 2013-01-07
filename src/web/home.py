@@ -10,6 +10,8 @@ import lib
 def render_home(request):
 	if AuthManager.is_logged_in:
     	context = Context({"user": AuthManager.get_current_user})
+    else:
+    	context = Context({})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
