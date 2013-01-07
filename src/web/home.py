@@ -7,6 +7,8 @@ from web import AuthManager
 
 import lib
 
+import lib
+
 def render_home(request):
     if AuthManager.is_logged_in:
         context = Context({"user": AuthManager.get_current_user(request)})

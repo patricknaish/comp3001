@@ -5,16 +5,15 @@ from django.shortcuts import render
 from django.template import Context, loader
 import lib
 
-def render_book(request, listing_id):
-    listing = lib.USERBOOK.get_by_key_name(listing_id)
-    book = listing.book
-    seller = listing.user
-    copies = lib.BOOK.list_book_copies(book.isbn)
+def render_book(request, book_id):
+    copies = lib.BOOK.list_book_copies(book_id)
+    try:
+        user = lib.USER.get_by_key_name(request.session["user"]),
+    except:
+        user = None
     context = Context({
-                       "seller":seller,
-                       "current_book":book,
                        "same_books":copies, 
-                       "user": lib.USER.get_by_key_name(request.session["user"])
+                       "user": user
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
