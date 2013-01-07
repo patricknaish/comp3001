@@ -44,7 +44,10 @@ def render_account_test(request):
         "price": "15.00",
         "author": "Bill"}}
     ]
-    context = Context({"purchase_history": purchase_hist, "user": User.get_by_key_name(request.session["user"])})
+    context = Context({
+                       "purchase_history": purchase_hist, 
+                       "user": User.get_by_key_name(request.session["user"])
+                       })
     response = HttpResponse()
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
     response.write(render_to_string(tmpl, context))
