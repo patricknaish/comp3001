@@ -143,7 +143,7 @@ def render_listing(request, listing_id):
     response.write(loader.render_to_string(tmpl, context))
     return response
 
-def render_book(request, book_id):
+def render_book(request, book_isbn):
     "Page to show the details of a single book"
     context = Context({"user": AuthManager.get_current_user(request)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
