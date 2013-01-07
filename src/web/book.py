@@ -14,7 +14,7 @@ def render_book(request, book_id):
         user = None
     context = Context({
                        "same_books":copies, 
-                       "user": user)
+                       "user": user
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
