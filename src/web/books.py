@@ -138,7 +138,7 @@ def render_listing(request, listing_id):
                        "same_books":copies, 
                        "user": AuthManager.get_current_user(request)
                        })
-    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'listing.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
