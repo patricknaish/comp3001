@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context, loader
 
-from lib import BOOK
+from lib import Book
+from lib import User
 
 def render_book(request, book_id):
     copies = BOOK.list_book_copies(book_id)
