@@ -25,4 +25,4 @@ def get_current_user(request):
     "Get the current user object"
     if not is_logged_in(request):
         return None
-    return lib.User.get_by_key_name(request.session["user"])
+    return lib.USER.get_by_key_name(request.session["user"])

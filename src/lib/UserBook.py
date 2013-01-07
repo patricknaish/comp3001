@@ -18,4 +18,4 @@ class UserBook(db.Model):
                                 required=True, 
                                 collection_name = 'users')
     price = db.IntegerProperty()
-    condition = db.IntegerProperty()
+    condition = db.StringProperty()

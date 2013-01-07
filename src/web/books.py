@@ -9,9 +9,7 @@ from django.template import Context, loader
 from django.core.exceptions import PermissionDenied
 import cgi
 import json
-from lib import BOOK
-from lib import USER
-from lib import UserBook
+import lib
 from web import AuthManager
 
 def render_create_book(request):
@@ -24,7 +22,7 @@ def render_create_book(request):
     if request.method == 'POST':
         return create_book_action(request)
     else:
-        context = Context({"user": USER.get_by_key_name(request.session["user"])})
+        context = Context({"user": lib.USER.get_by_key_name(request.session["user"])})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
@@ -41,8 +39,8 @@ def render_create_listing(request):
         return list_book_action(request)
     else:
         context = Context({
-                            "user": USER.get_by_key_name(request.session["user"]),
-                            "books": BOOK.list_all_books()
+                            "user": lib.USER.get_by_key_name(request.session["user"]),
+                            "books": lib.BOOK.list_all_books()
                             })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book.html')
         response = HttpResponse()
@@ -57,18 +55,23 @@ def list_book_action(request):
         isbn = cgi.escape(request.POST["isbn"])
     else:
         isbn = cgi.escape(request.POST["template_isbn"])
-    book = BOOK.get_by_key_name(isbn)
+    book = lib.BOOK.get_by_key_name(isbn)
     user = AuthManager.get_current_user(request)
     condition = cgi.escape(request.POST['condition'])
-    rrp = float(cgi.escape(request.POST['price']))
-    rrp = int(rrp * 100) #convert P.pp to interger pence
+    price = float(cgi.escape(request.POST['price']))
+    price = int(price * 100) #convert P.pp to interger pence
 
 
-    UserBook(key_name = None,
-                 user = user,
-                 book = book,
-                 price = price,
-                 condition = condition).put()
+    try:
+        lib.USERBOOK(key_name = None,
+                     user = user,
+                     book = book,
+                     price = price,
+                     condition = condition).put()
+        tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_success.html')
+    except Exception as e:
+        context = Context({"error": e})
+        tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
 
 def create_book_action(request):
     isbn = cgi.escape(request.POST['isbn'])
@@ -83,7 +86,7 @@ def create_book_action(request):
 
     context = Context()
     try:
-        BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
+        lib.BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_success.html')
     except Exception as e:
         context = Context({"error": e})
@@ -95,7 +98,7 @@ def create_book_action(request):
 
 def render_book_json(request):
     isbn = cgi.escape(request.GET['isbn'])
-    book = BOOK.get_by_key_name(isbn)
+    book = lib.BOOK.get_by_key_name(isbn)
     response = HttpResponse()
     response.write(json.dumps(book.as_dict()))
     return response
