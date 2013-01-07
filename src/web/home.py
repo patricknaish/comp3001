@@ -9,7 +9,7 @@ import lib
 
 def render_home(request):
     if AuthManager.is_logged_in:
-        context = Context({"user": AuthManager.get_current_user()})
+        context = Context({"user": AuthManager.get_current_user(request)})
     else:
         context = Context({})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
