@@ -115,18 +115,28 @@ def render_book_json(request):
     return response
 
 def render_listing(request, listing_id):
+    "Page to show a listing, as well as other listings of the same book"
     listing_id = int(listing_id)
     listing = lib.USERBOOK.get_by_id(listing_id)
     book = listing.book
     seller = listing.user
     copies = lib.BOOK.list_book_copies(book.isbn)
     context = Context({
+                       "book":book,
                        "seller":seller,
                        "current_book":listing,
                        "same_books":copies, 
                        "user": AuthManager.get_current_user(request)
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
+    return response
+
+def render_book(request, book_id):
+    "Page to show the details of a single book"
+    context = Context({"user": AuthManager.get_current_user(request)})
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
