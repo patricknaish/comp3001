@@ -40,9 +40,9 @@ def render_create_listing(request):
         return list_book_action(request)
     else:
         context = Context({
-                            "user": USER.get_by_key_name(request.session["user"]),
-                            "books": BOOK.list_all_books()
-                            })
+                           "user": USER.get_by_key_name(request.session["user"]),
+                           "books": BOOK.list_all_books()
+                           })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
