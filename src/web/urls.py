@@ -18,3 +18,5 @@ urlpatterns = patterns('',
 )
 
 handler403 = "web.errors.permission_denied"
+handler404 = "web.errors.page_not_found"
+handler500 = "web.errors.server_error"

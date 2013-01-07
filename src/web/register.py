@@ -96,7 +96,7 @@ def render_forgotpw_action(request):
              return None
 
         # Do the creation
-        new_password = USER.reset_password(email)
+        new_password = lib.USER.reset_password(email)
 
         # Send the success email
         context = Context({

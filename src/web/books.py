@@ -12,6 +12,7 @@ from web import AuthManager
 import cgi
 import json
 import lib
+import time
 
 def render_create_book(request):
     "Show the create book form"
@@ -23,7 +24,11 @@ def render_create_book(request):
     if request.method == 'POST':
         return create_book_action(request)
     else:
-        context = Context({"user": lib.USER.get_by_key_name(request.session["user"])})
+        try:
+            user = lib.USER.get_by_key_name(request.session["user"])
+        except:
+            user = None
+        context = Context({"user": user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
@@ -39,8 +44,12 @@ def render_create_listing(request):
     if request.method == 'POST':
         return list_book_action(request)
     else:
+        try:
+            user = lib.USER.get_by_key_name(request.session["user"])
+        except:
+            user = None
         context = Context({
-                            "user": lib.USER.get_by_key_name(request.session["user"]),
+                            "user": user,
                             "books": lib.BOOK.list_all_books()
                             })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book.html')
@@ -68,13 +77,14 @@ def list_book_action(request):
                      user = user,
                      book = book,
                      price = price,
-                     condition = condition).put()
+                     condition = condition,
+                     listed_stamp = int(time.time()) ).put()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_success.html')
     except Exception as e:
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
     try:
-        user = lib.USER.get_by_key_name(request.session["user"]),
+        user = lib.USER.get_by_key_name(request.session["user"])
     except:
         user = None
     context = Context({
