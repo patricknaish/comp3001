@@ -13,8 +13,6 @@ def has_permission(request, perm_name):
 
 def is_logged_in(request):
     "Is the user logged in?"
-    if request == None:
-        return False
     if "user" in request.session.keys():
         return True
     else:
@@ -30,4 +28,4 @@ def get_current_user(request):
     return lib.USER.get_by_key_name(request.session["user"])
 
 def set_logged_out(request):
-    request.session["user"] = None
+    del request.session["user"]
