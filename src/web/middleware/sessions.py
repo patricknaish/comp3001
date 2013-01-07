@@ -63,7 +63,7 @@ class Session(object):
         pass
 
     def save(self):
-        lib.Session.write_session(self.SID, self.SessionStore)
+        lib.SESSION.write_session(self.SID, self.SessionStore)
 
     def _new_sid(self):
         return hashlib.md5(SESSION_KEY + repr(time.time()) + str(random.random())).hexdigest()
@@ -88,7 +88,7 @@ class Session(object):
         if "TTSID" in self.cookie.keys():
             self.SID = self.cookie["TTSID"].value
             logging.info(self.SID)
-            session = lib.Session.get_session(self.SID)
+            session = lib.SESSION.get_session(self.SID)
             if session != None:
                 self.SessionStore = session
         else:

@@ -5,7 +5,7 @@ import os
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import Context, loader
-from lib import USER
+import lib
 from web import AuthManager
 
 def render_login(request):
@@ -31,7 +31,7 @@ def render_login_action(request):
         return render_login_form(request, "Email address is a required field")
     if request.POST["password"] == "":
         return render_login_form(request, "Password is a required field")
-    if USER.authenticate(request.POST["email"], request.POST["password"]):
+    if lib.USER.authenticate(request.POST["email"], request.POST["password"]):
         AuthManager.set_logged_in(request, request.POST["email"])
         if "from" in request.POST.keys():
             return redirect(request.POST["from"])
