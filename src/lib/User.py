@@ -177,6 +177,7 @@ class User(db.Model):
         """
         List all books associated with a user
         """
+        from lib.UserBook import UserBook
         books = []
         user_ref = User.get_by_key_name(user_email)
         user_book_ref = db.GqlQuery("SELECT * FROM UserBook WHERE " +\
@@ -193,6 +194,7 @@ class User(db.Model):
         """
         List all courses associated with a user
         """
+        from lib.UserCourse import UserCourse
         courses = []
         user_ref = User.get_by_key_name(user_email)
         user_course_ref = db.GqlQuery("SELECT * FROM UserCourse WHERE " +\
