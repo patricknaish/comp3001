@@ -6,7 +6,7 @@ from google.appengine.api import mail
 import cgi
 
 # User functions
-from lib import USER
+import lib
 
 class EmailDoesntMatchError(Exception):
     def __init__(self):
@@ -76,7 +76,7 @@ def render_forgotpw_action(request):
         email = cgi.escape(request.POST['email'])
         lastname = cgi.escape(request.POST['lastname'])
         # Check their email addresses match
-        user = USER.get_by_key_name(email)
+        user = lib.USER.get_by_key_name(email)
         if user == None:
              raise InvalidUserError()
 
