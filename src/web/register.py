@@ -12,6 +12,10 @@ class EmailDoesntMatchError(Exception):
     def __init__(self):
         Exception.__init__(self, "The provided email addresses do not match.")
 
+class AlreadyRegisteredError(Exception):
+    def __init__(self):
+        Exception.__init__(self, "An email address has already been registered to this account.<br> Have you <a href=/login/forgotten>forgotten your password?</a>")
+
 def render_register(request):
     if request.method == 'GET':
         return render_register_form(request)
@@ -29,6 +33,10 @@ def render_register_action(request):
         # Check their email addresses match
         if email != email2:
             raise EmailDoesntMatchError()
+
+        # Check that the email isn't already registered
+        if lib.USER.get_by_key_name(request.POST['email']):
+            raise AlreadyRegisteredError()
 
         # Do the creation
         lib.USER.create_user(email, firstname, lastname, year)
@@ -55,6 +63,9 @@ def render_register_action(request):
         return response
 
     except EmailDoesntMatchError as e:
+        return render_register_form(request, str(e))
+
+    except AlreadyRegisteredError as e:
         return render_register_form(request, str(e))
 
 def render_register_form(request, error = None):
