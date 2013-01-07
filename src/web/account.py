@@ -39,7 +39,7 @@ def render_account(request, message = None):
             if password != password2:
                 raise PasswordDoesntMatchError()
             lib.USER.change_password(user.email, password)
-            message = "Successfully updated password"
+            message = "Successfully updated password."
             context = Context({ "user": user,
                                 "message": message})
             response = HttpResponse()
