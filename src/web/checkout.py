@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 
 def render_basket(request):
-    pp = Paypal();
+    pp = Paypal.Paypal();
     pp.sandbox = True
     pp.merchant_id = "comp30_1354642631_biz@lists.cmalton.me.uk"
     pp.pdt_auth_token = "lwcdLbpiHFwN8PJr08Rv6JVvYcmp90ivctfoJSWgBvANCrG-7iXJ59e8Qy4"
