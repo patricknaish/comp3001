@@ -4,6 +4,8 @@ from lib import Paypal
 from django.http import HttpResponse
 from django.template import Context, loader
 
+from lib import User
+
 def render_basket(request):
     pp = Paypal.Paypal();
     pp.sandbox = True
