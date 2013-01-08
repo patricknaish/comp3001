@@ -114,7 +114,7 @@ def create_book_action(request):
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
 
-    #Check if the book already exists
+    #Check if the book already exists. This doesn't work at the moment - the database isn't updated, but it still shows success page
     try:    
         if lib.BOOK.get_by_key_name(isbn):
             raise BookAlreadyExistsError()
