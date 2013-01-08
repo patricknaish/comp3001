@@ -23,6 +23,7 @@ def render_basket(request):
     user = AuthManager.get_current_user(request)
     context = Context({"user": user})
     if 'items' in request.session.keys():
+        total_cost = 0
         for item in request.session['items']:
             userbook = lib.USERBOOK.get(item)
             total_cost += userbook.price
