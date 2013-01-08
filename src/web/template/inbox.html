@@ -5,11 +5,11 @@
 {% block content %}
 <div class="home">
     <h1>Inbox</h1>
-    {% if not message %}You have no messages{% endif %}
+    {% if not user_messages %}You have no messages{% endif %}
     {% for message in user_messages %}
         <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
-        <div class="message-subject">{{ message.subject }}</div>
-        <div class="inbox-message">{{ message.message }}</div>
+        <div class="message-subject" style="border: 1px solid black">Subject: {{ message.subject }}</div><br>
+        <div class="inbox-message" style="border: 1px solid black">Message: {{ message.message }}</div>
     {% endfor %}
 </div>
 
