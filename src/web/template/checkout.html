@@ -1,4 +1,5 @@
 {% extends "pagebase.html" %}
+{% load price %}
 
 {% block title %}Checkout | TexTrader{% endblock %} 
 {% block content %}
@@ -12,7 +13,7 @@
 <span class='picture'><img src='{{ entry.book.picture }}' alt='Book image' /></span>
 <span class='title'>{{ entry.book.title }}</span>
 <span class='seller'>Seller: {{ entry.user.name }}</span>
-<span class='price'>&pound; {{ entry.price }}</span>
+<span class='price'>&pound; {{ entry.price|to_price }}</span>
 <span class='remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
 </div>
 </li>
