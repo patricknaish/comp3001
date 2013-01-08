@@ -6,7 +6,7 @@
 
 <div class="current_book_details">
 
-    <img src="/book/{{book.isbn}}/image" alt="cover">
+    <div id='listing-image'><img class='listing-image' src="/book/{{book.isbn}}/image" alt="cover"></div>
 
     <h2>Seller Details</h2>
     <p><strong>Name: {{ seller.firstName }} {{ seller.lastName }}</strong></p>
@@ -22,17 +22,22 @@
     <br>
     <p><strong>Book condition: {{ current_book.condition }}</strong></p>
     <p><strong>Price: &#163;{{ current_book.price|to_price}}</strong></p>
-
+    <p><form action="/basket/add" method="post">
+    <input type="hidden" name="item" value="{{ current_book.key }}" />
+    <input type="submit" name="submit" value="Add to basket" />
+    </form></p>
 </div>
 
 <div class="other_listings">
     <h2>Other listings of this book:</h2>
     <ul>
     {% for book_copy in same_books %}
+        {% if book_copy.key != listing.key %}
         <li class="book-listing">
             <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-            <span class="listing-price">&#163;{{ book_copy.price }}</span><span class="listing-author">{{ book.author }}</span>
+            <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span><span class="listing-author">{{ book.author }}</span>
         </li>
+        {% endif %}
     {% endfor %}
     </ul>
 </div>
@@ -41,10 +46,12 @@
     <h2>Related books:</h2>
     <ul>
     {% for book in related_books %}
+        {% if book_copy.key != listing.key %}
         <li class="book-listing">
             <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-            <span class="listing-price">{{ book.price }}</span><span class="listing-author">{{ book.author }}</span>
+            <span class="listing-price">&#163;{{ book.price|to_price }}</span><span class="listing-author">{{ book.author }}</span>
         </li>
+        {% endif %}
     {% endfor %}
     </ul>
 </div>
