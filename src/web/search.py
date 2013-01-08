@@ -56,7 +56,7 @@ def do_advanced_search(request):
     context = Context({ "book_list": matched_books })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(request, tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def search_predict(request):
