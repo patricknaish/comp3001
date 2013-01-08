@@ -43,19 +43,19 @@ def do_advanced_search(request):
     if title:
         for book in all_books:
             if title.lower() in book.title.lower():
-                all_books.apprend(book)
+                matched_books.append(book)
 
     if isbn:
         for book in m1:
             if isbn.lower() in book.isbn.lower():
-                all_books.append(book)
+                matched_books.append(book)
 
     if author:
         for book in m2:
             if author.lower() in author.lower():
-                all_books.append(book)
+                matched_books.append(book)
 
-    context = Context({ "book_list": m3,
+    context = Context({ "book_list": matched_books,
                         "user": AuthManager.get_current_user(request)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
     response = HttpResponse()
