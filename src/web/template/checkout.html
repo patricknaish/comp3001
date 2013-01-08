@@ -15,7 +15,7 @@
 <span class='listing-title'>{{ entry.book.title }}</span>
 <span class='listing-seller'>Seller: {{ entry.user.firstName }} {{ entry.user.lastName }}</span>
 <span class='listing-price'>&pound; {{ entry.price|to_price }}</span><br />
-<span><a href="/basket/remove/key">Remove From Basket</a></span>
+<span><a href="/basket/remove/{{ entry.key }}">Remove From Basket</a></span>
 </div>
 </li>
 {% empty %}
