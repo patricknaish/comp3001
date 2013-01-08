@@ -46,12 +46,12 @@ def do_advanced_search(request):
                 matched_books.append(book)
 
     if isbn:
-        for book in m1:
+        for book in all_books:
             if isbn.lower() in book.isbn.lower():
                 matched_books.append(book)
 
     if author:
-        for book in m2:
+        for book in all_books:
             if author.lower() in author.lower():
                 matched_books.append(book)
 
