@@ -297,3 +297,7 @@ label
 {
     float: right;
 }
+
+.paypal-button {
+    text-align: right;
+}
