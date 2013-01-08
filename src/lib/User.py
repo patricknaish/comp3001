@@ -192,9 +192,7 @@ class User(db.Model):
                                     "user = :1",                                      
                                     user_ref)
         for book_ref in user_book_ref.run():
-            book_key = UserBook.book.get_value_for_datastore(book_ref)
-            book_res = Book.get(Book_key)
-            books.append(book_res)
+            books.append(book_ref)
         return books
 
     @staticmethod
