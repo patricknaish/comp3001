@@ -208,7 +208,7 @@ class User(db.Model):
                                       user_ref)
         for course_ref in user_course_ref.run():
             course_key = UserCourse.course.get_value_for_datastore(course_ref)
-            course_res = Course.get(Course_key)
+            course_res = Course.get(course_key)
             courses.append(course_res)
         return courses
 
@@ -223,8 +223,11 @@ class User(db.Model):
         user_message_from_ref = db.GqlQuery("SELECT * FROM Message WHERE " +\
                                             "fromUser = :1",
                                             user_ref)
+        for message_ref in user_message_from_ref.run():
+            messages.append(message_ref)
         user_message_to_ref = db.GqlQuery("SELECT * FROM Message WHERE " +\
                                             "toUser = :1",
                                             user_ref)
-        user_message_from_ref.extend(user_message_to_ref)
-        return user_message_from_ref
+        for message_ref in user_message_to_ref.run():
+            messages.append(message_ref)
+        return messages
