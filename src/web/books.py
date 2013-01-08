@@ -32,8 +32,7 @@ def render_create_book(request):
             user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
-        context = Context({ "error":error,
-                            "user":user})
+        context = Context({"user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
@@ -46,7 +45,7 @@ def render_create_listing(request, error = None):
         raise PermissionDenied
 
     # Handle the request if we're allowed to
-    if request.method == 'POST':
+    if request.method == 'POST' and error is not None:
         return list_book_action(request)
     else:
         try:
@@ -54,6 +53,7 @@ def render_create_listing(request, error = None):
         except:
             user = None
         context = Context({
+                            "error": error,
                             "user": user,
                             "books": lib.BOOK.list_all_books()
                             })
