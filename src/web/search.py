@@ -19,3 +19,6 @@ def render_search(request):
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
+
+def render_advanced_search(request):
+    return response

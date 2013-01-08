@@ -7,12 +7,11 @@
     <h1>Search Results</h1>
     <ul class="book-list">
     {% for book in book_list %}
-        <a href="./book/test" class="listing-link">
+        <a href="/book/{{book.isbn}}" class="listing-link">
         <li class="book-listing">
             <div class="listing-image">{{ book.image }}</div>
             <div class="listing-info">
                 <span class="listing-title">{{ book.title }}</span> - <span class="listing-author">{{ book.author }}</span><br>
-                <span class="listing-price">{{ book.price }}</span>
             </div>
         </li>
         </a>
