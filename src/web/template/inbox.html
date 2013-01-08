@@ -8,8 +8,8 @@
     {% if not user_messages %}You have no messages{% endif %}
     {% for message in user_messages %}
         <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
-        <div class="message-subject" style="border: 1px solid black">Subject: {{ message.subject }}</div><br>
-        <div class="inbox-message" style="border: 1px solid black">Message: {{ message.message }}</div>
+        <div class="message-subject" style="border: 1px solid black"><label>Subject: </label>{{ message.subject }}</div><br>
+        <div class="inbox-message" style="border: 1px solid black"><label>Message: </label>{{ message.message }}</div>
     {% endfor %}
 </div>
 
