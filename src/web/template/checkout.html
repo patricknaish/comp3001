@@ -10,7 +10,7 @@
 {% for entry in basket %}
 <li>
 <div class='basket-entry'>
-<span class='listing-image'><img src='{{ entry.book.picture }}' alt='Book image' /></span>
+<span><img class='listing-image' src='{{ entry.book.picture }}' alt='Book image' /></span>
 <span class='listing-title'>{{ entry.book.title }}</span>
 <span class='listing-seller'>Seller: {{ entry.user.name }}</span>
 <span class='listing-price'>&pound; {{ entry.price|to_price }}</span>
