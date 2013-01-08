@@ -15,19 +15,19 @@ body
 
 h1
 {
-	color: #9C0014;
+    color: #9C0014;
 }
 
 a
 {
-	color: #9C0014;
-	text-decoration: none;
+    color: #9C0014;
+    text-decoration: none;
 }
 
 a:hover
 {
-	color: #CC0000;
-	text-decoration: underline;
+    color: #CC0000;
+    text-decoration: underline;
 }
 
 hr.fade 
@@ -42,253 +42,253 @@ hr.fade
 
 .header
 {
-	height: 150px;
+    height: 150px;
 }
 
 .banner
 {
-	float: left;
-	height: 150px;
-	width: 55%;
+    float: left;
+    height: 150px;
+    width: 55%;
 }
 
 .banner img
 {
-	height: 150px;
-	width: 500px;
+    height: 150px;
+    width: 500px;
 }
 
 .navigation-bar
 {
-	display: block;
-	float: right;
-	text-align: right;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	width: 40%;
-	padding: 4px;
+    display: block;
+    float: right;
+    text-align: right;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    width: 40%;
+    padding: 4px;
 }
 
 #mask {
-	display: none;
-	background: #000; 
-	position: fixed; left: 0; top: 0; 
-	z-index: 10;
-	width: 100%; height: 100%;
-	opacity: 0.8;
-	z-index: 999;
+    display: none;
+    background: #000; 
+    position: fixed; left: 0; top: 0; 
+    z-index: 10;
+    width: 100%; height: 100%;
+    opacity: 0.8;
+    z-index: 999;
 }
 
 .login-popup {
-	display:none;
-	padding: 2em; 	
-	background: rgb(242,242,242);
-	border: 2px solid #ddd;
-	float: left;
-	font-size: 1.2em;
-	position: fixed;
-	top: 50%; left: 50%;
-	z-index: 99999;
-	box-shadow: 0px 0px 20px #999; /* CSS3 */
+    display:none;
+    padding: 2em;   
+    background: rgb(242,242,242);
+    border: 2px solid #ddd;
+    float: left;
+    font-size: 1.2em;
+    position: fixed;
+    top: 50%; left: 50%;
+    z-index: 99999;
+    box-shadow: 0px 0px 20px #999; /* CSS3 */
     -moz-box-shadow: 0px 0px 20px #999; /* Firefox */
     -webkit-box-shadow: 0px 0px 20px #999; /* Safari, Chrome */
 }
 
 .small {
-	font-size: 0.7em;
+    font-size: 0.7em;
 }
 
 .smaller {
-	font-size: 0.5em;
+    font-size: 0.5em;
 }
 
 .close-window {
-	display: inline-block;
-	float: right;
-	margin: -28px -28px 0 0;
+    display: inline-block;
+    float: right;
+    margin: -28px -28px 0 0;
 }
 
 .search-bar
 {
-	margin-top: 3px;
-	margin-bottom: 3px;
-	border: 1px solid #9C0014;
-	height: 30px;
-	padding: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: 1px solid #9C0014;
+    height: 30px;
+    padding: 5px;
 }
 
 .welcome-user
 {
-	float: left;
-	width: 20%;
+    float: left;
+    width: 20%;
 }
 
 .search-form
 {
-	float: left;
-	width: 80%;
+    float: left;
+    width: 80%;
 }
 
 .search-fields {
-	float: left;
-	width: 75%;
+    float: left;
+    width: 75%;
 }
 
 .search-form .input {
-	/* Need to set to content-box to allow styling */
-	-webkit-box-sizing: content-box;
-	-webkit-appearance: none;
+    /* Need to set to content-box to allow styling */
+    -webkit-box-sizing: content-box;
+    -webkit-appearance: none;
 
-	float: left;
-	margin: 0px;
-	height: 26px;
-	width: 55%;
-	border: 0px;
+    float: left;
+    margin: 0px;
+    height: 26px;
+    width: 55%;
+    border: 0px;
 }
 
 .search-form .button {
-	/* Need to set to content-box to allow styling */
-	-webkit-box-sizing: content-box;
-	-webkit-appearance: none;
+    /* Need to set to content-box to allow styling */
+    -webkit-box-sizing: content-box;
+    -webkit-appearance: none;
 
-	float: left;
-	margin: 0px;
-	border: 0px;
-	font-size: 0.8rem;
-	font-weight: bold;
-	height: 26px;
-	width: 50px;
-	background-color: #9C0014;
-	color: #EEEEEE;
-	cursor: pointer;
+    float: left;
+    margin: 0px;
+    border: 0px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height: 26px;
+    width: 50px;
+    background-color: #9C0014;
+    color: #EEEEEE;
+    cursor: pointer;
 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
 .search-form .select-category
 {
-	float: left;
-	margin: 0px;
-	border: 0px;
-	height: 26px;
+    float: left;
+    margin: 0px;
+    border: 0px;
+    height: 26px;
 }
 
 .advanced-search
 {
-	margin-right: 5px;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 0.8em;
+    margin-right: 5px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em;
 }
 
 .browse
 {
-	margin-left: 5px;
-	display: inline-block;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 0.8em;
+    margin-left: 5px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.8em;
 }
 
 .main-content
 {
-	padding: 20px;
-	border: 1px solid #9C0014;
+    padding: 20px;
+    border: 1px solid #9C0014;
 }
 
 .user-login
 {
-	width: 45%;
+    width: 45%;
 }
 
 .user-login .input
 {
-	border: 1px solid #9C0014;
-	background: white;
-	padding: 1px;
-	font-size: 0.8rem;
-	width: 50%;
+    border: 1px solid #9C0014;
+    background: white;
+    padding: 1px;
+    font-size: 0.8rem;
+    width: 50%;
 }
 
 .register-form
 {
-	width: 45%;
+    width: 45%;
 }
 
 .register-form .input
 {
-	border: 1px solid #9C0014;
-	background: white;
-	padding: 1px;
-	font-size: 0.8rem;
-	width: 50%;
+    border: 1px solid #9C0014;
+    background: white;
+    padding: 1px;
+    font-size: 0.8rem;
+    width: 50%;
 }
 
 label
 {
-	display: inline-block;
-	font-size: 0.9rem;
-	width: 100px;
+    display: inline-block;
+    font-size: 0.9rem;
+    width: 100px;
 }
 
 .submit-button
 {
-	padding: 4px;
-	border: 1px solid #9C0014;
-	color: #9C0014;
-	width: 75px;
-	background-color: #FFFFFF;
-	font-size: 0.8rem;
+    padding: 4px;
+    border: 1px solid #9C0014;
+    color: #9C0014;
+    width: 75px;
+    background-color: #FFFFFF;
+    font-size: 0.8rem;
 }
 
 .submit-button:hover
 {
-	background-color: #9C0014;
-	color: white;
-	cursor: pointer;
+    background-color: #9C0014;
+    color: white;
+    cursor: pointer;
 }
 
 .book-listing
 {
-	display: inline-block;
-	background: rgb(230,230,230);
+    display: inline-block;
+    background: rgb(230,230,230);
     width: 100%;
 }
 
 .listing-image
 {
-	width: 150px;
-	height: 150px;
-	margin: 2px;
-	float: left;
+    width: 150px;
+    height: 150px;
+    margin: 2px;
+    float: left;
 }
 
 .listing-info
 {
-	float: left;
-	margin-top: 5px;
-	margin-left: 5px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 
 .listing-info:hover
 {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .listing-title
 {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .listing-price
 {
-	display: inline-block;
-	margin-top: 5px;
+    display: inline-block;
+    margin-top: 5px;
 }
 
-.listing-author
+.listing-seller
 {
-
+    float: right;
 }
