@@ -168,3 +168,8 @@ def render_book(request, book_isbn):
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
+
+def render_book_image(request, book_isbn):
+    isbn = cgi.escape(book_isbn)
+    book = lib.BOOK.get_by_key_name(isbn)
+    return redirect(book.picture)
