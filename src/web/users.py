@@ -24,9 +24,9 @@ def render_user(request, user_key):
     return response
 
 def render_message(request, to_user, error = None):
-    if request.POST['message'] and request.POST['subject']:
+    if request.method == 'POST':
         return send_message(request, to_user, request.POST['message'], request.POST['subject'])
-    else :
+    else:
         context = Context({ "send_user": to_user })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'message.html')
         response = HttpResponse()
