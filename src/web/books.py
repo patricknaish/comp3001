@@ -18,7 +18,7 @@ class BookAlreadyExistsError(Exception):
     def __init__(self):
         Exception.__init__(self, "A book with this ISBN has already been created.")
 
-def render_create_book(request):
+def render_create_book(request, error = None):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'create_book'):
@@ -32,20 +32,21 @@ def render_create_book(request):
             user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
-        context = Context({"user":user})
+        context = Context({ "error":error,
+                            "user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response
 
-def render_create_listing(request, error = None):
+def render_create_listing(request):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'list_book'):
         raise PermissionDenied
 
     # Handle the request if we're allowed to
-    if request.method == 'POST' and error is None:
+    if request.method == 'POST':
         return list_book_action(request)
     else:
         try:
@@ -53,7 +54,6 @@ def render_create_listing(request, error = None):
         except:
             user = None
         context = Context({
-                            "error": error,
                             "user": user,
                             "books": lib.BOOK.list_all_books()
                             })
