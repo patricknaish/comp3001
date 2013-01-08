@@ -35,10 +35,13 @@ def do_advanced_search(request):
 
     #Get all the entered details
     isbn = cgi.escape(request.POST['isbn'])
+    author = cgi.escape(request.POST['author'])
     all_books = lib.BOOK.list_all_books() #Grab all the books from the database
 
     for book in all_books:
         if isbn.lower() in book.isbn.lower():
+            matched_books.append(book)
+        if author.lower() in book.author.lower():
             matched_books.append(book)
     context = Context({ "book_list": matched_books,
                         "user": AuthManager.get_current_user(request)})
