@@ -44,6 +44,7 @@ def do_advanced_search(request):
             if isbn.lower() in book.isbn.lower():
                 matched_books.append(book)
         all_books = matched_books
+        matched_books = []
     if author:        
         for book in all_books_books:
             if author.lower() in book.author.lower():
