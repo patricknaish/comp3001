@@ -17,6 +17,18 @@
     <span><strong>ISBN:</strong> {{ book.isbn }}</span><br />
     </div>
 
+    <div class="other_listings">
+	    <h2>All listings of this book:</h2>
+	    <ul>
+	    {% for book in book_listings %}
+	        <li class="book-listing">
+	            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
+	            <span class="listing-price">&#163;{{ book_copy.price }}</span><span class="listing-author">{{ book.author }}</span>
+	        </li>
+	    {% endfor %}
+	    </ul>
+	</div>
+
 </div>
 
 <h2>Listings of this book:</h2>

@@ -1,4 +1,6 @@
 {% extends "pagebase.html" %}
+{% load price %}
+
 {% block title %}Account{% endblock %}
 
 {% block content %}
@@ -6,12 +8,29 @@
 	{% if message %}
 	<div class='message'>{{message}}</div> <br />
 	{% endif %}
+	<h2>Change Password</h2>
 	<form method="POST">
-		<span class="description">E-Mail: </span><span>{{user.email}}</span><br />
-		<span class="description">Password: </span><input type="password" name="password"><br />
-		<span class="description">Password (confirm): </span><input type="password" name="password_confirm"></br />
+		<label>E-Mail: </label><span>{{user.email}}</span><br />
+		<label>Password: </label><input type="password" name="password"><br />
+		<label>Condfirm Password: </label><input type="password" name="password_confirm"></br />
 		<input type="submit" value="Change Details"/>
 	</form>
+</div>
+
+<h2>Your Listings</h2>
+<div class="seller-listings">
+	<ul>
+	{% for listing in user_listings %}
+		<a href="/listing/{{ listing.key }}">
+			<li class="book-listing">
+				<img class="listing-image" href="{{ listing.book.image }}" />
+				<span class="listing-info">{{ listing.book.title }}</span>
+				<span class="listing-author">{{ listing.book.author }}</span>
+				<span class="listing-price">{{ listing.price|to_price }}</span>
+			</li>
+		</a>
+	{% endfor %}
+	</ul>
 </div>
 
 <div class="purchase-history">
@@ -21,20 +40,7 @@
 		<img class="listing-image" href="{{ purchase.book.image }}" />
 		<span class="listing-info">{{ purchase.book.title }}</span>
 		<span class="listing-author">{{ purchase.book.author }}</span>
-		<span class="listing-price">{{ purchase.book.price }}</span>
-	</li>
-{% endfor %}
-</ul>
-</div>
-
-<div class="seller-listings">
-<ul>
-{% for listing in seller_listings %}
-	<li class="book-listing">
-		<img class="listing-image" href="{{ listing.book.image }}" />
-		<span class="listing-info">{{ listing.book.title }}</span>
-		<span class="listing-author">{{ listing.book.author }}</span>
-		<span class="listing-price">{{ listing.book.price }}</span>
+		<span class="listing-price">{{ purchase.book.price|to_price }}</span>
 	</li>
 {% endfor %}
 </ul>

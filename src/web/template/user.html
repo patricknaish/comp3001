@@ -1,0 +1,30 @@
+{% extends "pagebase.html" %}
+{% load price %}
+
+{% block title %}TexTrader - {{ viewing_user.firstName }} {{ viewing_user.lastName }}{% endblock %}
+{% block content %}
+
+<div class="current_book_details">
+
+    <h2>User Details</h2>
+    <p>Name: {{ viewing_user.firstName }} {{ viewing_user.lastName }}</p>
+    <p>Current Year: {{ viewing_user.currentYear }}</p>
+    <p>Reputation: {{ viewing_user.reputation }}</p>
+
+    <div class="other_listings">
+	    <h2>All listings by this user:</h2>
+	    <ul>
+	    {% for listing in user_listings %}
+	        <a href="/listing/{{ listing.key }}">
+		        <li class="book-listing">
+		            <div class="listing-image">{{ listing.book.image }}<div><span class="listing-info">{{ listing.book.title }}</span>
+		            <span class="listing-price">&#163;{{ listing.price|to_price }}</span><span class="listing-author">{{ listing.book.author }}</span>
+		        </li>
+		    </a>
+	    {% endfor %}
+	    </ul>
+	</div>
+
+</div>
+
+{% endblock %}
