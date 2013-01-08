@@ -9,7 +9,7 @@
     <img src="/book/{{book.isbn}}/image" alt="cover">
 
     <h2>Seller Details</h2>
-    <p><strong>Name: {{ seller.firstName }} {{ seller.lastName }}</strong></p>
+    <p><strong>Name: <a href="/user/{{ seller.key }}">{{ seller.firstName }} {{ seller.lastName }}</a></strong></p>
     <p><strong>Reputation:</strong> {{ seller.reputation }}</p>
     <h2>Book Details</h2>
     <p>Title: {{ book.title }}</p>
