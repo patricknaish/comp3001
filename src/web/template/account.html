@@ -26,7 +26,7 @@
 				<img class="listing-image" href="{{ listing.book.image }}" />
 				<span class="listing-info">{{ listing.book.title }}</span>
 				<span class="listing-author">{{ listing.book.author }}</span>
-				<span class="listing-price">{{ listing.price }}</span>
+				<span class="listing-price">{{ listing.price|to_price }}</span>
 			</li>
 		</a>
 	{% endfor %}
