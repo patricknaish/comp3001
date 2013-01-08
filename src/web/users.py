@@ -8,11 +8,11 @@ from web import AuthManager
 import lib
 
 def render_user(request, user_key):
-	user = lib.USER.get(user_key)
+    user = lib.USER.get(user_key)
     context = Context({ 
     	                "viewing_user": user,
     	                "user": AuthManager.get_current_user(request)
-    	              })
+                      })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'user.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
