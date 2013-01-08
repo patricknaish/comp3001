@@ -49,3 +49,9 @@ def do_advanced_search(request):
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
+
+def search_predict(request):
+    book = lib.BOOK.get_by_key_name("123456789X")
+    response = HttpResponse()
+    response.write(json.dumps(book.as_dict()))
+    return response
