@@ -11,10 +11,7 @@ def render_basket(request):
     pp.merchant_id = "comp30_1354642631_biz@lists.cmalton.me.uk"
     pp.pdt_auth_token = "lwcdLbpiHFwN8PJr08Rv6JVvYcmp90ivctfoJSWgBvANCrG-7iXJ59e8Qy4"
     item = lib.PAYPAL.Item("TEST", "Test item", 10.00)
-    try:
-        user = lib.USER.get_by_key_name(request.session["user"])
-    except:
-        user = None
+    user = AuthManager.get_current_user(request)
     context = Context({"user": user})
     if 'items' in request.session.keys():
         context["basket"] = request.session['items']

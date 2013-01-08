@@ -16,10 +16,7 @@ def render_account(request, message = None):
     if request.method == 'GET':
         if not AuthManager.is_logged_in(request):
             return redirect("/login")
-        try:
-            user = lib.USER.get_by_key_name(request.session["user"])
-        except:
-            user = None
+        user = AuthManager.get_current_user(request)
         context = Context({ "user": user,
                             "message": message})
         response = HttpResponse()
@@ -29,10 +26,7 @@ def render_account(request, message = None):
     if request.method == 'POST': 
         if not AuthManager.is_logged_in(request):
             return redirect("/login")
-        try:
-            user = lib.USER.get_by_key_name(request.session["user"])
-        except:
-            user = None
+        user = AuthManager.get_current_user(request)
         try :
             password = cgi.escape(request.POST['password'])
             password2 = cgi.escape(request.POST['password_confirm'])

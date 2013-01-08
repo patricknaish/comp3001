@@ -25,10 +25,7 @@ def render_create_book(request):
     if request.method == 'POST':
         return create_book_action(request)
     else:
-        try:
-            user = lib.USER.get_by_key_name(request.session["user"])
-        except:
-            user = None
+        user = AuthManager.get_current_user(request)
         context = Context({"user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
@@ -45,10 +42,7 @@ def render_create_listing(request, error = None):
     if request.method == 'POST' and error is None:
         return list_book_action(request)
     else:
-        try:
-            user = lib.USER.get_by_key_name(request.session["user"])
-        except:
-            user = None
+        user = AuthManager.get_current_user(request)
         context = Context({
                             "error": error,
                             "user": user,
@@ -85,10 +79,7 @@ def list_book_action(request):
     except Exception as e:
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
-    try:
-        user = lib.USER.get_by_key_name(request.session["user"])
-    except:
-        user = None
+    user = AuthManager.get_current_user(request.session["user"])
     context = Context({
                         "user": user
                         })
