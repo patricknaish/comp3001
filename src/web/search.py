@@ -35,9 +35,17 @@ def do_advanced_search(request):
     matched_books = [] #Stores all the books that match the query
 
     #Get all the entered details
+    title = cgi.escape(request.POST['title'])
     isbn = cgi.escape(request.POST['isbn'])
     author = cgi.escape(request.POST['author'])
     all_books = lib.BOOK.list_all_books() #Grab all the books from the database
+
+    if title:
+        for book in all_books:
+            if title.lower() in book.title.lower():
+                matched_books.append(book)
+        all_books = matched_books
+        matched_books = []
 
     if isbn:
         for book in all_books:
