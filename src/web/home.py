@@ -13,5 +13,5 @@ def render_home(request):
     context["book_list"] = lib.USERBOOK.get_recent_listings()
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'home.html')
     response = HttpResponse()
-    response.write(render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
