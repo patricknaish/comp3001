@@ -5,13 +5,19 @@ This includes rendering the individual book pages, adding new books etc.
 
 import os
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.template import Context, loader
+from django.template.loader import render_to_string
 from django.core.exceptions import PermissionDenied
+from web import AuthManager
 import cgi
 import json
 import lib
 import time
-from web import AuthManager
+
+class BookAlreadyExistsError(Exception):
+    def __init__(self):
+        Exception.__init__(self, "A book with this ISBN has already been created.")
 
 def render_create_book(request):
     "Show the create book form"
@@ -27,20 +33,20 @@ def render_create_book(request):
             user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
-        context = Context({"user": user})
+        context = Context({"user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response
 
-def render_create_listing(request):
+def render_create_listing(request, error = None):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'list_book'):
         raise PermissionDenied
 
     # Handle the request if we're allowed to
-    if request.method == 'POST':
+    if request.method == 'POST' and error is None:
         return list_book_action(request)
     else:
         try:
@@ -48,6 +54,7 @@ def render_create_listing(request):
         except:
             user = None
         context = Context({
+                            "error": error,
                             "user": user,
                             "books": lib.BOOK.list_all_books()
                             })
@@ -60,7 +67,10 @@ def list_book_action(request):
     # Are we using a template or a new book?
     if not "template_isbn" in request.POST.keys():
         # Create new book
-        create_book_action(request)
+        try:
+            create_book_action(request)
+        except BookAlreadyExistsError as e:
+            return render_create_listing(request, str(e))
         isbn = cgi.escape(request.POST["isbn"])
     else:
         isbn = cgi.escape(request.POST["template_isbn"])
@@ -104,6 +114,13 @@ def create_book_action(request):
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
 
+    #Check if the book already exists
+    try:    
+        if lib.BOOK.get_by_key_name(isbn):
+            raise BookAlreadyExistsError()
+    except BookAlreadyExistsError as e:
+        return render_create_listing(request, str(e))
+
     context = Context()
     try:
         lib.BOOK.create_book(isbn, title, author, year, edition, publisher, rrp, picture)
@@ -121,4 +138,34 @@ def render_book_json(request):
     book = lib.BOOK.get_by_key_name(isbn)
     response = HttpResponse()
     response.write(json.dumps(book.as_dict()))
+    return response
+
+def render_listing(request, listing_id):
+    "Page to show a listing, as well as other listings of the same book"
+    listing_id = int(listing_id)
+    listing = lib.USERBOOK.get_by_id(listing_id)
+    book = listing.book
+    seller = listing.user
+    copies = lib.BOOK.list_book_copies(book.isbn)
+    context = Context({
+                       "book":book,
+                       "seller":seller,
+                       "current_book":listing,
+                       "same_books":copies, 
+                       "user": AuthManager.get_current_user(request)
+                       })
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'listing.html')
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
+    return response
+
+def render_book(request, book_isbn):
+    "Page to show the details of a single book"
+    context = Context({
+                        "user": AuthManager.get_current_user(request),
+                        "book": lib.BOOK.get_by_key_name(book_isbn)
+                        })
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
     return response

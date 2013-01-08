@@ -3,6 +3,9 @@
 {% block content %}
 <script type="text/javascript" src="/js/TemplateBook.js"></script>
 <h1>List a book for sale</h1>
+{% if error %}
+    <div class='error'>Error: {{error}}</div>
+{% endif %}
 <div id='accordion'>
 <h3>List a book based on a template</h3>
 <div id='existingbook'>
