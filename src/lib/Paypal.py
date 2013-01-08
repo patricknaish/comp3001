@@ -6,6 +6,7 @@ It handles going from Sandbox to Live, along with button generation.
 It was originally a PHP module that was ported for use in this application.
 """
 
+import urllib2
 
 class InvalidPaypalOptionException(Exception):
     """
@@ -340,3 +341,62 @@ class Paypal:
             </form>""" % (btnid, self.button_type)
 
         return form_html
+
+    def get_pdt_object(self, txn_id):
+        req = "cmd=_notify-synch&tx=%s&at=%s" % (txn_id, self.pdt_auth_token);
+        if self.sandbox:
+            url = 'https://www.sandbox.paypal.com/cgi-bin/webscr'
+        else:
+            url = 'https://www.paypal.com/cgi-bin/webscr'
+
+        pageFile = urllib2.urlopen(url, req)
+        lines = pageFile.readlines()
+        import logging
+        logging.info(lines)
+        keyarray = dict()
+        if lines[0].strip() == "SUCCESS":
+            for i in range(1, len(lines)):
+                key, val = lines[i].strip().split("=")
+                keyarray[key] = val;
+            pdtObj = PostbackData()
+            pdtObj.buyer = User()
+            pdtObj.buyer.Address_City = keyarray["address_city"]
+            pdtObj.buyer.Address_Country = keyarray["address_country"]
+            pdtObj.buyer.Address_Country_Code = keyarray["address_country_code"]
+            pdtObj.buyer.Address_Name = keyarray["address_name"]
+            pdtObj.buyer.Address_State = keyarray["address_state"]
+            pdtObj.buyer.Address_Confirmed = (keyarray["address_status"] == "confirmed")
+            pdtObj.buyer.Address_Street = keyarray["address_street"]
+            pdtObj.buyer.Address_Zip = keyarray["address_zip"]
+            pdtObj.buyer.First_Name = keyarray["first_name"]
+            pdtObj.buyer.Last_Name = keyarray["last_name"]
+            if "payer_business_name" in keyarray.keys():
+                pdtObj.buyer.Business_Name = keyarray["payer_business_name"]
+            pdtObj.buyer.Email = keyarray["payer_email"]
+            pdtObj.buyer.ID = keyarray["payer_id"]
+            pdtObj.buyer.Verified = (keyarray["payer_status"] == "verified")
+            if "context_phone" in keyarray.keys():
+                pdtObj.buyer.Phone = keyarray["contact_phone"]
+            pdtObj.buyer.Residence_Country = keyarray["residence_country"]
+            pdtObj.status = keyarray["payment_status"]
+            if pdtObj.status=="Pending":
+                pdtObj.pending_reason = keyarray["pending_reason"]
+            if  pdtObj.status == "Reversed" or pdtObj.status == "Refunded" or pdtObj.status=="Cancelled_Reversal":
+                pdtObj.pending_reason = keyarray["reason_code"]
+            pdtObj.payment_type = keyarray["payment_type"]
+            pdtObj.txid = keyarray["txn_id"]
+            pdtObj.type = keyarray["txn_type"]
+            if pdtObj.type == "cart":
+                for i in range(1, int(keyarray["num_cart_items"]) + 1):
+                    pass
+            elif pdtObj.type == "web_accept":
+                item = Item(keyarray["item_number"], keyarray["item_name"], keyarray["mc_gross"], keyarray["mc_currency"])
+                i = 1
+                while "option_name%d" % i in keyarray:
+                    opt = Option(keyarray["option_name%d" % i], keyarray["option_selection%d" % i])
+                    item.add_option(opt)
+                    i += 1
+                pdtObj.add_item(item)
+            return pdtObj
+        else:
+            raise PaypalPDTFailureException()
