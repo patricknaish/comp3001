@@ -22,7 +22,7 @@
     <br>
     <p><strong>Book condition: {{ current_book.condition }}</strong></p>
     <p><strong>Price: &#163;{{ current_book.price|to_price}}</strong></p>
-    <p><form action="/basket/add" method="GET">
+    <p><form action="/basket/add" method="post">
     <input type="hidden" name="item" value="{{ current_book.key }}" />
     <input type="submit" name="submit" value="Add to basket" />
     </form></p>
