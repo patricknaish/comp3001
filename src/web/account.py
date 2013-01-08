@@ -18,6 +18,7 @@ def render_account(request, message = None):
             return redirect("/login")
         user = AuthManager.get_current_user(request)
         context = Context({ "user": user,
+                            "user_listings": lib.USER.list_books(user.email),
                             "message": message})
         response = HttpResponse()
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
@@ -35,6 +36,7 @@ def render_account(request, message = None):
             lib.USER.change_password(user.email, password)
             message = "Successfully updated password."
             context = Context({ "user": user,
+                                "user_listings": lib.USER.list_books(user.email),
                                 "message": message})
             response = HttpResponse()
             tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')

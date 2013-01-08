@@ -18,12 +18,12 @@
 <h2>Your Listings</h2>
 <div class="seller-listings">
 	<ul>
-	{% for listing in seller_listings %}
+	{% for listing in user_listings %}
 		<li class="book-listing">
 			<img class="listing-image" href="{{ listing.book.image }}" />
 			<span class="listing-info">{{ listing.book.title }}</span>
 			<span class="listing-author">{{ listing.book.author }}</span>
-			<span class="listing-price">{{ listing.book.price }}</span>
+			<span class="listing-price">{{ listing.price }}</span>
 		</li>
 	{% endfor %}
 	</ul>
