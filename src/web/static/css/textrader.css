@@ -257,6 +257,11 @@ label
     width: 100%;
 }
 
+.listing-entry
+{
+    height: 155px;
+}
+
 .listing-image
 {
     max-width: 150px;
@@ -291,4 +296,12 @@ label
 .listing-seller
 {
     float: right;
+}
+
+.basket-remove {
+    float: left;
+}
+
+.paypal-button {
+    text-align: right;
 }

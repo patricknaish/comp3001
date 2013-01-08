@@ -1,4 +1,5 @@
 {% extends "pagebase.html" %}
+{% load price %}
 
 {% block title %}Checkout | TexTrader{% endblock %} 
 {% block content %}
@@ -8,19 +9,21 @@
 <ul>
 {% for entry in basket %}
 <li>
-<div class='entry_entry'>
-<span class='picture'><img src='{{ entry.picture }}' alt='Book image' /></span>
-<span class='title'>{{ entry.title }}</span>
-<span class='seller'>Seller: {{ entry.user.name }}</span>
-<span class='price'>&pound; {{ entry.price }}</span>
-<span class='remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
+<div class='listing-entry'>
+<span class='basket-remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
+<span><img class='listing-image' src='{{ entry.book.picture }}' alt='Book image' /></span>
+<span class='listing-title'>{{ entry.book.title }}</span>
+<span class='listing-seller'>Seller: {{ entry.user.firstName }} {{ entry.user.lastName }}</span>
+<span class='listing-price'>&pound; {{ entry.price|to_price }}</span>
 </div>
 </li>
 {% endfor %}
 </ul>
 </form>
+<div class='paypal-button'>
 {% autoescape off %}
 {{ ppcheckout }}
 {% endautoescape %}
+</div>
 </div>
 {% endblock %}
