@@ -7,18 +7,23 @@
 <div class="current_book_details">
 
     <div id='listing-image'><img class='listing-image' src="/book/{{book.isbn}}/image" alt="cover"></div>
-
-    <h2>Seller Details</h2>
-    <p><strong>Name: <a href="/user/{{ seller.key }}">{{ seller.firstName }} {{ seller.lastName }}</a></strong></p>
-    <p><strong>Reputation:</strong> {{ seller.reputation }}</p>
-    <h2>Book Details</h2>
-    <p>Title: {{ book.title }}</p>
-    <p>Author: {{ book.author }}</p>
-    <p>RRP: &#163;{{ book.rrp|to_price }}</p>
-    <p>Publisher: {{ book.publisher }}</p>
-    <p>Edition: {{ book.edition }}</p>
-    <p>Year: {{ book.year }}</p>
-    <p>ISBN: {{ book.isbn }}</p>
+    <h1>{{ book.title }}<h1>
+    <h2>Author: {{ book.author }} ({{ book.year }})</h2>
+    
+    <div class="listing-book-details">
+    <h3>Book Details</h3>
+    <span><strong>RRP:</strong> &#163;{{ book.rrp|to_price }}</span><br />
+    <span><strong>Publisher:</strong> {{ book.publisher }}</span><br />
+    <span><strong>Edition:</strong> {{ book.edition }}</span><br />
+    <span><strong>ISBN:</strong> {{ book.isbn }}</span><br />
+    </div>
+    
+    <div class="listing-seller-details">
+    <h3>Seller Details</h3>
+    <span><strong>Name:</strong> {{ seller.firstName }} {{ seller.lastName }}</span><br />
+    <span><strong>Reputation:</strong> {{ seller.reputation }}</span><br />
+    </div>
+    
     <br>
     <p><strong>Book condition: {{ current_book.condition }}</strong></p>
     <p><strong>Price: &#163;{{ current_book.price|to_price}}</strong></p>
@@ -33,24 +38,14 @@
     <ul>
     {% for book_copy in same_books %}
         {% if book_copy.key != listing.key %}
+        <a href="/listing/{{book_copy.key}}" class="listing-link">
         <li class="book-listing">
-            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-            <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span><span class="listing-author">{{ book.author }}</span>
+            <img class='listing-image-small' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
+            <span class="listing-info">{{ book_copy.book.title }}</span><br />
+            <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span>
+            <span class="listing-author"> ({{ book_copy.condition }})</span>
         </li>
-        {% endif %}
-    {% endfor %}
-    </ul>
-</div>
-
-<div class="related_listings">
-    <h2>Related books:</h2>
-    <ul>
-    {% for book in related_books %}
-        {% if book_copy.key != listing.key %}
-        <li class="book-listing">
-            <div class="listing-image">{{ book.image }}<div><span class="listing-info">{{ book.title }}</span>
-            <span class="listing-price">&#163;{{ book.price|to_price }}</span><span class="listing-author">{{ book.author }}</span>
-        </li>
+        </a>
         {% endif %}
     {% endfor %}
     </ul>
