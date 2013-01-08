@@ -63,5 +63,5 @@ def search_predict(request):
     for book in matched_books:
         matched_objects.append( { "label": book.title, "value": book.isbn } )
     response = HttpResponse()
-    response.write(json.dumps(matched_objects)
+    response.write(json.dumps(matched_objects))
     return response
