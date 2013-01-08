@@ -292,3 +292,13 @@ label
 {
     float: right;
 }
+
+.listing-book-details
+{
+    clear: both;
+}
+
+.listing-seller-details
+{
+    clear: both;
+}
