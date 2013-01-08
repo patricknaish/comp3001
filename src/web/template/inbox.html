@@ -5,6 +5,7 @@
 {% block content %}
 <div class="home">
     <h1>Inbox</h1>
+    {% if not message %}You have no messages{% endif %}
     {% for message in user_messages %}
         <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
         <div class="message-subject">{{ message.subject }}</div>
