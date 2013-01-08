@@ -16,7 +16,7 @@ def render_account(request, message = None):
     if request.method == 'GET':
         if not AuthManager.is_logged_in(request):
             return redirect("/login")
-        user = AuthManager.get_current_user()
+        user = AuthManager.get_current_user(request)
         context = Context({ "user_listings": lib.USER.list_books(user.email),
                             "message": message})
         response = HttpResponse()
@@ -47,7 +47,7 @@ def render_account(request, message = None):
     
 
 def render_account_test(request):
-    if not users.get_current_user():
+    if not users.get_current_user(request):
         return redirect("/login") #TODO: Pass account as a return-to page
     purchase_hist = [
     {"book": 
