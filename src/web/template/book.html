@@ -6,16 +6,16 @@
 
 <div class="current_book_details">
 
-    <img src="cover" alt="cover">
-
-    <h2>Book Details</h2>
-    <p>Title: {{ book.title }}</p>
-    <p>Author: {{ book.author }}</p>
-    <p>RRP: &#163;{{ book.rrp|to_price }}</p>
-    <p>Publisher: {{ book.publisher }}</p>
-    <p>Edition: {{ book.edition }}</p>
-    <p>Year: {{ book.year }}</p>
-    <p>ISBN: {{ book.isbn }}</p>
+    <div id='listing-image'><img class='listing-image' src="/book/{{book.isbn}}/image" alt="cover"></div>
+    <h1>{{ book.title }}<h1>
+    <h2>Author: {{ book.author }} ({{ book.year }})</h2>
+    
+    <div class="listing-book-details">
+    <span><strong>RRP:</strong> &#163;{{ book.rrp|to_price }}</span><br />
+    <span><strong>Publisher:</strong> {{ book.publisher }}</span><br />
+    <span><strong>Edition:</strong> {{ book.edition }}</span><br />
+    <span><strong>ISBN:</strong> {{ book.isbn }}</span><br />
+    </div>
 
 </div>
 
