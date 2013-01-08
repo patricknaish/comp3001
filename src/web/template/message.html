@@ -6,7 +6,7 @@
 <div class="home">
     <h1>Message</h1>
     <p>To: {{ send_user.firstName }} {{ send_user.lastName }}</p>
-    <form action="/message" method="POST">
+    <form action="/message/{{ send_user.key }}" method="POST">
         <p>Subject: <input type="text" name="subject" placeholder="Message subject" /></p>
         <p>Message:<br>
             <textarea name="message" placeholder="Enter your message here...">
