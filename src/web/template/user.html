@@ -1,0 +1,17 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - {{ viewing_user.firstName }} {{ viewing_user.lastName }}{% endblock %}
+{% block content %}
+
+<div class="current_book_details">
+
+    <img src="cover" alt="cover">
+
+    <h2>User Details</h2>
+    <p>Name: {{ viewing_user.firstName }} {{ viewing_user.lastName }}</p>
+    <p>Current Year: {{ viewing_user.currentYear }}</p>
+    <p>Reputation: {{ viewing_user.reputation }}</p>
+
+</div>
+
+{% endblock %}

@@ -8,7 +8,6 @@ urlpatterns = patterns('',
     (r'^basket/add$', 'web.checkout.render_basket_add'),
     (r'^basket$', 'web.checkout.render_basket'),
     (r'^account$', 'web.account.render_account'),
-    (r'^listing/(.*)$', 'web.books.render_listing'),
     (r'^book/(?P<book_isbn>(97(8|9))?\d{9}(\d|X))/image$', 'web.books.render_book_image'),
     (r'^book/(?P<book_isbn>(97(8|9))?\d{9}(\d|X))$', 'web.books.render_book'),
     (r'^login$', 'web.login.render_login'),
@@ -18,8 +17,11 @@ urlpatterns = patterns('',
     (r'^json/book$', 'web.books.render_book_json'),
     (r'^help$', 'web.help.render_help'),
     (r'^user/logout$', 'web.logout.render_logout'),
+    (r'^advsearch$', 'web.search.render_advanced_search'),
+    (r'^listing/(.*)$', 'web.books.render_listing'),
+    (r'^user/(.*)$', 'web.users.render_user'),
     (r'^search', 'web.search.render_search'),
-    (r'^advsearch$', 'web.search.render_advanced_search')
+    (r'^predict', 'web.search.search_predict')
 )
 
 handler403 = "web.errors.permission_denied"

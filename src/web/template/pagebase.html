@@ -5,6 +5,17 @@
         <script type='text/javascript' src="/js/jquery-1.8.3.min.js"></script>
         <script type='text/javascript' src="/js/jquery-ui-1.9.2.custom.min.js"></script>
         <title>{% block title %}{% endblock %}</title>
+        <script>
+        $(function() {
+            $( "#search" ).autocomplete({
+                source: "/predict",
+                minLength: 2,
+                select: function( event, ui ) {
+                    $("#search").text(ui.item.value);
+                }
+            });
+        });
+        </script>
     </head>
     <body>
         <div class="header">
@@ -34,7 +45,8 @@
                             <option value="none">All Categories</option>
                             <option value="other">Other</option>
                         </select>
-                        <input name="s" type="search" class="input" placeholder="Search" />
+                        <input name="s" type="search" id="search" class="input" placeholder="Search by book title" />
+                        <div id="searchPredictions"></div>
                         <input type="submit" class="button" value="Search" />
                     </div>
                     <span class="advanced-search"><a href="/advsearch">Advanced<br>Search</a></span>|

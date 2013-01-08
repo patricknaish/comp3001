@@ -63,7 +63,16 @@ def list_book_action(request):
         isbn = cgi.escape(request.POST["template_isbn"])
     book = lib.BOOK.get_by_key_name(isbn)
     user = AuthManager.get_current_user(request)
-    condition = cgi.escape(request.POST['condition'])
+    condition = int(request.POST['condition'])
+    #Convert condition from ints into the appropriate strings
+    if condition == 1:
+        condition = "New"
+    if condition == 2:
+        condition = "As New"
+    if condition == 3:
+        condition = "Used"
+    if condition == 4:
+        condition = "Damaged"
     price = float(cgi.escape(request.POST['price']))
     price = int(price * 100) #convert P.pp to interger pence
 
@@ -137,7 +146,7 @@ def render_listing(request, listing_id):
 
 def render_book(request, book_isbn):
     "Page to show the details of a single book"
-    context = Context({
+    context = Context({ "book_listings": lib.BOOK.get_book_copies(book_isbn),
                         "user": AuthManager.get_current_user(request),
                         "book": lib.BOOK.get_by_key_name(book_isbn)
                         })
