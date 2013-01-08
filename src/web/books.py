@@ -4,8 +4,8 @@ This includes rendering the individual book pages, adding new books etc.
 """
 
 import os
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseNotFound
+from django.shortcuts import render, redirect
 from django.template import Context, loader
 from django.template.loader import render_to_string
 from django.core.exceptions import PermissionDenied
@@ -158,4 +158,6 @@ def render_book(request, book_isbn):
 def render_book_image(request, book_isbn):
     isbn = cgi.escape(book_isbn)
     book = lib.BOOK.get_by_key_name(isbn)
+    if book == None:
+       return HttpResponseNotFound("Book was not found")
     return redirect(book.picture)
