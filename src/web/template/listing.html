@@ -40,9 +40,9 @@
         {% if book_copy.key != listing.key %}
         <a href="/listing/{{book_copy.key}}" class="listing-link">
         <li class="book-listing">
-            <img class='listing-image' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
+            <img class='listing-image-small' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
             <span class="listing-info">{{ book_copy.book.title }}</span>
-            <span class="listing-price"> - &#163;{{ book_copy.price|to_price }}</span>
+            <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span>
             <span class="listing-author"> ({{ book_copy.condition }})</span>
         </li>
         </a>
@@ -58,7 +58,7 @@
         {% if book_copy.key != listing.key %}
         <a href="/listing/{{book_copy.key}}" class="listing-link">
         <li class="book-listing">
-            <img class='listing-image' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
+            <img class='listing-image-small' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
             <span class="listing-info">{{ book_copy.book.title }}</span>
             <span class="listing-price"> - &#163;{{ book_copy.price|to_price }}</span>
             <span class="listing-author"> ({{ book_copy.condition }})</span>

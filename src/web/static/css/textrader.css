@@ -265,6 +265,14 @@ label
     float: left;
 }
 
+.listing-image-small
+{
+    max-width: 75px;
+    max-height: 75px;
+    margin: 2px;
+    float: left;
+}
+
 .listing-info
 {
     float: left;
