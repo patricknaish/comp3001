@@ -51,7 +51,13 @@
     <div>RRP: <input type="text" name="rrp" /></div>
     <div>Picture: <input type="text" name="picture" /></div>
     <p><label for="new_price">Your price:</label><input type="text" name="price" id="new_price" /></p>
-    <p><label for="new_condition">Condition of your item:</label><input type="text" name="condition" id="new_condition" /></p>
+    <p><label for="new_condition">Condition of your item:</label>
+        <select name="condition" id="new_condition" />
+            <option value="1">New</option>
+            <option value="2">As New</option>
+            <option value="3">Used</option>
+            <option value="4">Damaged</option>
+        </select></p>
     <div><input type="submit" value="Create"></div>
     </form>
 </div>

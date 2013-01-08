@@ -70,6 +70,15 @@ def list_book_action(request):
     book = lib.BOOK.get_by_key_name(isbn)
     user = AuthManager.get_current_user(request)
     condition = cgi.escape(request.POST['condition'])
+    #Convert condition from ints into the appropriate strings
+    if condition == 1:
+        condition = "New"
+    if condition == 2:
+        condition = "As New"
+    if condition == 3:
+        condition = "Used"
+    if condition == 4:
+        condition = "Damaged"
     price = float(cgi.escape(request.POST['price']))
     price = int(price * 100) #convert P.pp to interger pence
 
