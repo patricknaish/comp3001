@@ -16,6 +16,7 @@ def render_account(request, message = None):
     if request.method == 'GET':
         if not AuthManager.is_logged_in(request):
             return redirect("/login")
+        user = AuthManager.get_current_user()
         context = Context({ "user_listings": lib.USER.list_books(user.email),
                             "message": message})
         response = HttpResponse()
