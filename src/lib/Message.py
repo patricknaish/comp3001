@@ -3,7 +3,7 @@ Module containing methods for manipulating messages
 """
 
 from google.appengine.ext import db
-from lib import User
+from lib.User import User
 
 class Message(db.Model):
     """
@@ -11,10 +11,10 @@ class Message(db.Model):
     """
     fromUser = db.ReferenceProperty(User, 
                                     required=True, 
-                                    collection_name = 'messages')
+                                    collection_name = 'from_messages')
     toUser = db.ReferenceProperty(User, 
                                   required=True, 
-                                  collection_name = 'messages')
+                                  collection_name = 'to_messages')
     sent = db.DateTimeProperty(auto_now_add=True)
     subject = db.StringProperty()
     body = db.TextProperty()
