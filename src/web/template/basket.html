@@ -3,13 +3,14 @@
 
 {% block title %}Checkout | TexTrader{% endblock %} 
 {% block content %}
-<h1>Checkout</h1>
-<p>You have committed to buying the following items:</p>
+<h1>Your basket</h1>
 <div class='basket'>
+<form action='/checkout/update' method='POST'>
 <ul>
 {% for entry in basket %}
 <li>
 <div class='listing-entry'>
+<span class='basket-remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
 <span><img class='listing-image' src='{{ entry.book.picture }}' alt='Book image' /></span>
 <span class='listing-title'>{{ entry.book.title }}</span>
 <span class='listing-seller'>Seller: {{ entry.user.firstName }} {{ entry.user.lastName }}</span>
@@ -18,10 +19,11 @@
 </li>
 {% endfor %}
 </ul>
+</form>
 <div class='paypal-button'>
-{% autoescape off %}
-{{ ppcheckout }}
-{% endautoescape %}
+<form action="/do_order" method="post">
+<input type="submit" value="Commit to buy" />
+</form>
 </div>
 </div>
 {% endblock %}
