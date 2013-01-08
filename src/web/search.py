@@ -8,7 +8,7 @@ import lib
 
 def render_search(request, search_string):
     matched_books = []
-    all_books = lib.BOOK.list_all_books #Grab all the books from the database
+    all_books = lib.BOOK.list_all_books() #Grab all the books from the database
     for book in all_books:
         if search_string.lower() in book.title.lower():
         	matched_books.append(book)
