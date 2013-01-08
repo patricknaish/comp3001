@@ -12,7 +12,7 @@
 <div class='listing-entry'>
 <span><img class='listing-image' src='{{ entry.book.picture }}' alt='Book image' /></span>
 <span class='listing-title'>{{ entry.book.title }}</span>
-<span class='listing-seller'>Seller: {{ entry.user.name }}</span>
+<span class='listing-seller'>Seller: {{ entry.user.firstName }} {{ entry.user.lastName }}</span>
 <span class='listing-price'>&pound; {{ entry.price|to_price }}</span>
 <span class='listing-remove'><input type='checkbox' name='remove_{{ entry.key }}' value='1' /></span>
 </div>
