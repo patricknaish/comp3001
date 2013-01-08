@@ -155,7 +155,7 @@ def render_listing(request, listing_id):
 
 def render_book(request, book_isbn):
     "Page to show the details of a single book"
-    context = Context({ "book_listings": lib.BOOK.get_book_copies(book_isbn)
+    context = Context({ "book_listings": lib.BOOK.get_book_copies(book_isbn),
                         "user": AuthManager.get_current_user(request),
                         "book": lib.BOOK.get_by_key_name(book_isbn)
                         })
