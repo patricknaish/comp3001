@@ -54,7 +54,7 @@ def render_register_action(request):
         message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
             subject = "TexTrader: Your account details")
         message.to = "%s %s <%s>" % (firstname, lastname, email)
-        message.body = render_to_string(tmpl, context)
+        message.body = render_to_string(request, tmpl, context)
         message.send()
 
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.html')
