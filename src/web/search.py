@@ -39,11 +39,15 @@ def do_advanced_search(request):
     author = cgi.escape(request.POST['author'])
     all_books = lib.BOOK.list_all_books() #Grab all the books from the database
 
-    for book in all_books:
-        if isbn.lower() in book.isbn.lower():
-            matched_books.append(book)
-        if author.lower() in book.author.lower():
-            matched_books.append(book)
+    if isbn:
+        for book in all_books:
+            if isbn.lower() in book.isbn.lower():
+                matched_books.append(book)
+        all_books = matched_books
+    if author:        
+        for book in all_books_books:
+            if author.lower() in book.author.lower():
+                matched_books.append(book)
     context = Context({ "book_list": matched_books,
                         "user": AuthManager.get_current_user(request)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
