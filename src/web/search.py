@@ -7,9 +7,9 @@ from web import AuthManager
 import lib
 
 def render_search(request, search_string):
-	matched_books = []
-	all_books = lib.BOOK.list_all_books #Grab all the books from the database
-	for book in all_books:
+    matched_books = []
+    all_books = lib.BOOK.list_all_books #Grab all the books from the database
+    for book in all_books:
         if search_string.lower() == book.title.lower():
         	matched_books.append(book)
     context = Context({ "book_list": matched_books,
