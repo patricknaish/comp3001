@@ -52,7 +52,7 @@ def do_advanced_search(request):
 
     if author:
         for book in all_books:
-            if author.lower() in author.lower():
+            if author.lower() in book.author.lower():
                 matched_books.append(book)
 
     context = Context({ "book_list": matched_books,
