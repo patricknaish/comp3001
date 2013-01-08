@@ -69,7 +69,7 @@ def list_book_action(request):
         isbn = cgi.escape(request.POST["template_isbn"])
     book = lib.BOOK.get_by_key_name(isbn)
     user = AuthManager.get_current_user(request)
-    condition = cgi.escape(request.POST['condition'])
+    condition = int(request.POST['condition'])
     #Convert condition from ints into the appropriate strings
     if condition == 1:
         condition = "New"
