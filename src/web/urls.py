@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     (r'^user/logout$', 'web.logout.render_logout'),
     (r'^advsearch$', 'web.search.render_advanced_search'),
     (r'^listing/(.*)$', 'web.books.render_listing'),
-    (r'^user/(.*)$', 'web.user.render_user'),
+    (r'^user/(.*)$', 'web.users.render_user'),
     (r'^search', 'web.search.render_search'),
     (r'^predict', 'web.search.search_predict')
 )
