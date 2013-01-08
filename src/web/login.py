@@ -3,10 +3,11 @@ This module handles being logged in and out of the TexTreader website
 """
 import os
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.template import Context, loader
+from django.shortcuts import redirect
+from django.template import Context
 import lib
 from web import AuthManager
+from web.TemplateWrapper import render_to_string
 
 def render_login(request):
     """
@@ -52,5 +53,5 @@ def render_login_form(request, error = None):
     context = Context({"origin": origin, "error": error})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'login.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response

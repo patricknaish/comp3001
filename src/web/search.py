@@ -1,11 +1,11 @@
 import os
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.template import Context, loader
+from django.template import Context
 from web import AuthManager
 import cgi
 import json
 import lib
+from web.TemplateWrapper import render_to_string
 
 def render_search(request):
     search_string = request.GET['s']
@@ -14,21 +14,19 @@ def render_search(request):
     for book in all_books:
         if search_string.lower() in book.title.lower():
         	matched_books.append(book)
-    context = Context({ "book_list": matched_books,
-    	                "user": AuthManager.get_current_user(request)})
+    context = Context({ "book_list": matched_books })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_advanced_search(request):
     if request.method == 'POST':
         return do_advanced_search(request)
     else:
-        context = Context({"user": AuthManager.get_current_user(request)})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'advanced.html')
         response = HttpResponse()
-        response.write(loader.render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl))
         return response
 
 def do_advanced_search(request):
@@ -55,11 +53,10 @@ def do_advanced_search(request):
             if author.lower() in book.author.lower():
                 matched_books.append(book)
 
-    context = Context({ "book_list": matched_books,
-                        "user": AuthManager.get_current_user(request)})
+    context = Context({ "book_list": matched_books })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(loader.render_to_string(request, tmpl, context))
     return response
 
 def search_predict(request):

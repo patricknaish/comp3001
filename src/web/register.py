@@ -1,12 +1,13 @@
 import os
 from django.http import HttpResponse
-from django.template.loader import render_to_string
 from django.template import Context
 from google.appengine.api import mail
 import cgi
 
 # User functions
 import lib
+
+from web.TemplateWrapper import render_to_string
 
 class EmailDoesntMatchError(Exception):
     def __init__(self):
@@ -53,13 +54,12 @@ def render_register_action(request):
         message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
             subject = "TexTrader: Your account details")
         message.to = "%s %s <%s>" % (firstname, lastname, email)
-        message.body = render_to_string(tmpl, context)
+        message.body = render_to_string(request, tmpl, context)
         message.send()
 
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.html')
-        context = Context()
         response = HttpResponse()
-        response.write(render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl))
         return response
 
     except EmailDoesntMatchError as e:
@@ -72,7 +72,7 @@ def render_register_form(request, error = None):
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registerform.html')
     context = Context({"error": error})
     response = HttpResponse()
-    response.write(render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_forgot_password(request):
@@ -109,13 +109,12 @@ def render_forgotpw_action(request):
         message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
             subject = "TexTrader: Password reset")
         message.to = "%s %s <%s>" % (user.firstName, user.lastName, user.email)
-        message.body = render_to_string(tmpl, context)
+        message.body = render_to_string(request, tmpl, context)
         message.send()
 
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'pwresetsuccess.html')
-        context = Context()
         response = HttpResponse()
-        response.write(render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl))
         return response
 
     except EmailDoesntMatchError as e:
@@ -125,5 +124,5 @@ def render_forgotpw_form(request, error = None):
     tmpl = os.path.join(os.path.dirname(__file__), 'template', 'pwreset.html')
     context = Context({"error": error})
     response = HttpResponse()
-    response.write(render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response

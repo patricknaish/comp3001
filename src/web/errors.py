@@ -1,22 +1,19 @@
 import os
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
-from django.template.loader import render_to_string
 from django.template import Context
-import AuthManager
+from web.TemplateWrapper import render_to_string
 
 def page_not_found(request):
-    context = Context({"user": AuthManager.get_current_user(request)})
-    tmpl =  os.path.join(os.path.dirname(__file__), 'template', '500.html')
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', '404.html')
     response = HttpResponse()
-    response.write(render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl))
     return response
 
 def server_error(request):
-    context = Context({"user": AuthManager.get_current_user(request)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', '500.html')
     response = HttpResponse()
-    response.write(render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl))
     return response
 
 def permission_denied(request):

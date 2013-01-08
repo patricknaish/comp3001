@@ -15,12 +15,11 @@ def render_user(request, user_key):
     user = lib.USER.get(user_key)
     user_listings = lib.USER.list_books(user.email)
     context = Context({ "user_listings": user_listings,
-    	                "viewing_user": user,
-    	                "user": AuthManager.get_current_user(request)
+    	                "viewing_user": user
                       })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'user.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_message(request, to_user, error = None):

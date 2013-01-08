@@ -7,9 +7,9 @@ import os
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.template import Context, loader
-from django.template.loader import render_to_string
 from django.core.exceptions import PermissionDenied
 from web import AuthManager
+from web.TemplateWrapper import render_to_string
 import cgi
 import json
 import lib
@@ -29,7 +29,7 @@ def render_create_book(request):
         context = Context({"user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
-        response.write(loader.render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl, context))
         return response
 
 def render_create_listing(request, error = None):
@@ -50,7 +50,7 @@ def render_create_listing(request, error = None):
                             })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book.html')
         response = HttpResponse()
-        response.write(loader.render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl, context))
         return response
 
 def list_book_action(request):
@@ -93,7 +93,7 @@ def list_book_action(request):
                         "user": user
                         })
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def create_book_action(request):
@@ -116,7 +116,7 @@ def create_book_action(request):
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book_failure.html')
 
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_book_json(request):
@@ -141,18 +141,20 @@ def render_listing(request, listing_id):
                        })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'listing.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_book(request, book_isbn):
     "Page to show the details of a single book"
-    context = Context({ "book_listings": lib.BOOK.get_book_copies(book_isbn),
+    copies = lib.BOOK.list_book_copies(book_isbn)
+    context = Context({
                         "user": AuthManager.get_current_user(request),
-                        "book": lib.BOOK.get_by_key_name(book_isbn)
+                        "book": lib.BOOK.get_by_key_name(book_isbn),
+                        "book_listings": copies
                         })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'book.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_book_image(request, book_isbn):
