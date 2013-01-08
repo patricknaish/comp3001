@@ -19,12 +19,14 @@
 <div class="seller-listings">
 	<ul>
 	{% for listing in user_listings %}
-		<li class="book-listing">
-			<img class="listing-image" href="{{ listing.book.image }}" />
-			<span class="listing-info">{{ listing.book.title }}</span>
-			<span class="listing-author">{{ listing.book.author }}</span>
-			<span class="listing-price">{{ listing.price }}</span>
-		</li>
+		<a href="/listing/{{ listing.key }}">
+			<li class="book-listing">
+				<img class="listing-image" href="{{ listing.book.image }}" />
+				<span class="listing-info">{{ listing.book.title }}</span>
+				<span class="listing-author">{{ listing.book.author }}</span>
+				<span class="listing-price">{{ listing.price }}</span>
+			</li>
+		</a>
 	{% endfor %}
 	</ul>
 </div>
