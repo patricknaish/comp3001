@@ -45,7 +45,7 @@ def render_create_listing(request, error = None):
         raise PermissionDenied
 
     # Handle the request if we're allowed to
-    if request.method == 'POST' and error is not None:
+    if request.method == 'POST' and error is None:
         return list_book_action(request)
     else:
         try:
