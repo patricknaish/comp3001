@@ -35,9 +35,10 @@ def render_message(request, to_user, error = None):
         return response
 
 def send_message(request, to_user, message, subject):
+    send_to_user = lib.USER.get(to_user)
+    send_from_user = AuthManager.get_current_user(request)
     try:
-        user = lib.USER.get(to_user)
-        lib.MESSAGE.create_message(AuthManager.get_current_user(request).email,user.email, subject, message)
+        lib.MESSAGE.create_message(send_from_user.email,send_to_user.email, subject, message)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'send_message_success.html')
     except Exception as e:
         context = Context({"error": str(e)})
