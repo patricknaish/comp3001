@@ -2,8 +2,15 @@
 import os
 from django.http import HttpResponse
 from django.template import Context, loader
+from django.shortcuts import redirect
 
 import lib
+
+def render_basket_add(request):
+    if not "items" in request.session:
+        request.session["items"] = list()
+    request.session["items"].append(request.POST["item"])
+    return redirect(request.META.HTTP_REFERER)
 
 def render_basket(request):
     pp = lib.PAYPAL.Paypal();
