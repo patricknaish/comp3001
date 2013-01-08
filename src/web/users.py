@@ -31,6 +31,7 @@ def render_message(request, to_user, error = None):
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'message.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
+        return response
 
 def send_message(request, to_user, message, subject):
     try:
