@@ -3,6 +3,9 @@
 
 {% block content %}
 <div class="account-settings">
+	{% if message %}
+	<div class='message'>{{message}}</div> <br />
+	{% endif %}
 	<form method="POST">
 		<span class="description">E-Mail: </span><span>{{user.email}}</span><br />
 		<span class="description">Password: </span><input type="password" name="password"><br />
@@ -15,10 +18,10 @@
 <ul>
 {% for purchase in purchase_history %}
 	<li class="book-listing">
-        <img class="listing-image" href="{{ purchase.book.image }}" />
+		<img class="listing-image" href="{{ purchase.book.image }}" />
 		<span class="listing-info">{{ purchase.book.title }}</span>
 		<span class="listing-author">{{ purchase.book.author }}</span>
-        <span class="listing-price">{{ purchase.book.price }}</span>
+		<span class="listing-price">{{ purchase.book.price }}</span>
 	</li>
 {% endfor %}
 </ul>
@@ -28,7 +31,7 @@
 <ul>
 {% for listing in seller_listings %}
 	<li class="book-listing">
-        <img class="listing-image" href="{{ listing.book.image }}" />
+		<img class="listing-image" href="{{ listing.book.image }}" />
 		<span class="listing-info">{{ listing.book.title }}</span>
 		<span class="listing-author">{{ listing.book.author }}</span>
 		<span class="listing-price">{{ listing.book.price }}</span>
