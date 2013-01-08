@@ -34,7 +34,14 @@
         </table>
     </div>
     <p><label for="existing_price">Your price:</label><input type="text" name="price" id="existing_price" /></p>
-    <p><label for="existing_condition">Condition of your item:</label><input type="text" name="condition" id="existing_condition" /></p>
+    <p><label for="existing_condition">Condition of your item:</label>
+        <select name="condition" id="new_condition" />
+            <option value="1">New</option>
+            <option value="2">As New</option>
+            <option value="3">Used</option>
+            <option value="4">Damaged</option>
+        </select>
+    </p>
     <p><input type='submit' value='List my item' /></p>
     </form>
 </div>
