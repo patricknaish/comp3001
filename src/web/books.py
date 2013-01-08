@@ -14,7 +14,11 @@ import json
 import lib
 import time
 
-def render_create_book(request):
+class BookAlreadyExistsError(Exception):
+    def __init__(self):
+        Exception.__init__(self, "A book with this ISBN has already been created.")
+
+def render_create_book(request, error = None):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'create_book'):
@@ -28,7 +32,8 @@ def render_create_book(request):
             user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
-        context = Context({"user": user})
+        context = Context({ "error":error,
+                            "user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
@@ -104,6 +109,13 @@ def create_book_action(request):
     rrp = float(cgi.escape(request.POST['rrp']))
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
+
+    #Check if the book already exists
+    try:    
+        if lib.BOOK.get_by_key_name(isbn):
+            raise BookAlreadyExistsError()
+    except BookAlreadyExistsError as e:
+        return render_create_listing(request, str(e))
 
     context = Context()
     try:
