@@ -298,6 +298,10 @@ label
     float: right;
 }
 
+.basket-remove {
+    float: left;
+}
+
 .paypal-button {
     text-align: right;
 }
