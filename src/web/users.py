@@ -27,8 +27,8 @@ def render_message(request, to_user, error = None):
     if request.method == 'POST':
         return send_message(request, to_user, request.POST['message'], request.POST['subject'])
     else:
-        user = lib.USER.get(to_user)
-        context = Context({ "send_user": user })
+        context = Context({ "send_user": lib.USER.get(to_user),
+                            "user": AuthManager.get_current_user(request) })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'message.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
