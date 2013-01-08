@@ -22,7 +22,7 @@ def render_search(request):
 
 def render_advanced_search(request):
     if request.method == 'POST':
-        do_advanced_search(request)
+        return do_advanced_search(request)
     else:
         context = Context({"user": AuthManager.get_current_user(request)})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'advanced.html')
