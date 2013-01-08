@@ -340,3 +340,62 @@ class Paypal:
             </form>""" % (btnid, self.button_type)
 
         return form_html
+
+    def get_pdt_object(self, txn_id)
+        req = "cmd=_notify-synch&tx=%s&at=%s" (txn_id, self.pdt_auth_token);
+        url = 'https://www.' . (self.sandbox ? 'sandbox.' : '') . 'paypal.com/cgi-bn/webscr';
+
+        pageFile = urllib2.urlopen(url, req)
+        lines = pageFile.readlines()
+
+
+        keyarray = dict()
+        if (strcmp ($lines[0], "SUCCESS") == 0) {
+            for i in range(len(lines)):
+                key, val = lines[i].split("=")
+                keyarray[key] = val;
+            pdtObj = PaypalPostbackData()
+            pdtObj.Buyer = new PaypalMember()
+            pdtObj.Buyer.Address_City = keyarray["address_city"]
+            pdtObj.Buyer.Address_Country = keyarray["address_country"]
+            pdtObj.Buyer.Address_Country_Code = keyarray["address_country_code"]
+            pdtObj.Buyer.Address_Name = keyarray["address_name"]
+            pdtObj.Buyer.Address_State = keyarray["address_state"]
+            pdtObj.Buyer.Address_Confirmed = (keyarray["address_status"] == "confirmed")
+            pdtObj.Buyer.Address_Street = keyarray["address_street"]
+            pdtObj.Buyer.Address_Zip = keyarray["address_zip"]
+            pdtObj.Buyer.First_Name = keyarray["first_name"]
+            pdtObj.Buyer.Last_Name = keyarray["last_name"]
+            pdtObj.Buyer.Business_Name = keyarray["payer_business_name"]
+            pdtObj.Buyer.Email = keyarray["payer_email"]
+            pdtObj.Buyer.ID = keyarray["payer_id"]
+            pdtObj.Buyer.Verified = (keyarray["payer_status"] == "verified")
+            pdtObj.Buyer.Phone = keyarray["contact_phone"]
+            pdtObj.Buyer.Residence_Country = keyarray["residence_country"]
+            pdtObj.Status = keyarray["payment_status"]
+            if pdtObj.Status=="Pending":
+                pdtObj.PendingReason = keyarray["pending_reason"]
+            if  pdtObj.Status == "Reversed" or pdtObj.Status == "Refunded" or pdtObj.Status=="Cancelled_Reversal":
+                pdtObj.PendingReason = keyarray["reason_code"]
+            pdtObj.PaymentType = $keyarray["payment_type"]
+            pdtObj.TXID = $keyarray["txn_id"]
+            pdtObj.Type = $keyarray["txn_type"]
+            if pdtObj.Type == "cart":
+                for i in range(1, int(keyarray["num_cart_items"]) + 1):
+                    pass
+            elif pdtObj.Type == "web_accept":
+                item = new PaypalItem()
+                item.Code = keyarray["item_number"]
+                item.Name = keyarray["item_name"]
+                item.Cost = keyarray["mc_gross"]
+                item.Currency = keyarray["mc_currency"]
+                i = 1
+                while("option_name%d" % i in keyarray){
+                    opt = new PaypalOption(keyarray["option_name%d" % i], keyarray["option_selection%d" % i])
+                    item.addOption(opt)
+                    i++
+                }
+                pdtObj.addItem(item)
+        return pdtObj
+    else:
+      raise PaypalPDTFailureException()
