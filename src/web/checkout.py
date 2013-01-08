@@ -16,7 +16,7 @@ def render_basket_add(request):
     return redirect(render_basket)
 
 def render_basket_remove(request, listing_id):
-    if "items" in request.session.keys() and listing_id in request.sessions["items"]:
+    if "items" in request.session.keys() and listing_id in request.session["items"]:
         del request.session["items"][listing_id]
     return redirect(render_basket)
 
