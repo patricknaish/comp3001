@@ -10,7 +10,7 @@ def render_basket_add(request):
     if not "items" in request.session.keys():
         request.session["items"] = list()
     request.session["items"].append(request.POST["item"])
-    return redirect(request.META.HTTP_REFERER)
+    return redirect(render_basket)
 
 def render_basket(request):
     pp = lib.PAYPAL.Paypal();
