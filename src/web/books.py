@@ -67,7 +67,10 @@ def list_book_action(request):
     # Are we using a template or a new book?
     if not "template_isbn" in request.POST.keys():
         # Create new book
-        create_book_action(request)
+        try:
+            create_book_action(request)
+        except BookAlreadyExistsError as e:
+            return render_create_listing(request, str(e))
         isbn = cgi.escape(request.POST["isbn"])
     else:
         isbn = cgi.escape(request.POST["template_isbn"])
