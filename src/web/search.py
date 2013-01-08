@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.template import Context, loader
 from web import AuthManager
 import cgi
+import json
 import lib
 
 def render_search(request):
@@ -51,7 +52,16 @@ def do_advanced_search(request):
     return response
 
 def search_predict(request):
-    book = lib.BOOK.get_by_key_name("123456789X")
+    matched_books = []
+    html = ""
+    search = cgi.escape(request.GET['term'])
+    book_list = lib.BOOK.list_all_books()
+    for book in book_list:
+        if search.lower() in book.title.lower():
+            matched_books.append(book)
+    matched_objects = list()
+    for book in matched_books:
+        matched_objects.append( { "label": book.title, "value": book.isbn } )
     response = HttpResponse()
-    response.write(json.dumps(book.as_dict()))
+    response.write(json.dumps(matched_objects)
     return response
