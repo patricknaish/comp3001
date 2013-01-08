@@ -9,7 +9,7 @@
     {% for book in book_list %}
         <a href="/book/{{book.isbn}}" class="listing-link">
         <li class="book-listing">
-            <div class="listing-image"><img src="{{book.picture}}" /></div>
+            <div class="listing-image"><img class="listing-image" src="{{book.picture}}" /></div>
             <div class="listing-info">
                 <span class="listing-title">{{ book.title }}</span> - <span class="listing-author">{{ book.author }}</span><br>
             </div>
