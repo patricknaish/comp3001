@@ -70,9 +70,7 @@ def render_pp_return(request):
         total_cost += userbook.price
 
     request.session["items"] = list()
-    logging.info(pdt_data.items[0].cost)
-    logging.info(total_cost)
-    if total_cost == pdt_data.items[0].cost * 100:
+    if total_cost == float(pdt_data.items[0].cost) * 100:
         # Good - the totals match
         response = HttpResponse()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'checkout_complete.html')
