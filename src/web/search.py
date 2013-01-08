@@ -64,7 +64,6 @@ def do_advanced_search(request):
 
 def search_predict(request):
     matched_books = []
-    html = ""
     search = cgi.escape(request.GET['term'])
     book_list = lib.BOOK.list_all_books()
     for book in book_list:
