@@ -1,4 +1,6 @@
 {% extends "pagebase.html" %}
+{% load price %}
+
 {% block title %}Account{% endblock %}
 
 {% block content %}
@@ -38,7 +40,7 @@
 		<img class="listing-image" href="{{ purchase.book.image }}" />
 		<span class="listing-info">{{ purchase.book.title }}</span>
 		<span class="listing-author">{{ purchase.book.author }}</span>
-		<span class="listing-price">{{ purchase.book.price }}</span>
+		<span class="listing-price">{{ purchase.book.price|to_price }}</span>
 	</li>
 {% endfor %}
 </ul>
