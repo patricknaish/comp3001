@@ -14,7 +14,6 @@ def render_search(request, search_string):
         	matched_books.append(book)
     context = Context({ "book_list": matched_books,
     	                "user": AuthManager.get_current_user(request)})
-    context["book_list"] = lib.USERBOOK.get_recent_listings()
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'search.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
