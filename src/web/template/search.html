@@ -5,6 +5,7 @@
 {% block content %}
 <div class="home">
     <h1>Search Results</h1>
+    {% if not book_list %}There are no results for your search query. <a href="/advsearch">Advanced search</a> is available if you have more details about the book. {% endif %}
     <ul class="book-list">
     {% for book in book_list %}
         <a href="/book/{{book.isbn}}" class="listing-link">
