@@ -38,8 +38,8 @@ def send_message(request, to_user, message, subject):
     try:
         lib.MESSAGE.create_message(AuthManager.get_current_user(request),to_user, subject, message)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'send_message_success.html')
-    except Exception:
-        context = Context({"error": e})
+    except Exception as e:
+        context = Context({"error": str(e)})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'send_message_failure.html')
 
     response = HttpResponse()
