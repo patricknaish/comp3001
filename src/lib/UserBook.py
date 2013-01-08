@@ -23,15 +23,20 @@ class UserBook(db.Model):
     price = db.IntegerProperty()
     condition = db.StringProperty()
     listed_stamp = db.IntegerProperty()
+    sold_stamp = db.IntegerProperty()
+    sold_to_user = db.StringProperty()
 
     @staticmethod
     def get_recent_listings():
         "Gets all listings created in the last 24 hours"
         books = []
         book_ref = UserBook.gql("WHERE listed_stamp > %d" % (time.time() - 86400, ))
-        logging.info("Running GQL for get_recent_listings")
         for book in book_ref.run():
-            logging.info(book)
-            books.append(book)
+            if not book.sold_to_user:
+                books.append(book)
         return books
 
+    def mark_as_sold(self, user):
+        self.sold_to_user = user.email
+        self.sold_stamp = int(time.time())
+        self.put()
