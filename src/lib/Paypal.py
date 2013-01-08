@@ -341,7 +341,7 @@ class Paypal:
 
         return form_html
 
-    def get_pdt_object(self, txn_id)
+    def get_pdt_object(self, txn_id):
         req = "cmd=_notify-synch&tx=%s&at=%s" (txn_id, self.pdt_auth_token);
         url = 'https://www.' . (self.sandbox ? 'sandbox.' : '') . 'paypal.com/cgi-bn/webscr';
 
