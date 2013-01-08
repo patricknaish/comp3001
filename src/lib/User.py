@@ -212,3 +212,19 @@ class User(db.Model):
             courses.append(course_res)
         return courses
 
+    @staticmethod
+    def list_messages(user_email):
+        """
+        List all messages associated with a user
+        """
+        from lib.Message import Message
+        messages = []
+        user_ref = User.get_by_key_name(user_email)
+        user_message_from_ref = db.GqlQuery("SELECT * FROM Message WHERE " +\
+                                            "fromUser = :1",
+                                            user_ref)
+        user_message_to_ref = db.GqlQuery("SELECT * FROM Message WHERE " +\
+                                            "toUser = :1",
+                                            user_ref)
+        user_message_from_ref.extend(user_message_to_ref)
+        return user_message_from_ref
