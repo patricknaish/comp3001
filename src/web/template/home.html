@@ -7,7 +7,7 @@
     <h1>Recent listings</h1>
     <ul class="book-list">
     {% for listing in book_list %}
-        <a href="/book/{{listing.key}}" class="listing-link">
+        <a href="/listing/{{listing.key}}" class="listing-link">
         <li class="book-listing">
             <div class="listing-image">{{ listing.book.image }}</div>
             <div class="listing-info">
