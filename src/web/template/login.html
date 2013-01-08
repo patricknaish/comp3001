@@ -2,10 +2,22 @@
 
 {% block title %}TexTrader Login{% endblock %}
 {% block content %}
-<div id="user_login">
-    <form action="/user/login" method="POST">
-        <p><input type="text" name="username" value="Username" /></p>
-        <p><input type="password" name="password" value="Password" /> <input type="submit" value="Log in" /></p>
+<div class="user-login">
+    <h1>Login</h1>
+    {% if origin %}
+    <div class="warning">You need to be logged in before you can do that.</div>
+    {% endif %}
+    {% if error %}
+    <div class="error">{{error}}</div>
+    {% endif %}
+    <form action="/login" method="POST">
+        <fieldset>
+            {% if origin %}<input type="hidden" name="from" value="{{origin}}" />{% endif %}
+            <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" autofocus="autofocus" /></p>
+            <p><label>Password:</label><input type="password" name="password" placeholder="Password" class="input" /></p>
+            <p><small>( <a href="/login/forgotten">Forgotten your password?</a> )</small></p>
+            <p><input type="submit" value="Login" class="submit-button" /></p>
+        </fieldset>
     </form>
 </div>
 {% endblock %}

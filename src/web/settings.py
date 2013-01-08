@@ -11,7 +11,7 @@ INSTALLED_APPS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'web.middleware.sessions.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
 )
 
@@ -29,3 +29,5 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template'),)
 # web.urls contains the url mapping to functions
 ROOT_URLCONF = 'web.urls'
 
+# Turn on debugging
+DEBUG = True

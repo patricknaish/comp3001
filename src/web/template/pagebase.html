@@ -1,6 +1,9 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="/css/textrader.css" />
+        <link rel="stylesheet" type="text/css" href="/css/blitzer/jquery-ui-1.9.2.custom.min.css" />
+        <script type='text/javascript' src="/js/jquery-1.8.3.min.js"></script>
+        <script type='text/javascript' src="/js/jquery-ui-1.9.2.custom.min.js"></script>
         <title>{% block title %}{% endblock %}</title>
     </head>
     <body>
@@ -8,43 +11,88 @@
             <div class="banner">
                 <a href="/"><img src="/images/logo.png" alt="TexTrader Logo" /></a>
             </div>
-            <ul class="navigation-bar">
-                {% if gae_user != None %}
-                <a href="/"><li>Home</li></a>
-                <a href="/help"><li>Help</li></a>
-                <a href="/account"><li>My Account</li></a>
-                <a href="/search"><li>Search</li></a>
-                <a href="/basket"<li class="basket">Basket(0)</li>
+            <nav class="navigation-bar">
+                {% if user != None %}
+                <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
+                <a href="/list_book">Sell</a> | <a href="/basket">Basket(0)</a>
                 {% else %}
-                <a href="/"><li>Home</li></a>
-                <a href="/help"><li>Help</li></a>
-                <a href="/login"><li>Login</li></a>
-                <a href="/register"><li>Register</li></a>
+                <a href="/">Home</a> | <a href="/help">Help</a> | <a href="#login-box" class="login-window">Login</a> | 
+                <a href="/register">Register</a>
                 {% endif %}
-            </ul>
+            </nav>
         </div>
 
         <div class="search-bar">
             <div class="welcome-user">
-                Welcome {% if gae_user != None %}Name{% else %} Guest{% endif %}!
+                <small>Welcome, <strong>{% if user != None %}{{ user.firstName }}!<br>(<a href="/user/logout">logout</a>)
+                {% else %} Guest!{% endif %}</strong></small>
             </div>
             <div class="search-form">
                 <form action="/search" method="get">
-                    <input type="text" />
-                    <select>
-                        <option="none">Categories</option>
-                    </select>
-                    <input type="submit" value="Search" />
-                    <a href="/search">Advanced Search</a>
+                    <div class="search-fields">
+                        <select class="select-category">
+                            <option value="none">All Categories</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <input name="s" type="search" class="input" placeholder="Search" />
+                        <input type="submit" class="button" value="Search" />
+                    </div>
+                    <span class="advanced-search"><a href="/advsearch">Advanced<br>Search</a></span>|
+                    <span class="browse"><a href="/browse">Browse</a></span>
                 </form>
             </div>
         </div>
-
         <div class=main-content>
         {% block content %}{% endblock %}
         </div>
 
         <div class="footer">
         </div>
+
+        <!-- Login box html -->
+        <div id="login-box" class="login-popup">
+            <span class="small"><a href="#" class="close-window">close window</a></span>
+            <form method="post" class="login-form" action="/login">
+                <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" required autofocus="autofocus" /></p>
+                <p><label>Password:</label><input type="password" name="password" placeholder="Password" required class="input" /><br>
+                    <span class="smaller"><a href="/login/forgotten">Forgotten your password?</a></span></p>
+                <p><input type="submit" value="Login" class="submit-button" /></p>
+            </form>
+            <hr class="fade">
+            <span class="small">Don't have an account?<br>Get one <a href="/register">here</a></span>
+        </div>
+
+        <script>
+        $(document).ready(function() {
+            $('a.login-window').click(function() {
+                
+                var loginBox = $(this).attr('href');
+                $(loginBox).fadeIn(300);
+                
+                var popMargTop = ($(loginBox).height() + 24) / 2; 
+                var popMargLeft = ($(loginBox).width() + 24) / 2; 
+                
+                $(loginBox).css({ 
+                    'margin-top' : -popMargTop,
+                    'margin-left' : -popMargLeft
+                });
+                
+                //Mask the body
+                $('body').append('<div id="mask"></div>');
+                $('#mask').fadeIn(300);
+                
+                return false;
+            });
+            
+            // When clicking on the button close or the mask layer the popup closed
+            $('a.close-window, #mask').live('click', function() { 
+                $('#mask , .login-popup').fadeOut(300 , function() {
+                   $('#mask').remove();  
+            }); 
+            return false;
+            });
+        });
+        </script>
+
     </body>
 </html>
