@@ -17,7 +17,8 @@ urlpatterns = patterns('',
     (r'^json/book$', 'web.books.render_book_json'),
     (r'^help$', 'web.help.render_help'),
     (r'^user/logout$', 'web.logout.render_logout'),
-    (r'^search', 'web.search.render_search')
+    (r'^search', 'web.search.render_search'),
+    (r'^advsearch', 'web.search.render_advanced_search')
 )
 
 handler403 = "web.errors.permission_denied"

@@ -1,0 +1,14 @@
+{% extends "pagebase.html" %}
+
+{% block title %}TexTrader - Advanced Search{% endblock %}
+
+{% block content %}
+<div class="home">
+    <h1>Advanced Search</h1>
+    <form action="/advsearch" method="POST">
+        <p><label>ISBN</label><input name="isbn" type="text" placeholder="123456789X" /></p>
+        <input type="submit" />
+    </form>
+</div>
+
+{% endblock %}
