@@ -7,6 +7,7 @@ import os
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context, loader
+from django.template.loader import render_to_string
 from django.core.exceptions import PermissionDenied
 from web import AuthManager
 import cgi
@@ -18,7 +19,7 @@ class BookAlreadyExistsError(Exception):
     def __init__(self):
         Exception.__init__(self, "A book with this ISBN has already been created.")
 
-def render_create_book(request, error = None):
+def render_create_book(request):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'create_book'):
@@ -32,14 +33,13 @@ def render_create_book(request, error = None):
             user = lib.USER.get_by_key_name(request.session["user"])
         except:
             user = None
-        context = Context({ "error":error,
-                            "user":user})
+        context = Context({"user":user})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'create_book.html')
         response = HttpResponse()
         response.write(loader.render_to_string(tmpl, context))
         return response
 
-def render_create_listing(request):
+def render_create_listing(request, error = None):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'list_book'):
@@ -54,6 +54,7 @@ def render_create_listing(request):
         except:
             user = None
         context = Context({
+                            "error": error,
                             "user": user,
                             "books": lib.BOOK.list_all_books()
                             })
