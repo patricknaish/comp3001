@@ -5,6 +5,7 @@ from django.template import Context, loader
 from django.shortcuts import redirect
 
 import lib
+from web import AuthManager
 
 def render_basket_add(request):
     if not "items" in request.session.keys():

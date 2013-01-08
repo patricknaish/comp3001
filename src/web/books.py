@@ -79,7 +79,7 @@ def list_book_action(request):
     except Exception as e:
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
-    user = AuthManager.get_current_user(request.session["user"])
+    user = AuthManager.get_current_user(request)
     context = Context({
                         "user": user
                         })
