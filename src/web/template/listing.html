@@ -1,4 +1,5 @@
 {% extends "pagebase.html" %}
+{% load price %}
 
 {% block title %}TexTrader - {{ book.title }}{% endblock %}
 {% block content %}
@@ -13,14 +14,14 @@
     <h2>Book Details</h2>
     <p>Title: {{ book.title }}</p>
     <p>Author: {{ book.author }}</p>
-    <p>RRP: &#163;{{ book.rrp }}</p>
+    <p>RRP: &#163;{{ book.rrp|to_price }}</p>
     <p>Publisher: {{ book.publisher }}</p>
     <p>Edition: {{ book.edition }}</p>
     <p>Year: {{ book.year }}</p>
     <p>ISBN: {{ book.isbn }}</p>
     <br>
     <p><strong>Book condition: {{ current_book.condition }}</strong></p>
-    <p><strong>Price: &#163;{{ current_book.price }}</strong></p>
+    <p><strong>Price: &#163;{{ current_book.price|to_price}}</strong></p>
 
 </div>
 
