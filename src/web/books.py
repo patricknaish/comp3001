@@ -15,10 +15,6 @@ import json
 import lib
 import time
 
-class BookAlreadyExistsError(Exception):
-    def __init__(self):
-        Exception.__init__(self, "A book with this ISBN has already been created.")
-
 def render_create_book(request):
     "Show the create book form"
     # Check permissions
@@ -67,10 +63,7 @@ def list_book_action(request):
     # Are we using a template or a new book?
     if not "template_isbn" in request.POST.keys():
         # Create new book
-        try:
-            create_book_action(request)
-        except BookAlreadyExistsError as e:
-            return render_create_listing(request, str(e))
+        create_book_action(request)
         isbn = cgi.escape(request.POST["isbn"])
     else:
         isbn = cgi.escape(request.POST["template_isbn"])
@@ -113,13 +106,6 @@ def create_book_action(request):
     rrp = float(cgi.escape(request.POST['rrp']))
     picture = cgi.escape(request.POST['picture'])
     rrp = int(rrp * 100) #convert P.pp to interger pence
-
-    #Check if the book already exists. This doesn't work at the moment - the database isn't updated, but it still shows success page
-    try:    
-        if lib.BOOK.get_by_key_name(isbn):
-            raise BookAlreadyExistsError()
-    except BookAlreadyExistsError as e:
-        return render_create_listing(request, str(e))
 
     context = Context()
     try:
