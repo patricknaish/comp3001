@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 import lib
 
 def render_basket_add(request):
-    if not "items" in request.session:
+    if not "items" in request.session.keys():
         request.session["items"] = list()
     request.session["items"].append(request.POST["item"])
     return redirect(request.META.HTTP_REFERER)
