@@ -9,7 +9,8 @@ import lib
 
 def render_user(request, user_key):
     user = lib.USER.get(user_key)
-    context = Context({ 
+    user_listings = lib.USER.list_books(user.email)
+    context = Context({ "user_listings": user_listings,
     	                "viewing_user": user,
     	                "user": AuthManager.get_current_user(request)
                       })
