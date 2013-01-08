@@ -1,5 +1,6 @@
 from django.template import Context, loader
 from web import AuthManager
+import lib
 
 def render_to_string(request, template, context = None):
     if context == None:
