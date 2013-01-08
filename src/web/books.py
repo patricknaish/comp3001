@@ -18,7 +18,7 @@ class BookAlreadyExistsError(Exception):
     def __init__(self):
         Exception.__init__(self, "A book with this ISBN has already been created.")
 
-def render_create_book(request, error = None):
+def render_create_book(request):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'create_book'):
@@ -39,7 +39,7 @@ def render_create_book(request, error = None):
         response.write(loader.render_to_string(tmpl, context))
         return response
 
-def render_create_listing(request):
+def render_create_listing(request, error = None):
     "Show the create book form"
     # Check permissions
     if not AuthManager.has_permission(request, 'list_book'):
