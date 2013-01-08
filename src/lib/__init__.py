@@ -12,6 +12,7 @@ import lib.UserBook as UserBook
 import lib.Book as Book
 import lib.Module as Module
 import lib.Session as Session
+import lib.Message as Message
 import logging
 # Now make the classes available readily
 logging.info("dir(lib.Paypal) = %s" % dir(Paypal))
@@ -23,3 +24,4 @@ BOOK = Book.Book
 MODULE = Module.Module
 USERBOOK = UserBook.UserBook
 SESSION = Session.Session
+MESSAGE = Message.Message

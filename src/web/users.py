@@ -34,7 +34,7 @@ def render_message(request, to_user, error = None):
 
 def send_message(request, to_user, message, subject):
     try:
-        lib.MESSAGE.send_message(to_user, message, subject, AuthManager.get_current_user(request))
+        lib.MESSAGE.create_message(AuthManager.get_current_user(request),to_user, subject, message)
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'send_message_success.html')
     except Exception:
         context = Context({"error": e})
@@ -45,7 +45,8 @@ def send_message(request, to_user, message, subject):
     return response
 
 def render_inbox(request):
-    context = Context({"error": e})
+    user = AuthManager.get_current_user(request)
+    context = Context({"user_messages": lib.USER.list_messages(user.email)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'inbox.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))

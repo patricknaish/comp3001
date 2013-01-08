@@ -6,7 +6,7 @@
 <div class="home">
     <h1>Inbox</h1>
     {% for message in user_messages %}
-        <p>From: {{ from_user.firstName }} {{ from_user.lastName }}</p>
+        <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
         <div class="message-subject">{{ message.subject }}</div>
         <div class="inbox-message">{{ message.message }}</div>
     {% endfor %}
