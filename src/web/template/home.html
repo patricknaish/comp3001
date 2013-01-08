@@ -4,15 +4,18 @@
 
 {% block content %}
 <div class="home">
-    <h1>Popular Books</h1>
+    <h1>Recent listings</h1>
     <ul class="book-list">
-    {% for book in book_list %}
-        <a href="./book/test" class="listing-link">
+    {% for listing in book_list %}
+        <a href="/listing/{{listing.key}}" class="listing-link">
         <li class="book-listing">
-            <div class="listing-image">{{ book.image }}</div>
+            <div class="listing-image">{{ listing.book.image }}</div>
             <div class="listing-info">
-                <span class="listing-title">{{ book.title }}</span> - <span class="listing-author">{{ book.author }}</span><br>
-                <span class="listing-price">{{ book.price }}</span>
+                <span class="listing-title">{{ listing.book.title }}</span> - <span class="listing-author">{{ listing.book.author }}</span><br>
+                <span class="listing-price">{{ listing.price }}</span>
+            </div>
+            <div class="listing-seller">
+                {{listing.user.firstName}} {{listing.user.lastName}}
             </div>
         </li>
         </a>
