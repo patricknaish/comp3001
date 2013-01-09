@@ -5,6 +5,7 @@
 {% block content %}
 <div class="home">
     <h1>Recent listings</h1>
+    {% if not book_list %}There haven't been any listings put up recently.{% endif %}
     <ul class="book-list">
     {% for listing in book_list %}
         <a href="/listing/{{listing.key}}" class="listing-link">

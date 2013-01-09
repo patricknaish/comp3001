@@ -83,15 +83,14 @@ def list_book_action(request):
                      book = book,
                      price = price,
                      condition = condition,
-                     listed_stamp = int(time.time()) ).put()
+                     listed_stamp = int(time.time()),
+                     sold_stamp = 0,
+                     sold_to_user = None ).put()
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_success.html')
+        context = Context()
     except Exception as e:
         context = Context({"error": e})
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'list_book_failure.html')
-    user = AuthManager.get_current_user(request)
-    context = Context({
-                        "user": user
-                        })
     response = HttpResponse()
     response.write(render_to_string(request, tmpl, context))
     return response

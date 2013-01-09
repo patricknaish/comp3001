@@ -20,8 +20,9 @@
     
     <div class="listing-seller-details">
     <h3>Seller Details</h3>
-    <span><strong>Name:</strong> {{ seller.firstName }} {{ seller.lastName }}</span><br />
+    <span><strong>Name:</strong> <a href="/user/{{ seller.key }}">{{ seller.firstName }} {{ seller.lastName }}</a></span><br />
     <span><strong>Reputation:</strong> {{ seller.reputation }}</span><br />
+    <span><a href="/message/{{ seller.key }}">Send a message to the seller</a>
     </div>
     
     <br>
@@ -50,4 +51,5 @@
     {% endfor %}
     </ul>
 </div>
+
 {% endblock %}
