@@ -22,8 +22,7 @@ def render_user(request, user_key):
     response.write(render_to_string(request, tmpl, context))
     return response
 
-def render_message(request, error = None):
-    to_user = lib.USER.get_by_key_name(request.GET['email'])
+def render_message(request, to_user, error = None):
     if request.method == 'POST':
         return send_message(request, to_user, request.POST['message'], request.POST['subject'])
     else:
