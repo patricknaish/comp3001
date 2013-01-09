@@ -18,3 +18,5 @@ def render_logout(request):
         response = HttpResponse()
         response.write(render_to_string(request, tmpl))
         return response
+    else:
+        return redirect("/login")
