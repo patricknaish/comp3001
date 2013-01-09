@@ -66,6 +66,9 @@ def render_register_action(request):
         response.write(render_to_string(request, tmpl))
         return response
 
+    except InvalidUserError as e:
+        return render_register_form(request, str(e))
+
     except EmailDoesntMatchError as e:
         return render_register_form(request, str(e))
 
