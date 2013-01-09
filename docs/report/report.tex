@@ -74,7 +74,6 @@ web page templates.
 
 \end{itemize}
 
-
 *The Google App Engine Runner is a system which updates the App Engine when there is a push to the Git repository. Each branch has its own link to what the final website will look like as the branch currently exists, as well as access to standard out and standard error from the associated Google App Engine instance.
 
 \newpage
@@ -84,6 +83,10 @@ web page templates.
 \newpage
 
 \section{Design and Implementation}
+
+The basic website design was inspired by the appearance of the many popular websites that exist for the selling of books. Wireframes were created for what the main pages would be, along with connections illustrating how these pages were to be connected.
+
+The back end is the Google App Engine Data Store which stores all of the information; Python classes are used as the interface through which the front end interacts with the data store and templates are used to isolate the database and the HTML.
 
 The design which was originally devised was based around the concept of tailoring the system for use in a university environment; it would have been built such that books could be assigned to relevant courses/universities to help users of the system to find books which are appropriate to the courses they are studying at the university they are attending.
 
