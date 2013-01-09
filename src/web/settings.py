@@ -30,4 +30,4 @@ TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), 'template'),)
 ROOT_URLCONF = 'web.urls'
 
 # Turn on debugging
-DEBUG = True
+#DEBUG = True
