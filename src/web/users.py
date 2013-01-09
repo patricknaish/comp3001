@@ -15,7 +15,8 @@ def render_user(request, user_key):
     user = lib.USER.get(user_key)
     user_listings = lib.USER.list_books(user.email)
     context = Context({ "user_listings": user_listings,
-    	                "viewing_user": user
+    	                "viewing_user": user,
+                        "user": AuthManager.get_current_user(request)
                       })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'user.html')
     response = HttpResponse()
