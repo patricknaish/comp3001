@@ -237,9 +237,9 @@ class Paypal:
             raise InvalidPaypalItemException()
 
         if self.sandbox:
-            pp_host = "sandbox.paypal.com"
+            pp_host = "www.sandbox.paypal.com"
         else:
-            pp_host = "paypal.com"
+            pp_host = "www.paypal.com"
 
         form_html = """<FORM action="https://%s/cgi-bin/webscr" method="post">
             <input type="hidden" name="charset" value="%s">
