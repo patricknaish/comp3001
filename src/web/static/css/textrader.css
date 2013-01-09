@@ -280,6 +280,9 @@ label {
 }
 
 .listing-small {
+    margin: 0.2em;
+    padding: 0.2em;
+    border: 1px solid #9C0014;
     float: left;
 }
 
