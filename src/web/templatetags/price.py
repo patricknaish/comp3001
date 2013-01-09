@@ -2,6 +2,7 @@ from django import template
 
 def to_price(var):
     price = str(var)
+    print price
     if len(price) == 2:
         return "0." + price[-2:]
     elif len(price) == 1;
