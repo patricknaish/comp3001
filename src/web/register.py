@@ -51,7 +51,7 @@ def render_register_action(request):
             "password": new_password
         })
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'registersuccess.eml')
-        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
+        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001-1213-b.appspot.com>", 
             subject = "TexTrader: Your account details")
         message.to = "%s %s <%s>" % (firstname, lastname, email)
         message.body = render_to_string(request, tmpl, context)
@@ -106,7 +106,7 @@ def render_forgotpw_action(request):
             "password": new_password
         })
         tmpl = os.path.join(os.path.dirname(__file__), 'template', 'forgotpw.eml')
-        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001.net.cmalton.me.uk>", 
+        message = mail.EmailMessage(sender = "TexTrader Support <support@comp3001-1213-b.appspot.com>", 
             subject = "TexTrader: Password reset")
         message.to = "%s %s <%s>" % (user.firstName, user.lastName, user.email)
         message.body = render_to_string(request, tmpl, context)
