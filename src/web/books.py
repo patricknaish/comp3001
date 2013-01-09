@@ -127,7 +127,7 @@ def render_book_json(request):
 
 def render_listing(request, listing_id):
     "Page to show a listing, as well as other listings of the same book"
-    listing = lib.USERBOOK.get(listing_id)
+    listing = lib.USERBOOK.get_by_id(listing_id)
     book = listing.book
     seller = listing.user
     copies = lib.BOOK.list_book_copies(book.isbn)
