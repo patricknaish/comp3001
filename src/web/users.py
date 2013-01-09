@@ -51,8 +51,17 @@ def send_message(request, to_user, message, subject):
 def render_inbox(request):
     user = AuthManager.get_current_user(request)
     context = Context({"user_messages": lib.USER.list_received_messages(user.email),
-                       "user": AuthManager.get_current_user(request)})
+                       "user": AuthManager.get_current_user(request)})  
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'inbox.html')
+    response = HttpResponse()
+    response.write(loader.render_to_string(tmpl, context))
+    return response
+
+def render_sentbox(request):
+    user = AuthManager.get_current_user(request)
+    context = Context({"user_messages": lib.USER.list_sent_messages(user.email),
+                       "user": AuthManager.get_current_user(request)})
+    tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'sentbox.html')
     response = HttpResponse()
     response.write(loader.render_to_string(tmpl, context))
     return response
