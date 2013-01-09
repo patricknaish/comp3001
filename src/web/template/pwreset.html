@@ -11,8 +11,8 @@
     <div class='error'>Error: {{error}}</div>
     {% endif %}
     <form action="/login/forgotten" method="post">
-        <p><label>Last Name:</label><input type="text" name="lastname" placeholder="Smith" class="input"></p>
-        <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input"></p>
+        <p><label>Last Name:</label><input type="text" name="lastname" placeholder="Smith" class="input" required></p>
+        <p><label>Email:</label><input type="email" name="email" placeholder="example@mail.com" class="input" required></p>
         <div><input type="submit" value="Reset password" class="submit-button"></div>
     </form>
 </div>
