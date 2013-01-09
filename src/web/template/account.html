@@ -19,6 +19,7 @@
 
 <h2>Your Listings</h2>
 <div class="seller-listings">
+	{% if not user_listings %}You haven't put any listings up yet.{% endif %}
 	<ul>
 	{% for listing in user_listings %}
 		<a href="/listing/{{ listing.key }}">
