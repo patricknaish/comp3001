@@ -13,11 +13,9 @@
 <span><img class='listing-image' src='{{ entry.book.picture }}' alt='Book image' /></span>
 <span class='listing-title'>{{ entry.book.title }}</span>
 <span class='listing-seller'>Seller: {{ entry.user.firstName }} {{ entry.user.lastName }}</span>
-<span class='listing-price'>&pound; {{ entry.price|to_price }}</span><br /
+<span class='listing-price'>&pound; {{ entry.price|to_price }}</span>
 </div>
 </li>
-{% empty %}
-<p>You have no items in your basket.</p>
 {% endfor %}
 </ul>
 <div class='paypal-button'>
