@@ -4,8 +4,7 @@
     padding: 0;
 }
 
-body
-{
+body {
     margin: auto auto;
     padding-top: 5px;
     width: 75%;
@@ -13,25 +12,21 @@ body
     background: rgb(242,242,242);
 }
 
-h1
-{
+h1 {
     color: #9C0014;
 }
 
-a
-{
+a {
     color: #9C0014;
     text-decoration: none;
 }
 
-a:hover
-{
+a:hover {
     color: #CC0000;
     text-decoration: underline;
 }
 
-hr.fade 
-{
+hr.fade {
     border: 0;
     height: 1px;
     background-image: -webkit-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
@@ -40,26 +35,22 @@ hr.fade
     background-image: -o-linear-gradient(left, rgba(156,0,20,0), rgba(156,0,20,0.75), rgba(156,0,20,0)); 
 }
 
-.header
-{
+.header {
     height: 150px;
 }
 
-.banner
-{
+.banner {
     float: left;
     height: 150px;
     width: 55%;
 }
 
-.banner img
-{
+.banner img {
     height: 150px;
     width: 500px;
 }
 
-.navigation-bar
-{
+.navigation-bar {
     display: block;
     float: right;
     text-align: right;
@@ -108,8 +99,7 @@ hr.fade
     margin: -28px -28px 0 0;
 }
 
-.search-bar
-{
+.search-bar {
     margin-top: 3px;
     margin-bottom: 3px;
     border: 1px solid #9C0014;
@@ -117,14 +107,12 @@ hr.fade
     padding: 5px;
 }
 
-.welcome-user
-{
+.welcome-user {
     float: left;
     width: 20%;
 }
 
-.search-form
-{
+.search-form {
     float: left;
     width: 80%;
 }
@@ -166,8 +154,7 @@ hr.fade
     border-bottom-right-radius: 3px;
 }
 
-.advanced-search
-{
+.advanced-search {
     margin-right: 5px;
     display: inline-block;
     text-align: center;
@@ -175,8 +162,7 @@ hr.fade
     font-size: 0.8em;
 }
 
-.browse
-{
+.browse {
     margin-left: 5px;
     display: inline-block;
     text-align: center;
@@ -184,19 +170,16 @@ hr.fade
     font-size: 0.8em;
 }
 
-.main-content
-{
+.main-content {
     padding: 20px;
     border: 1px solid #9C0014;
 }
 
-.user-login
-{
+.user-login {
     width: 45%;
 }
 
-.user-login .input
-{
+.user-login .input {
     border: 1px solid #9C0014;
     background: white;
     padding: 1px;
@@ -204,13 +187,11 @@ hr.fade
     width: 50%;
 }
 
-.register-form
-{
+.register-form {
     width: 45%;
 }
 
-.register-form .input
-{
+.register-form .input {
     border: 1px solid #9C0014;
     background: white;
     padding: 1px;
@@ -218,15 +199,13 @@ hr.fade
     width: 50%;
 }
 
-label
-{
+label {
     display: inline-block;
     font-size: 0.9rem;
     width: 100px;
 }
 
-.submit-button
-{
+.submit-button {
     padding: 4px;
     border: 1px solid #9C0014;
     color: #9C0014;
@@ -234,76 +213,64 @@ label
     font-size: 0.8rem;
 }
 
-.submit-button:hover
-{
+.submit-button:hover {
     background-color: #9C0014;
     color: white;
     cursor: pointer;
 }
 
-.book-listing
-{
+.book-listing {
     display: inline-block;
     background: rgb(230,230,230);
     width: 100%;
 }
 
-.listing-entry
-{
+.listing-entry {
     height: 155px;
 }
 
-.listing-image
-{
+.listing-image {
     max-width: 150px;
     max-height: 150px;
     margin: 2px;
     float: left;
 }
 
-.listing-image-small
-{
+.listing-image-small {
     max-width: 75px;
     max-height: 75px;
     margin: 2px;
     float: left;
 }
 
-.listing-info
-{
+.listing-info {
     float: left;
     margin-top: 5px;
     margin-left: 5px;
 }
 
-.listing-info:hover
-{
+.listing-info:hover {
     text-decoration: underline;
 }
 
-.listing-title
-{
+.listing-title {
     font-weight: bold;
 }
 
-.listing-price
-{
+.listing-price {
     display: inline-block;
     margin-top: 5px;
 }
 
-.listing-seller
-{
+.listing-seller {
     float: right;
 }
 
-.listing-book-details
-{
+.listing-book-details {
     clear: both;
 }
 
-.listing-seller-details
-{
+.listing-seller-details {
     clear: both;
 }
 
