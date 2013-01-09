@@ -13,6 +13,10 @@ class EmailDoesntMatchError(Exception):
     def __init__(self):
         Exception.__init__(self, "The provided email addresses do not match.")
 
+class InvalidUserError(Exception):
+    def __init__(self):
+        Exception.__init__(self, "An error occurred retrieveing your user details.")
+
 class AlreadyRegisteredError(Exception):
     def __init__(self):
         Exception.__init__(self, "An email address has already been registered to this account.")
@@ -92,8 +96,7 @@ def render_forgotpw_action(request):
              raise InvalidUserError()
 
         if user.lastName != lastname:
-#            raise InvalidUserDataError()
-             return None
+             raise InvalidUserError()
 
         # Do the creation
         new_password = lib.USER.reset_password(email)
