@@ -15,9 +15,7 @@
             <div class="listing-info">
                 <span class="listing-title">{{ listing.book.title }}</span> - <span class="listing-author">{{ listing.book.author }}</span><br>
                 <span class="listing-price">&#163;{{ listing.price|to_price }}</span>
-            </div>
-            <div class="listing-seller">
-                {{listing.user.firstName}} {{listing.user.lastName}}
+                <span>from {{listing.user.firstName}} {{listing.user.lastName}}</span>
             </div>
         </li>
         </a>
