@@ -34,12 +34,11 @@ def render_account(request, message = None):
                 raise PasswordDoesntMatchError()
             lib.USER.change_password(user.email, password)
             message = "Successfully updated password."
-            context = Context({ "user": user,
-                                "user_listings": lib.USER.list_books(user.email),
+            context = Context({ "user_listings": lib.USER.list_books(user.email),
                                 "message": message})
             response = HttpResponse()
             tmpl = os.path.join(os.path.dirname(__file__), 'template', 'account.html')
-            response.write(render_to_string(tmpl, context))
+            response.write(render_to_string(request, tmpl, context))
             return response
         except PasswordDoesntMatchError as e:
             request.method = 'GET'
