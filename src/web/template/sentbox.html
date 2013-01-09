@@ -9,7 +9,7 @@
     {% for message in user_messages %}
     <div class="message">
         <p><label>To: </label>{{ message.toUser.firstName }} {{ message.toUser.lastName }}</p>
-        <p><label>Subject: </label>{{ message.subject }}</div></p>
+        <p><label>Subject: </label>{{ message.subject }}</p>
         <p><label>Message: </label><div class="message-body">{{ message.body }}</div></p>
         <p><label>Sent on:</label><span>{{ message.sent }}</span></p>
     </div>
