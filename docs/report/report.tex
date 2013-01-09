@@ -16,14 +16,15 @@ The system created was a prototype of a text book selling system for use by univ
 
 Here is a list of all features implemented in the prototype:
 \begin{itemize}
-\item Sell books
-\item Buy books
-\item Search books
-\item Basket system
-\item PayPal checkout
-\item Messaging system
-\item Registering users
-\item Book templates (for selling books that are already known to the system)
+\item sell books;
+\item buy books;
+\item search books;
+\item basket system;
+\item PayPal checkout;
+\item messaging system;
+\item registering users;
+\item book templates (for selling books that are already known to the system);
+\item predictive search.
 \end{itemize}
 
 \newpage
@@ -38,28 +39,28 @@ Editors:
 \begin{itemize}
 
 \item
-Vim
+Vim;
 \item
-Notepad++
+Notepad+;
 \item
-Sublime Text
+Sublime Text.
 
 \end{itemize}
 
 \item
-Source Control
+Source Control:
 \begin{itemize}
-\item Git
+\item Git.
 \end{itemize}
 
 \item
-Testing
+Testing:
 \begin{itemize}
 \item
-Google App Engine Local Launcher
+Google App Engine Local Launcher;
 
 \item
-Google App Engine Runner*
+Google App Engine Runner*.
 \end{itemize}
 
 \end{itemize}
@@ -69,12 +70,12 @@ The programming techniques used during the development process were the followin
 \begin{itemize}
 
 \item
-Web page templates
+web page templates.
 
 \end{itemize}
 
 
-*The Google App Engine Runner is a system which updates the App Engine when there is a push to the Git repository.
+*The Google App Engine Runner is a system which updates the App Engine when there is a push to the Git repository. Each branch has its own link to what the final website will look like as the branch currently exists, as well as access to standard out and standard error from the associated Google App Engine instance.
 
 \newpage
 
@@ -84,15 +85,17 @@ Web page templates
 
 \section{Design and Implementation}
 
+The design which was originally devised was based around the concept of tailoring the system for use in a university environment; it would have been built such that books could be assigned to relevant courses/universities to help users of the system to find books which are appropriate to the courses they are studying at the university they are attending.
+
 The following list contains all of the technologies and how they were used:
 
 \begin{itemize}
 
-\item Google App Engine Data Store which keeps track of users, books, messages between users and sessions.
-\item Python interfaces are used to interact with this for the purposes of retrieving information from the data store and adding things to the data store.
-\item Templates were used to decouple the database system and the HTML formatting.
-\item JavaScript is used for predictive search, logging in, listing books. 
-\item Validation is performed by HTML5.
+\item Google App Engine Data Store keeps track of users, books, messages between users and sessions;
+\item Python interfaces are used to interact with the data store for the purposes of retrieving and adding information;
+\item templates are used to decouple the database system and the HTML formatting;
+\item JavaScript is used for predictive search, logging in and  listing books;
+\item client side validation for forms is performed by HTML5.
 
 \end{itemize}
 
@@ -100,6 +103,6 @@ The following list contains all of the technologies and how they were used:
 
 \section{Critical Evaluation}
 
-
+While the basic functionality has been implemented, some of the advanced concepts which were in the initial plan had to be cut due to time constraints. Hence, the final prototype does not fully reflect the intent at the start of the project.
 
 \end{document}
