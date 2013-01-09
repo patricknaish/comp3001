@@ -10,7 +10,7 @@
     <div class="message">
         <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
         <label>Subject: </label>{{ message.subject }}<br>
-        <label>Message: </label><div class="inbox-message" style="border: 1px solid black">{{ message.body }}</div>
+        <label>Message: </label><div class="message-body">{{ message.body }}</div>
         <label>Sent on:</label><span>{{ message.sent }}</span>
     </div>
     {% endfor %}

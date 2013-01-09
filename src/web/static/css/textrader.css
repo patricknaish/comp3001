@@ -284,5 +284,12 @@ label {
 }
 
 .message {
+    padding: 1em;
     border: 1px solid #9C0014;
+}
+
+.message-body {
+    margin: auto auto;
+    width: 80%;
+    background-color: #FFFFFF;
 }
