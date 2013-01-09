@@ -162,14 +162,6 @@ hr.fade {
     font-size: 0.8em;
 }
 
-.browse {
-    margin-left: 5px;
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
-    font-size: 0.8em;
-}
-
 .main-content {
     padding: 20px;
     border: 1px solid #9C0014;
@@ -280,4 +272,13 @@ label {
 
 .paypal-button {
     text-align: right;
+}
+
+.more {
+    height: 15em;
+    border: 1px solid #9C0014;
+}
+
+.listing-small {
+    float: left;
 }
