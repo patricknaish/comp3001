@@ -5,6 +5,8 @@ from django.shortcuts import render
 from django.template import Context, loader
 from web import AuthManager
 
+from web.TemplateWrapper import render_to_string
+
 import lib
 
 class MessageSendError(Exception):
@@ -20,7 +22,7 @@ def render_user(request, user_key):
                       })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'user.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(request, tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_message(request, to_user, error = None):
@@ -31,7 +33,7 @@ def render_message(request, to_user, error = None):
                             "user": AuthManager.get_current_user(request) })
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'message.html')
         response = HttpResponse()
-        response.write(loader.render_to_string(tmpl, context))
+        response.write(render_to_string(request, tmpl, context))
         return response
 
 def send_message(request, to_user, message, subject):
@@ -46,7 +48,7 @@ def send_message(request, to_user, message, subject):
         tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'send_message_failure.html')
 
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_inbox(request):
@@ -55,7 +57,7 @@ def render_inbox(request):
                        "user": AuthManager.get_current_user(request)})  
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'inbox.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
 
 def render_sentbox(request):
@@ -64,5 +66,5 @@ def render_sentbox(request):
                        "user": AuthManager.get_current_user(request)})
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'sentbox.html')
     response = HttpResponse()
-    response.write(loader.render_to_string(tmpl, context))
+    response.write(render_to_string(request, tmpl, context))
     return response
