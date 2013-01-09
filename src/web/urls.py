@@ -24,7 +24,7 @@ urlpatterns = patterns('',
     (r'^message/(.*)$', 'web.users.render_message'),
     (r'^listing/(.*)$', 'web.books.render_listing'),
     (r'^user/(.*)$', 'web.users.render_user'),
-    (r'^search', 'web.search.render_search'),
+    (r'^search/', 'web.search.render_search'),
     (r'^predict', 'web.search.search_predict')
 )
 
