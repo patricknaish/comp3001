@@ -246,3 +246,18 @@ class User(db.Model):
         for message_ref in user_message_to_ref.run():
             messages.append(message_ref)
         return messages    
+
+    @staticmethod
+    def list_sent_messages(user_email):
+        """
+        List all messages associated with a user
+        """
+        from lib.Message import Message
+        messages = []
+        user_ref = User.get_by_key_name(user_email)
+        user_message_from_ref = db.GqlQuery("SELECT * FROM Message WHERE " +\
+                                            "fromUser = :1",
+                                            user_ref)
+        for message_ref in user_message_from_ref.run():
+            messages.append(message_ref)
+        return messages    
