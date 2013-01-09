@@ -10,6 +10,8 @@ from web import AuthManager
 from web.TemplateWrapper import render_to_string
 
 def render_basket_add(request):
+    if not AuthManager.is_logged_in(request):
+        return redirect("/login")
     if not "items" in request.session.keys():
         request.session["items"] = set()
     if not request.POST["item"] in request.session["items"]:
@@ -17,11 +19,15 @@ def render_basket_add(request):
     return redirect(render_basket)
 
 def render_basket_remove(request, listing_id):
+    if not AuthManager.is_logged_in(request):
+        return redirect("/login")
     if "items" in request.session.keys() and listing_id in request.session["items"]:
         request.session["items"].remove(listing_id)
     return redirect(render_basket)
 
 def render_basket(request):
+    if not AuthManager.is_logged_in(request):
+        return redirect("/login")
     user = AuthManager.get_current_user(request)
     context = Context({"user": user})
     if 'items' in request.session.keys():
@@ -37,6 +43,8 @@ def render_basket(request):
     return response
 
 def render_commit(request):
+    if not AuthManager.is_logged_in(request):
+        return redirect("/login")
     pp = lib.PAYPAL.Paypal();
     pp.sandbox = True
     pp.merchant_id = "comp30_1354642631_biz@lists.cmalton.me.uk"
@@ -61,6 +69,8 @@ def render_commit(request):
     return response
 
 def render_pp_return(request):
+    if not AuthManager.is_logged_in(request):
+        return redirect("/login")
     pp = lib.PAYPAL.Paypal()
     pp.sandbox = True
     pp.merchant_id = "comp30_1354642631_biz@lists.cmalton.me.uk"
