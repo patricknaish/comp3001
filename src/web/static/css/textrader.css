@@ -282,3 +282,7 @@ label {
 .listing-small {
     float: left;
 }
+
+.message {
+    border: 1px solid #9C0014;
+}
