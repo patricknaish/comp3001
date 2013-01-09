@@ -1,10 +1,11 @@
 from django import template
-import re
 
 def to_price(var):
     price = str(var)
-    if not re.search('^[0-9]{2}$', price):
+    if len(price) == 2:
         return "0." + price[-2:]
+    elif len(price) == 1;
+        return "0.0"+ price[-2:]
     else:
         return price[:-2] + "." + price[-2:]
 
