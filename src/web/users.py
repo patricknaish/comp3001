@@ -19,7 +19,7 @@ def render_user(request, user_key):
                       })
     tmpl =  os.path.join(os.path.dirname(__file__), 'template', 'user.html')
     response = HttpResponse()
-    response.write(render_to_string(request, tmpl, context))
+    response.write(loader.render_to_string(request, tmpl, context))
     return response
 
 def render_message(request, error = None):
