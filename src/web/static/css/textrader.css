@@ -284,6 +284,7 @@ label {
 }
 
 .message {
+    font-size: 0.9em;
     padding: 1em;
     border: 1px solid #9C0014;
 }
