@@ -18,21 +18,26 @@
 </div>
 
 <h2>Your Listings</h2>
-<div class="seller-listings">
-	{% if not user_listings %}You haven't put any listings up yet.{% endif %}
-	<ul>
-	{% for listing in user_listings %}
-		<a href="/listing/{{ listing.key }}">
-			<li class="book-listing">
-				<img class="listing-image" href="{{ listing.book.image }}" />
-				<span class="listing-info">{{ listing.book.title }}</span>
-				<span class="listing-author">{{ listing.book.author }}</span>
-				<span class="listing-price">{{ listing.price|to_price }}</span>
-			</li>
-		</a>
-	{% endfor %}
-	</ul>
-</div>
+    {% if not user_listings %}You haven't put any listings up.{% endif %}
+    <ul class="book-list">
+    {% for listing in user_listings %}
+        <a href="/listing/{{listing.key}}" class="listing-link">
+        <li class="book-listing">
+            <div class="listing-image"><img class="listing-image-small" src="{{ listing.book.picture }}" alt="Image for {{ listing.book.isbn }}" /></div>
+            <div class="listing-info">
+                <span class="listing-title">{{ listing.book.title }}</span> - <span class="listing-author">{{ listing.book.author }}</span><br>
+                <span class="listing-price">&#163;{{ listing.price|to_price }}</span>
+            </div>
+            <div class="listing-seller">
+                {{listing.user.firstName}} {{listing.user.lastName}}
+            </div>
+        </li>
+        </a>
+        
+        {% if not forloop.last %}
+        <hr class="fade" \>
+        {% endif %}
+    {% endfor %}
 
 <div class="purchase-history">
 <ul>
