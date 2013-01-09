@@ -24,7 +24,7 @@
             </div>
             <nav class="navigation-bar">
                 {% if user != None %}
-                <a href="/">Home</a> | <a href="/help">Help</a> | <a href="/account">My Account</a> | 
+                <a href="/">Home</a> | <a href="/account">My Account</a> | 
 
                 <a href="/list_book">Sell</a> | <a href="/inbox">Inbox(0)</a> | <a href="/sent">Sent Messages</a> | <a href="/basket">Basket({{ basket|length }})</a>
                 {% else %}
@@ -42,16 +42,11 @@
             <div class="search-form">
                 <form action="/search/" method="get">
                     <div class="search-fields">
-                        <select class="select-category">
-                            <option value="none">All Categories</option>
-                            <option value="other">Other</option>
-                        </select>
                         <input name="s" type="search" id="search" class="input" placeholder="Search by book title" />
                         <div id="searchPredictions"></div>
                         <input type="submit" class="button" value="Search" />
                     </div>
-                    <span class="advanced-search"><a href="/advsearch">Advanced<br>Search</a></span>|
-                    <span class="browse"><a href="/browse">Browse</a></span>
+                    <span class="advanced-search"><a href="/advsearch">Advanced<br>Search</a></span>
                 </form>
             </div>
         </div>
