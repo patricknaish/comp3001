@@ -34,22 +34,24 @@
     </form></p>
 </div>
 
-<div class="other_listings">
+<div class="other-listings">
     <h2>Other listings of this book:</h2>
-    <ul>
-    {% for book_copy in same_books %}
-        {% if book_copy.key != listing.key %}
-        <a href="/listing/{{book_copy.key}}" class="listing-link">
-        <li class="book-listing">
-            <img class='listing-image-small' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
-            <span class="listing-info">{{ book_copy.book.title }}</span><br />
-            <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span>
-            <span class="listing-author"> ({{ book_copy.condition }})</span>
-        </li>
-        </a>
-        {% endif %}
-    {% endfor %}
-    </ul>
+    <div class="more">
+        <ul>
+        {% for book_copy in same_books %}
+            {% if book_copy.key != listing.key %}
+            <a href="/listing/{{book_copy.key}}" class="listing-link">
+            <li class="listing-small">
+                <img class='listing-image-small' src="/book/{{book_copy.book.isbn}}/image" alt="cover" />
+                <span class="listing-title">{{ book_copy.book.title }}</span><br />
+                <span class="listing-price">&#163;{{ book_copy.price|to_price }}</span>
+                <span class="listing-author"> ({{ book_copy.condition }})</span>
+            </li>
+            </a>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
 </div>
 
 {% endblock %}
