@@ -1,13 +1,13 @@
 {% extends "pagebase.html" %}
 
-{% block title %}TexTrader - Inbox{% endblock %}
+{% block title %}TexTrader - Sentbox{% endblock %}
 
 {% block content %}
 <div class="home">
-    <h1>Inbox</h1>
-    {% if not user_messages %}You have no messages{% endif %}
+    <h1>Sentbox</h1>
+    {% if not user_messages %}You haven't sent any messages{% endif %}
     {% for message in user_messages %}
-        <p>From: {{ message.fromUser.firstName }} {{ message.fromUser.lastName }}</p>
+        <p>To: {{ message.toUser.firstName }} {{ message.toUser.lastName }}</p>
         <label>Subject: </label><div class="message-subject" style="border: 1px solid black">{{ message.subject }}</div><br>
         <label>Message: </label><div class="inbox-message" style="border: 1px solid black">{{ message.body }}</div>
         <label>Sent on:</label><span>{{ message.sent }}</span>
