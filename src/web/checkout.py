@@ -16,6 +16,11 @@ def render_basket_add(request):
         request.session["items"].append(request.POST["item"])
     return redirect(render_basket)
 
+def render_basket_remove(request, listing_id):
+    if "items" in request.session.keys() and listing_id in request.session["items"]:
+        request.session["items"].remove(listing_id)
+    return redirect(render_basket)
+
 def render_basket(request):
     user = AuthManager.get_current_user(request)
     context = Context({"user": user})

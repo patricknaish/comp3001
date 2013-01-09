@@ -59,8 +59,10 @@ def list_book_action(request):
         # Create new book
         create_book_action(request)
         isbn = cgi.escape(request.POST["isbn"])
-    else:
+    elif request.POST["template_isbn"]:
         isbn = cgi.escape(request.POST["template_isbn"])
+    else:
+        return render_create_listing(request, "Please select a book from the drop-down or enter details for a new book.")
     book = lib.BOOK.get_by_key_name(isbn)
     user = AuthManager.get_current_user(request)
     condition = int(request.POST['condition'])
