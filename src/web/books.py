@@ -59,7 +59,7 @@ def list_book_action(request):
         # Create new book
         create_book_action(request)
         isbn = cgi.escape(request.POST["isbn"])
-    else if isbn:
+    else if isbn is not None:
         isbn = cgi.escape(request.POST["template_isbn"])
     else:
         return render_create_listing(request, "Please select a book from the drop-down or enter details for a new book.")
