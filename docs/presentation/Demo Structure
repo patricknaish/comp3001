@@ -1,0 +1,34 @@
+2 Protaganists
+- Seller
+- Buyer
+
+Registration of buyer (seller-preregistered)
+- If email not arrived, use pre-reg user
+
+Seller - forgotten password
+
+Seller
+- Login
+- List book
+ - Demo with template
+  - Show that it's now on homepage
+ - Or create a new book
+  - Create a second listing
+
+Check for buyer password
+- If not arrived, use pre-reg
+
+Login as buyer
+- Needs two books
+- Recent listings demo
+- Add to basket
+- Searched for second
+- Sends message - include email address for reply
+- Adds to basket anyway
+
+Switch to seller
+- Check inbox
+
+Switch to buyer
+- Checkout
+- Paypal
